@@ -6,7 +6,7 @@
 <atom:link href="https://eliashejdenberg.github.io/nyhetss-kning/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Daglig bevakning av svensk tyngdlyftning i svenska och utländska redaktionella medier.</description>
 <language>sv</language>
-<lastBuildDate>Tue, 10 Nov 2026 09:50:06 +0000</lastBuildDate>
+<lastBuildDate>Tue, 10 Nov 2026 09:54:16 +0000</lastBuildDate>
 <item>
 <title>Succén på VM – slog svenskt och nordiskt rekord</title>
 <link>https://www.expressen.se/tv/sport/succen-pa-vm-slog-svenskt-och-nordiskt-rekord/</link>
@@ -14,14 +14,6 @@
 <pubDate>Tue, 10 Nov 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">Expressen (VIDEO)</source>
 <description>Expressen (VIDEO) – Kort video om Joen Vikingsson Sjöbloms rekordlyft på VM i Ningbo.</description>
-</item>
-<item>
-<title>56-åring ska tävla i veteran-VM i tyngdlyftning: ”Aldrig för sent&quot;</title>
-<link>https://news.google.com/rss/articles/CBMiogFBVV95cUxPc2dQNGdrQ19yOVpxSWpxT0RpblV3VkJiVmhidG5yaXBQd3p0Yjg4bWRxSWdFQ2dvS1RILW90RVY4TW8zVGlDMlF1Ujl4dUlVekdiNmt2ZWpYc2dxSzNrUjJram00ZVBnSGRJRlp3VHdvUnBjajl2cTNpaWM5UXZlS3dxZXdUYjFHQlhkRlhtZTE0X2xZMUZLMjZ6SWpqRkFvUEE?oc=5</link>
-<guid isPermaLink="false">TV4 Nyheterna|56-åring ska tävla i veteran-VM i tyngdlyftning: ”Aldrig för sent&quot;</guid>
-<pubDate>Thu, 05 Nov 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">TV4 Nyheterna</source>
-<description>TV4 Nyheterna – Reportage om en 56-årig lyftare inför veteran-VM.</description>
 </item>
 <item>
 <title>Patricia Strenius vill bojkotta VM i Moskva 2030</title>
@@ -134,6 +126,14 @@
 <pubDate>Sat, 10 Oct 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">SVT Halland (VIDEO)</source>
 <description>SVT Halland (VIDEO) – Om elitcentret Elitmiljö Tyngdlyftning Halmstad, där flera av Sveriges bästa lyftare bor och tränar.</description>
+</item>
+<item>
+<title>56-åring ska tävla i veteran-VM i tyngdlyftning: ”Aldrig för sent&quot;</title>
+<link>https://news.google.com/rss/articles/CBMiogFBVV95cUxPc2dQNGdrQ19yOVpxSWpxT0RpblV3VkJiVmhidG5yaXBQd3p0Yjg4bWRxSWdFQ2dvS1RILW90RVY4TW8zVGlDMlF1Ujl4dUlVekdiNmt2ZWpYc2dxSzNrUjJram00ZVBnSGRJRlp3VHdvUnBjajl2cTNpaWM5UXZlS3dxZXdUYjFHQlhkRlhtZTE0X2xZMUZLMjZ6SWpqRkFvUEE?oc=5</link>
+<guid isPermaLink="false">TV4 Nyheterna|56-åring ska tävla i veteran-VM i tyngdlyftning: ”Aldrig för sent&quot;</guid>
+<pubDate>Mon, 21 Nov 2022 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">TV4 Nyheterna</source>
+<description>TV4 Nyheterna – Reportage om Eva Krönlein, 56, inför veteran-VM. Klippet är från 2022 men dök upp igen i Google Nyheter i november 2026.</description>
 </item>
 </channel>
 </rss>
