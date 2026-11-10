@@ -6,7 +6,7 @@
 <atom:link href="https://eliashejdenberg.github.io/nyhetss-kning/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Daglig bevakning av svensk tyngdlyftning i svenska och utländska redaktionella medier.</description>
 <language>sv</language>
-<lastBuildDate>Tue, 10 Nov 2026 13:25:27 +0000</lastBuildDate>
+<lastBuildDate>Tue, 10 Nov 2026 13:27:22 +0000</lastBuildDate>
 <item>
 <title>Succén på VM – slog svenskt och nordiskt rekord</title>
 <link>https://www.expressen.se/tv/sport/succen-pa-vm-slog-svenskt-och-nordiskt-rekord/</link>
@@ -128,6 +128,14 @@
 <description>ETC.se – Krönika.</description>
 </item>
 <item>
+<title>VM till Ryssland: ”Propagandacirkus”</title>
+<link>https://www.etc.se/inrikes/vm-till-ryssland-propagandacirkus</link>
+<guid isPermaLink="false">ETC.se|VM till Ryssland: ”Propagandacirkus”</guid>
+<pubDate>Mon, 26 Oct 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">ETC.se</source>
+<description>ETC.se – Intervju med Helene Johage om att Ryssland får VM i tyngdlyftning 2030.</description>
+</item>
+<item>
 <title>Tyngdlyftning: Joen Vikingsson Sjöblom efter Rysslandsbeskedet: ”Inte förvånad”</title>
 <link>https://www.svt.se/sport/tyngdlyftning/joen-vikingsson-sjoblom-efter-rysslandsbeskedet-inte-forvanad</link>
 <guid isPermaLink="false">SVT Nyheter|Tyngdlyftning: Joen Vikingsson Sjöblom efter Rysslandsbeskedet: ”Inte förvånad”</guid>
@@ -238,14 +246,6 @@
 <pubDate>Fri, 29 May 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">Barometern-OT</source>
 <description>Barometern-OT</description>
-</item>
-<item>
-<title>Ny succé för supertalangen – SM-guld och rekord</title>
-<link>https://www.kristianstadsbladet.se/sport/ny-succe-for-14-aringen-sm-guld-och-svenskt-rekord/</link>
-<guid isPermaLink="false">Kristianstadsbladet|Ny succé för supertalangen – SM-guld och rekord</guid>
-<pubDate>Fri, 29 May 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Kristianstadsbladet</source>
-<description>Kristianstadsbladet</description>
 </item>
 </channel>
 </rss>
