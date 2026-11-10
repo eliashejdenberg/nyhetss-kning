@@ -6,7 +6,7 @@
 <atom:link href="https://eliashejdenberg.github.io/nyhetss-kning/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Daglig bevakning av svensk tyngdlyftning i svenska och utländska redaktionella medier.</description>
 <language>sv</language>
-<lastBuildDate>Tue, 10 Nov 2026 09:48:16 +0000</lastBuildDate>
+<lastBuildDate>Tue, 10 Nov 2026 09:50:06 +0000</lastBuildDate>
 <item>
 <title>Succén på VM – slog svenskt och nordiskt rekord</title>
 <link>https://www.expressen.se/tv/sport/succen-pa-vm-slog-svenskt-och-nordiskt-rekord/</link>
@@ -126,6 +126,14 @@
 <pubDate>Sun, 25 Oct 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">Aftonbladet</source>
 <description>Aftonbladet – IWF ger VM 2030 till Moskva.</description>
+</item>
+<item>
+<title>Halmstad har blivit bas för landets främsta tyngdlyftare</title>
+<link>https://www.svt.se/nyheter/lokalt/halland/halmstad-har-blivit-bas-for-landets-framsta-tyngdlyftare</link>
+<guid isPermaLink="false">SVT Halland|Halmstad har blivit bas för landets främsta tyngdlyftare</guid>
+<pubDate>Sat, 10 Oct 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">SVT Halland (VIDEO)</source>
+<description>SVT Halland (VIDEO) – Om elitcentret Elitmiljö Tyngdlyftning Halmstad, där flera av Sveriges bästa lyftare bor och tränar.</description>
 </item>
 </channel>
 </rss>
