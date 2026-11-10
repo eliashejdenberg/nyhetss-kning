@@ -1,0 +1,54 @@
+name: Mejla nya artiklar
+
+on:
+  # Morgonkörningen pushar en uppdaterad sida -> mejla det som är nytt
+  push:
+    branches: [main]
+    paths: ["src/sida.html"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: morgonmejl
+  cancel-in-progress: false
+
+jobs:
+  mejl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Mejla nya artiklar
+        env:
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          MAIL_FROM_NAME: "Tyngdlyftning i media"
+          # Repot är publikt – mottagarna ligger därför i en secret, inte här i klartext
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python skicka_mejl.py
+
+      - name: Spara vilka artiklar som har mejlats
+        run: |
+          git config user.name "nyhets-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state
+          if git diff --cached --quiet; then
+            echo "Inget nytt att spara"
+            exit 0
+          fi
+          git commit -m "Mejlade artiklar $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            echo "Försök $i misslyckades, väntar och försöker igen"
+            sleep $((i * 10))
+          done
+          exit 1

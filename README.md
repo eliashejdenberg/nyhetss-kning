@@ -45,3 +45,15 @@ Hela sidan visar 50 artiklar per sida med knappar för att bläddra. Antalet än
 
 - `lyftare` – svenska tyngdlyftare (underhålls av bevakningen och för hand).
 - `forbund` – förbundsstyrelse, personal, landslagsstaber, ETH och medicinskt team. Uppdateras varje kvartal av `hamta_namn.py`, som läser tyngdlyftning.com. Bara namn och roll sparas.
+
+## Mejlutskick (GitHub Actions)
+
+När morgonkörningen pushar en uppdaterad `src/sida.html` startar `.github/workflows/morgonmejl.yml`, som mejlar artiklar som inte skickats tidigare (`state/skickade.json`) till mottagarna i `MAIL_TO`. Samma upplägg som i story-generator.
+
+Secrets (Settings → Secrets and variables → Actions):
+- `SMTP_SERVER`, `SMTP_USERNAME`, `SMTP_PASSWORD` – samma som i story-generator
+- `SMTP_PORT` (valfri, standard 587) och `MAIL_FROM` (valfri)
+- `MAIL_TO` – mottagare, kommaseparerade. Ligger som secret eftersom repot är publikt.
+
+Inga nya artiklar ger inget mejl. Morgonkörningens sammanfattning (t.ex. bortsorterade artiklar) skrivs till `state/sammanfattning.txt` och tas med i mejlet.
+Testa: Actions → Mejla nya artiklar → Run workflow.
