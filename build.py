@@ -1,0 +1,163 @@
+"""Bygger de publicerade filerna från src/sida.html.
+
+src/sida.html är den enda källan (samma innehåll som bevakningssidan på claude.ai).
+Skriptet skapar:
+  index.html                 hela bevakningssidan
+  modul.html                 kompakt lista för inbäddning (?antal=5)
+  feed.xml                   RSS: svenska medier
+  feed-internationellt.xml   RSS: internationella medier
+
+Kör: python3 build.py
+"""
+import html
+import re
+from datetime import datetime, timezone
+from email.utils import format_datetime
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+BASE = "https://eliashejdenberg.github.io/nyhetss-kning/"
+SRC = (ROOT / "src" / "sida.html").read_text(encoding="utf-8")
+
+ITEM_RE = re.compile(
+    r'<div class="item"><span class="src">(?P<src>.*?)</span><div class="body">'
+    r'<span class="tag[^"]*">(?P<date>.*?)</span>'
+    r'<a href="(?P<href>[^"]*)"[^>]*>(?P<title>.*?)</a>(?:<p>(?P<p>.*?)</p>)?</div></div>',
+    re.S,
+)
+
+
+def section(html_text, start_marker, end_marker):
+    i = html_text.find(start_marker)
+    if i < 0:
+        return ""
+    j = html_text.find(end_marker, i)
+    return html_text[i : j if j > 0 else None]
+
+
+def items(block):
+    out = []
+    for m in ITEM_RE.finditer(block):
+        d = m["date"].strip()
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", d):
+            continue  # t.ex. "Äldre" – utan datum, hoppas över i flöden
+        out.append(
+            {
+                "src": html.unescape(m["src"]),
+                "date": d,
+                "href": html.unescape(m["href"]),
+                "title": html.unescape(re.sub(r"<[^>]+>", "", m["title"])),
+                "p": html.unescape(m["p"] or ""),
+            }
+        )
+    out.sort(key=lambda x: x["date"], reverse=True)
+    return out
+
+
+sv = items(section(SRC, 'id="flode"', "</section>"))
+intl = items(section(SRC, 'id="intl"', "</section>"))
+
+HEAD = """<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+"""
+
+
+def write(name, text):
+    (ROOT / name).write_text(text, encoding="utf-8")
+    print("skrev", name)
+
+
+# index.html – hela sidan
+write("index.html", HEAD + "</head>\n<body>\n" + SRC + "\n</body>\n</html>\n")
+
+
+# RSS-flöden
+def rss(name, title, desc, rows):
+    now = format_datetime(datetime.now(timezone.utc))
+    parts = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+        "<channel>",
+        f"<title>{html.escape(title)}</title>",
+        f"<link>{BASE}</link>",
+        f'<atom:link href="{BASE}{name}" rel="self" type="application/rss+xml"/>',
+        f"<description>{html.escape(desc)}</description>",
+        "<language>sv</language>",
+        f"<lastBuildDate>{now}</lastBuildDate>",
+    ]
+    for r in rows[:30]:
+        dt = datetime.strptime(r["date"], "%Y-%m-%d").replace(hour=6, tzinfo=timezone.utc)
+        description = r["src"] + (" – " + r["p"] if r["p"] else "")
+        parts += [
+            "<item>",
+            f"<title>{html.escape(r['title'])}</title>",
+            f"<link>{html.escape(r['href'])}</link>",
+            f'<guid isPermaLink="false">{html.escape(r["src"] + "|" + r["title"])}</guid>',
+            f"<pubDate>{format_datetime(dt)}</pubDate>",
+            f"<source url=\"{BASE}\">{html.escape(r['src'])}</source>",
+            f"<description>{html.escape(description)}</description>",
+            "</item>",
+        ]
+    parts += ["</channel>", "</rss>", ""]
+    write(name, "\n".join(parts))
+
+
+rss("feed.xml", "Tyngdlyftning i svenska medier",
+    "Daglig bevakning av olympisk tyngdlyftning i svenska redaktionella medier.", sv)
+rss("feed-internationellt.xml", "Tyngdlyftning i internationella medier",
+    "Internationella artiklar om tyngdlyftning som är relevanta för Sverige.", intl)
+
+# modul.html – kompakt lista
+li = "\n".join(
+    f'<li><span class="d">{r["date"]}</span><span class="s">{html.escape(r["src"])}</span>'
+    f'<a href="{html.escape(r["href"])}" target="_blank" rel="noopener">{html.escape(r["title"])}</a></li>'
+    for r in sv[:20]
+)
+updated = re.search(r"Senast uppdaterad <b>(.*?)</b>", SRC)
+updated = updated[1] if updated else ""
+write("modul.html", HEAD + f"""<title>Tyngdlyftning i media</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+<style>
+:root{{--fg:#404040;--muted:#666;--line:#e6e6e6;--blue:#1d428e;--yellow:#f6ca30;
+  --font:"Clear Sans","Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif}}
+html,body{{margin:0;background:#fff;color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.45}}
+.m{{padding:4px 2px}}
+h2{{margin:0 0 6px;font-size:1.25rem;font-weight:700;text-transform:uppercase;color:var(--blue);padding-bottom:8px;border-bottom:1px solid #ccc}}
+ul{{list-style:none;margin:0;padding:0}}
+li{{display:grid;grid-template-columns:auto 1fr;column-gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}}
+li[hidden]{{display:none}}
+.d{{font-variant-numeric:tabular-nums;color:#000;font-size:14px}}
+.s{{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);align-self:center}}
+.s::before{{content:"· ";color:#ccc}}
+a{{grid-column:1/-1;color:var(--blue);font-weight:700;text-decoration:none}}
+a:hover,a:focus-visible{{text-decoration:underline}}
+a:focus-visible{{outline:2px solid var(--yellow);outline-offset:2px}}
+.f{{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--muted)}}
+.f a{{grid-column:auto;font-weight:600}}
+</style>
+</head>
+<body>
+<div class="m">
+<h2>Tyngdlyftning i media</h2>
+<ul id="l">
+{li}
+</ul>
+<div class="f"><span>Uppdaterad {html.escape(updated)}</span><a href="{BASE}" target="_blank" rel="noopener">Alla nyheter →</a></div>
+</div>
+<script>
+// ?antal=5 styr hur många rubriker som visas (standard 5)
+(function(){{
+  var n = parseInt(new URLSearchParams(location.search).get("antal") || "5", 10);
+  var li = document.querySelectorAll("#l li");
+  for (var i = n; i < li.length; i++) li[i].hidden = true;
+  // meddela inbäddande sida höjden (för automatisk iframe-höjd)
+  function h(){{ try {{ parent.postMessage({{tyngdlyftningModulHojd: document.documentElement.scrollHeight}}, "*"); }} catch(e){{}} }}
+  window.addEventListener("load", h); h();
+}})();
+</script>
+</body>
+</html>
+""")

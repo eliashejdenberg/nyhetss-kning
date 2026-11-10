@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<title>Tyngdlyftningsbevakningen</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: följer tyngdlyftning.com – vit yta, förbundsblå rubriker i versaler med grå linje, datum ovanför rubrik, vita kort med mjuk skugga. Medvetet ljust tema för inbäddning i Sitevision. */
+:root{
+  --bg:#ffffff; --surface:#ffffff; --soft:#fafafa; --fg:#404040; --muted:#666666; --line:#cccccc;
+  --blue:#1d428e; --yellow:#f6ca30; --shadow:0 1px 6px rgba(0,0,0,.08);
+  --font:"Clear Sans","Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 56px}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+header{display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1{font-weight:700;font-size:clamp(1.9rem,4.5vw,2.6rem);line-height:1.15;margin:0;color:#000;text-wrap:balance}
+h2{font-weight:700;font-size:1.75rem;margin:0;color:var(--blue);text-transform:uppercase;letter-spacing:.01em;padding-bottom:10px;border-bottom:1px solid var(--line);text-wrap:balance}
+.lede{margin:0;max-width:65ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:14px}
+.meta span{background:var(--soft);border:1px solid #e6e6e6;padding:4px 10px}
+.meta b{color:var(--blue);font-weight:700}
+section{display:flex;flex-direction:column;gap:20px}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.lift{background:var(--surface);box-shadow:var(--shadow);border-top:4px solid var(--blue);padding:16px 18px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.lift .name{font-weight:700;font-size:15px;color:#000}
+.lift .kg{font-weight:700;font-size:2.1rem;line-height:1.15;font-variant-numeric:tabular-nums;color:var(--blue)}
+.lift .kg small{font-size:1rem;color:var(--muted)}
+.lift .det{font-size:13px;color:var(--muted)}
+.boardmeta{margin:-8px 0 0;font-size:15px;color:var(--muted)}
+.boardmeta b{color:#000}
+.lift .cite{margin-top:8px;font-size:13px;color:var(--blue);text-decoration:none;font-weight:600}
+.lift .cite:hover,.lift .cite:focus-visible{text-decoration:underline}
+.lift.pending{border-top-color:var(--line);background:var(--soft);justify-content:center}
+.lift.pending .det{font-size:14px}
+.feed{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.item{background:var(--surface);box-shadow:var(--shadow);padding:16px 18px;display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:4px;align-content:start;min-width:0}
+.item .body{display:contents}
+.item .tag{grid-row:1;grid-column:1;font-size:15px;font-variant-numeric:tabular-nums;color:#000}
+.item .tag.old{color:var(--muted);font-style:italic}
+.item .src{grid-row:1;grid-column:2;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);align-self:center;overflow-wrap:anywhere}
+.item .src::before{content:"· ";color:var(--line)}
+.item a{grid-column:1 / -1;color:var(--blue);font-weight:700;font-size:1.15rem;line-height:1.3;text-decoration:none}
+.item a:hover,.item a:focus-visible{text-decoration:underline;outline:none}
+.item a:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+.item p{grid-column:1 / -1;margin:2px 0 0;font-size:15px}
+.cal{display:flex;flex-direction:column}
+.cal div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #e6e6e6}
+.cal time{font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}
+.note{background:var(--soft);border-left:4px solid var(--yellow);padding:16px 18px;font-size:14px;display:flex;flex-direction:column;gap:6px}
+.note b{color:#000}
+@media (max-width:700px){.feed{grid-template-columns:1fr}}
+@media (max-width:480px){.cal div{grid-template-columns:1fr;gap:2px}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Daglig mediebevakning · Ryck &amp; stöt</span>
+    <h1>Tyngdlyftningsbevakningen</h1>
+    <p class="lede">Nyheter om svensk och internationell tyngdlyftning från svenska medier. Sidan uppdateras varje morgon.</p>
+    <div class="meta"><span>Senast uppdaterad <b>2026-11-10</b></span><span>Nästa körning <b>2026-11-11, ca 06:47</b></span></div>
+  </header>
+
+  <section aria-labelledby="vm">
+    <h2 id="vm">Senaste mästerskap</h2>
+    <p class="boardmeta"><b>VM i Ningbo, Kina</b> · 2026-10-28 – 2026-11-09 · svenska resultat</p>
+    <div class="board" data-event="VM Ningbo 2026">
+      <div class="lift"><span class="name">Joen Vikingsson Sjöblom</span><span class="kg">390 <small>kg</small></span><span class="det">176 ryck · 214 stöt · svenskt och nordiskt rekord</span><a class="cite" href="http://vlstat.dk/Rangliste.aspx?Language=SE" target="_blank" rel="noopener">Källa: VLstat</a></div>
+      <div class="lift pending"><span class="name">Övriga svenskar</span><span class="det">Hugo Ottosson, Victor Sundh och Donna Berglund tävlade. Deras resultat har ännu inte rapporterats i media eller i en officiell resultatlista.</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="flode">
+    <h2 id="flode">Svenska medier</h2>
+    <div class="feed">
+      <div class="item"><span class="src">TV4 Nyheterna</span><div class="body"><span class="tag">2026-11-05</span><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPc2dQNGdrQ19yOVpxSWpxT0RpblV3VkJiVmhidG5yaXBQd3p0Yjg4bWRxSWdFQ2dvS1RILW90RVY4TW8zVGlDMlF1Ujl4dUlVekdiNmt2ZWpYc2dxSzNrUjJram00ZVBnSGRJRlp3VHdvUnBjajl2cTNpaWM5UXZlS3dxZXdUYjFHQlhkRlhtZTE0X2xZMUZLMjZ6SWpqRkFvUEE?oc=5" target="_blank" rel="noopener">56-åring ska tävla i veteran-VM i tyngdlyftning: ”Aldrig för sent"</a><p>Reportage om en 56-årig lyftare inför veteran-VM.</p></div></div>
+      <div class="item"><span class="src">Sveriges Radio</span><div class="body"><span class="tag">2026-11-02</span><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPNlJsak4xa3NaelQ3VThIalUzWWtpbHk1bmF4Tm54VmlmV2xRYXpSOFV0VGVEV1NNOG43U0oweU1leFdMMnBnNHhLaG9QRS1GbXgxbF9vQ1B3NWhMZXRmV1FnZ1hxVHBPRWJQNXVfMzEwekFEb1pBaUFPUlc3Tkh1VU9xTC00WEM3OWVTWDZB?oc=5" target="_blank" rel="noopener">Patricia Strenius vill bojkotta VM i Moskva 2030</a></div></div>
+      <div class="item"><span class="src">Dagens Nyheter</span><div class="body"><span class="tag">2026-10-31</span><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPb3pxbGs3RkFhV0RSaEVhVkt3RUs5dE5MM1hES0FXaF91bGtKU3hHbW1XN1RmWXJoamt2UXV3ZmZCRk1lWTFfX2tOYWdXbk82WFFiWmdGZng1aWlxN05POVhaRXRJQ1B5cWlMWnQzVXlxb2NiUjZvQ0VzbGo3YVZZamozbWd2djJMbFE?oc=5" target="_blank" rel="noopener">Ukrainska lyftarna kräver bojkott: ”Ska vi åka till fienden?”</a></div></div>
+      <div class="item"><span class="src">Sveriges Radio</span><div class="body"><span class="tag">2026-10-30</span><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxOd2swclBVQ1RJVFZkOHRsUVdldGdzeGpleFBval9wdHZ3aXdkQlVtcC1WeTFyNDEtQWp4QlVmcFdiRThBSWdWN0x0S3pibVVDSUtyRDFmOURONmtiZnFYemV6Z0ZXb2tGZ1B2ZG9UYTFTNU9oZjhhNTIwYWNUVEltSU9Yd2xxa1p4OEE?oc=5" target="_blank" rel="noopener">Donna Berglund gör debut i VM i tyngdlyftning</a></div></div>
+      <div class="item"><span class="src">Västerbotten | Folkbladet</span><div class="body"><span class="tag">2026-10-29</span><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNWnZuYUp1c2NlbEZWSE9RX2FGcWxSM0RXRFFoQS0wWGx6ZHMtSmFCdURPYUZhU3lGS0NiNUFDVzhNRzV1UEhGa3pGcDRueS1sbjJ5VmduN3huM1pDSlJJWGxDMUdCemstM29wZHhlSHRpTTFJNGRNcXY5aXJaR2RQNl9FRzg5MHRobXhhZ1FPYm1hNjlZ?oc=5" target="_blank" rel="noopener">Norge vägrar åka till Ryssland för VM: ”Glasklart”</a></div></div>
+      <div class="item"><span class="src">Arbetarbladet</span><div class="body"><span class="tag">2026-10-28</span><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQVHVWZElKM0otR2Q5Sm0zS1o5LU1aQjJmY0JER2FaRW40eXFqZ1BFS1pHRmNFbzFaRUllelRiR0FRR1R1UVJfMS1Xak80cF9HT2lKUFFUMG4tOGNuVUZaRm03NGtZXzFHOGl1R0ltbDhVclBMTER4SGxMbTJYRHZJZG92bS1kX3lPc3VZaGVn?oc=5" target="_blank" rel="noopener">Sigge, 16, bytte hockey mot tyngdlyftning</a></div></div>
+      <div class="item"><span class="src">Aftonbladet</span><div class="body"><span class="tag">2026-10-26</span><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQVXF6WF9qaWwwQklRN2VHSWFLbjZOSU5pM3htY2xNSjd1T29NQUlCcGNVbTRRY0RWdWlfbERlM0Y5Z2l4QUkwYXVjT1VqdDhSSldxYWQ3VTlfRlpaNWdMMlFYMFVmdTdZbEdyMVNSYUxTZzFXQnB5R1JjM3hoSXRTaXE3YzJXN3ZtUTJYbVVJS291UVltS2s1VUpR?oc=5" target="_blank" rel="noopener">Svenska beskedet: Ingen bojkott mot VM i Moskva</a><p>Samma artikel finns även i Borås Tidning.</p></div></div>
+      <div class="item"><span class="src">Aftonbladet</span><div class="body"><span class="tag">2026-10-26</span><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPa000ak5mUVVNYzBuTXRGVTdlOFZ5N0hmUzVKb0tUVWh5RTgwWFBVNkl5ZmF6Wm10TjAyR1BaOUQwdnl6akg5Nnd4RWVwemY3dFRSdEpvMm9RaVVlLTRTaHpic0E5SklCWjVsN2xOMmMzTHI3VmFvYU5xZVNnSzdUT0xKNGVKc0dieERpU2NGMXo?oc=5" target="_blank" rel="noopener">Ukraina rasar mot beslutet: ”Oacceptabelt”</a></div></div>
+      <div class="item"><span class="src">Expressen</span><div class="body"><span class="tag">2026-10-26</span><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNNFRQMnZENWhXcmxVSDJROE9sb3RWOHktMjVfLVFfV2FHTWVCeGR6X094ZUdkU2k0Wnp3Q0FoLVRKdDVYVk5pSmdaUkpaQi1rUzRIanlZUjFwSnRqaVBtemt5dl9PQVhFcDVxbVpHTU5vQUN4R0JNWFhTal93UTl6MGh3?oc=5" target="_blank" rel="noopener">Ministern rasar mot beslutet: ”Skamligt”</a></div></div>
+      <div class="item"><span class="src">ETC.se</span><div class="body"><span class="tag">2026-10-26</span><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE54cjdYSDBGcm8xVzJLNGtsOU4zSjlfdU0tTUdNWDNHazNwYWZ0T3ZoTlpRai0tc2dUQjYydFMtNURFeFplUzh3TGlhOFEzaGZFeXh5WXZ1c2IzTGhENG5LSVFFbmhOSHdXTUdRUVVxVzFiM3Qya01NdXFkVkI?oc=5" target="_blank" rel="noopener">Somar Al Naher: Min älskade sport släpper in Putin i värmen</a><p>Krönika.</p></div></div>
+      <div class="item"><span class="src">SVT Nyheter</span><div class="body"><span class="tag">2026-10-25</span><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNS3VzOEpmMUZwNGxBdHB1Z2thVjlBbFVBZEQ5V05wZF9DYmdOQ0l5R0ZJY3ZFcDlPRXAzX2s4dVNmb25HQ2tWektwaUpzRTdYaFF0cXlIMmM1UjBxV0ZjV2FaRHhJN0NORVQxV1RsOGc0YUFhZ1NCUkVhZkxBRGN4R2RlTkJLU211cU5iZlFQUkp4WjB4RXpJbWNQQjlqaUVDMHc?oc=5" target="_blank" rel="noopener">Tyngdlyftning: Joen Vikingsson Sjöblom efter Rysslandsbeskedet: ”Inte förvånad”</a></div></div>
+      <div class="item"><span class="src">Sveriges Radio</span><div class="body"><span class="tag">2026-10-25</span><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPWl9GcjVyY0NJUmp1OGZ2M1gwTmtiV1QtczRma0ZVQUdFWHhkYXAzZHFLdnc5c0REMFNZUWN0U25ab2s4RXB1V0VtZTJ6MFNzRjlJYzFCSkJpWjVxLXdXMmtSMHRqeURuVUpFbDdmSzVrMk5zQTBWcktKZXllYWNwbzFHR0E?oc=5" target="_blank" rel="noopener">Ryssland får arrangera VM i tyngdlyftning: ”Emotionell utpressning”</a></div></div>
+      <div class="item"><span class="src">Svenska Dagbladet</span><div class="body"><span class="tag">2026-10-25</span><a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE5paGdiSXlQSFZ0cncxbGF5SUNCWllHOG9aT3NLTGtsclRYSjFmRkFnQjFJd3pnUEt1QkhlVkVDcXFnTWZaOGpFOW1MRjMwME5KaEpKcGxnOGRQQXdsRVRxSmpvUldSV0lZWVp6SFN6MVRpZk9sR1dYVEhB?oc=5" target="_blank" rel="noopener">Ger VM till Ryssland: ”Kriget pågår ju ännu”</a></div></div>
+      <div class="item"><span class="src">Aftonbladet</span><div class="body"><span class="tag">2026-10-25</span><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNaEYzUE9Cajh6UnNBYlVGUXQ1SUNHQ2JwaVFyeTM2UFlmalk0VFUxX0JuTGdkb3NmYU8xcHpYR1JiWXpPcEx5VDg3czhIQV9PNjNhSU1uYlVVX1Jsc19CTWZhcEZVMUgzN0VvZWtfd0FxSVNWcmxJWGozYWdaQnE2MnMtZWVwUTZ2Q1VWdFFUc3FyemFaeWRRMTEtY2NIRUE?oc=5" target="_blank" rel="noopener">Ryssland ska anordna VM – första värdskapet sen 2022</a><p>IWF ger VM 2030 till Moskva.</p></div></div>
+      <div class="item"><span class="src">svt.se</span><div class="body"><span class="tag old">Äldre</span><a href="https://www.svt.se/nyheter/lokalt/orebro/okk-satsar-pa-sm-i-tyngdlyftning-kul-med-manga-tjejer" target="_blank" rel="noopener">ÖKK satsar på SM i tyngdlyftning</a><p>SVT Örebro om klubbens SM-satsning. Med som bakgrund inför Lag-SM i Örebro.</p></div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="intl">
+    <h2 id="intl">Internationella medier</h2>
+    <p class="boardmeta">Engelska, norska, danska och finska medier. Med kommer artiklar som nämner Sverige eller svenska lyftare, och stora internationella nyheter.</p>
+    <div class="feed" id="intl-feed">
+      <div class="item"><span class="src">Olympics.com · engelska</span><div class="body"><span class="tag">2026-11-07</span><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNV3lUR21FdFRlRDlLcE1pMUtoS3E0MGdpaXFyemNDX3hCdHpLaTlkTXBmNFViZENQTVNhcEc3Z0lLZjA2SVlLWUh4LTgydWRtWVRlR2lXZnYtM3ZKQzJwWVVJMzNRbXF3Q2NMZk9EUlpxX0hRQU5UUWpORHR4SHdJdjkwX2dqeUN3N2Z5UDgyNGJEaWdxOERv?oc=5" target="_blank" rel="noopener" lang="en">Weightlifting - 2026 IWF World Championships: Stars in action, schedule, all results</a><p>Översikt med schema och samtliga resultat från VM i Ningbo.</p></div></div>
+      <div class="item"><span class="src">Fitness Volt · engelska</span><div class="body"><span class="tag">2026-11-05</span><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPcjgyUllPMFBTWjRUMW1zci1WTmF0XzFfMXBXRlluUDFrd0RMWER6NFlxVHpIQzBiWXIyQ0hrY1JDUkVwX2syYlotTjFmenBQMjNCMGkzcGUtRzVTUGxzMlRFMWd0Y1NNVnFsTW11N01JN3J5eTZkdjhydXIxdEZ3dWlLMUJvYUl1a091dVlwYTg4UTU3RHFTeE9kR0JodXFld1E?oc=5" target="_blank" rel="noopener" lang="en">Karlos Nasar (U95KG) Sweeps Three World Records at 2026 IWF World Weightlifting Championships</a><p>Bulgariens Karlos Nasar satte tre världsrekord i 95-kilosklassen på VM.</p></div></div>
+      <div class="item"><span class="src">Idrettspolitikk.no · norska</span><div class="body"><span class="tag">2026-10-28</span><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxNYjRLbGVRRXpCcmN1VzFmWGNTRnRYSFVKeDJhSFJaWXk5MDhaczBLUVJCcS1sSENXT2JMakNEeVNQTlQxYnFLVWtLb1JoRGRCd1RZdFNQRVJndjVlYUhHSndxb1NlLW5fZ3RIWHBDdzRrWC0wUUR2amNGVFk3ZWE0ZGNDa21vVzVjbVZncTlDWEU0aTFYZ0V3dnJqUTcxLUplT1lEWHpla253U3ZFdzlfMzZGc1M5aS1kcnk2azJsWndyTVZUenc?oc=5" target="_blank" rel="noopener" lang="no">Vektløfterforbundet første som gir VM til Russland etter fullskalainvasjonen: – Sjokkerende!</a><p>På svenska: Tyngdlyftningsförbundet först med att ge VM till Ryssland efter fullskaleinvasionen.</p></div></div>
+      <div class="item"><span class="src">Inside The Games · engelska</span><div class="body"><span class="tag">2026-10-27</span><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5mZ2xtcjFLOEJ2MF8yZWNPQ1RBbWtUbFhsR0tWQU1mcUFQenZXQUlONjNwZlVZVDh0SklqNl9fSk1ueWtxWFRNaUY0cUV5Nm5tT3ZKUTdSSmtuSGRxeGs1Zm1JMzF3aXNNVFhnYm91bFRBM0pUemxQRkQxeTluQzA?oc=5" target="_blank" rel="noopener" lang="en">IWF's Moscow decision sparks outrage</a><p>På svenska: IWF:s Moskvabeslut väcker ilska.</p></div></div>
+      <div class="item"><span class="src">UNITED24 Media · engelska</span><div class="body"><span class="tag">2026-10-26</span><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOeERRUmdoX3d6cWRMSHU5SlNsM05TMzZuZE9tdE80SjFsREJ4SVd6dWhOYkYwVjg2ZlBObW8xODJfVjRvRnFHNG42SEhkR0x0R3FnU3hTX1dDR2RsQTZWRERSb3J2Y3o3RjM1ZmJJbzM0QnNTWnNMRWRjcXVBTXE0Y3JzNG5aQ3U4YVBNbnpGOTgtY29qQkUxSDJURUozZHZfa29Vcnh5UXFod0E?oc=5" target="_blank" rel="noopener" lang="en">Ukraine Will Boycott 2030 World Weightlifting Championships in Moscow</a><p>På svenska: Ukraina bojkottar VM 2030 i Moskva.</p></div></div>
+      <div class="item"><span class="src">Dagbladet · norska</span><div class="body"><span class="tag">2026-10-26</span><a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5iOVZIeUJyYk0tWjgtRjMyb3Mtc3N3N2lLWTh6WTloT3A1d0I5ZXZKVlFULTY3LU1lanBPbUxsNXk4STRFbmpoVlZ0NkVqY19oVHJNUXRSUTNJR0tVVkxXdjl2N3BUV253WTNaYmRMcjdkb2J5aHFPZQ?oc=5" target="_blank" rel="noopener" lang="no">VM i Russland: - Jeg er sjokkert</a><p>På svenska: VM i Ryssland: ”Jag är chockad”.</p></div></div>
+      <div class="item"><span class="src">Yle · finska</span><div class="body"><span class="tag">2026-10-25</span><a href="https://news.google.com/rss/articles/CBMiQkFVX3lxTFBxcmNVSTBWZG5zNml4WjJNZXlLd2RqRHNHNHVqSW43WnhzakJQRHlKbmwyaDh1ZXFxZERFU0g5aHkzUQ?oc=5" target="_blank" rel="noopener" lang="fi">Venäjälle myönnettiin painonnoston MM-kisat</a><p>På svenska: Ryssland tilldelades VM i tyngdlyftning.</p></div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="kal">
+    <h2 id="kal">Kommande tävlingar</h2>
+    <div class="cal">
+      <div><time>20–22 nov</time><span>NM för seniorer, ungdomar och juniorer i Norge. Datumet skiljer sig mellan förbundets sidor.</span></div>
+      <div><time>28 nov</time><span>Lag-SM, Örebro</span></div>
+      <div><time>5–6 dec</time><span>Junior-SM, Göteborg. Startlistor och tidsschema är publicerade.</span></div>
+    </div>
+  </section>
+
+  <div class="note">
+    <b>Om källorna</b>
+    <span>Bevakningen läser Google Nyheters flöde för svenska nyheter om tyngdlyftning. Där ingår Aftonbladet, Expressen, DN, SvD, SVT, Sveriges Radio, TV4 och lokaltidningar. Länkarna går via Google Nyheter till artikeln. Internationella artiklar hämtas på samma sätt från engelska, norska, danska och finska utgåvor av Google Nyheter. Artiklar bakom betalvägg visas med rubrik.</span>
+    <span>Svenska Tyngdlyftningsförbundets egna nyheter och pressmeddelanden ingår inte. Bara redaktionella medier visas.</span>
+  </div>
+</div>
+
+</body>
+</html>
