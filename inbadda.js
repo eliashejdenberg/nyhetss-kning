@@ -10,7 +10,16 @@
   var URSPRUNG = "https://eliashejdenberg.github.io";
 
   window.addEventListener("message", function (e) {
-    if (e.origin !== URSPRUNG || !e.data || e.data.typ !== "tyngdlyftning-hojd") return;
+    if (e.origin !== URSPRUNG || !e.data) return;
+    if (e.data.typ === "tyngdlyftning-topp") {
+      // Byte av sida i listan: rulla upp till modulens början.
+      var alla = document.getElementsByTagName("iframe");
+      for (var j = 0; j < alla.length; j++) {
+        if (alla[j].contentWindow === e.source) alla[j].scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
+    if (e.data.typ !== "tyngdlyftning-hojd") return;
     var h = parseInt(e.data.hojd, 10);
     if (!(h > 0)) return;
     var lista = document.getElementsByTagName("iframe");

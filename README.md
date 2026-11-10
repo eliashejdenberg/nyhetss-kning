@@ -28,4 +28,8 @@ Iframen växer automatiskt med innehållet om sidan också laddar `inbadda.js` e
 <script src="https://eliashejdenberg.github.io/nyhetss-kning/inbadda.js"></script>
 ```
 
-Höjden i `style` gäller bara tills sidan laddat. Samma skript fungerar för hela sidan (`/nyhetss-kning/`) och för flera iframes på samma sida.
+Höjden i `style` gäller bara tills sidan laddat. När man byter sida i listan rullar Sitevision-sidan upp till modulens början. Samma skript fungerar för hela sidan (`/nyhetss-kning/`) och för flera iframes på samma sida.
+
+## Sidbläddring
+
+Hela sidan visar 50 artiklar per sida med knappar för att bläddra. Antalet ändras med `?per=`, t.ex. `https://eliashejdenberg.github.io/nyhetss-kning/?per=25`. Bläddringen visas bara när det finns fler artiklar än så. Den dagliga bevakningen tar inte bort gamla artiklar, så listan fungerar som arkiv.

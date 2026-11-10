@@ -92,6 +92,75 @@ section{display:flex;flex-direction:column;gap:20px}
   <p class="updated">Senast uppdaterad <b>2026-11-10</b> · uppdateras varje morgon</p>
 </div>
 
+<style>
+.pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin-top:4px}
+.pager[hidden],.feed > .item[hidden]{display:none}
+.pager button{font:inherit;font-size:14px;font-weight:600;min-width:40px;padding:8px 12px;border:1px solid var(--line);background:var(--surface);color:var(--blue);cursor:pointer}
+.pager button:hover{border-color:var(--blue)}
+.pager button:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+.pager button[aria-current="page"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.pager button:disabled{color:var(--line);border-color:#e6e6e6;cursor:default}
+.pager .gap{padding:0 4px;color:var(--muted)}
+.pager .info{flex-basis:100%;text-align:center;font-size:13px;color:var(--muted);margin-top:4px}
+</style>
+<script>
+(function(){
+  var PER = parseInt(new URLSearchParams(location.search).get("per") || "50", 10) || 50;
+  var feed = document.querySelector('section[aria-labelledby="flode"] .feed');
+  if (!feed) return;
+  var items = Array.prototype.slice.call(feed.querySelectorAll(":scope > .item"));
+  var antalSidor = Math.max(1, Math.ceil(items.length / PER));
+  var nav = document.createElement("nav");
+  nav.className = "pager";
+  nav.setAttribute("aria-label", "Sidor");
+  feed.parentNode.insertBefore(nav, feed.nextSibling);
+
+  function knapp(text, sida, etikett, aktuell, av){
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = text;
+    if (etikett) b.setAttribute("aria-label", etikett);
+    if (aktuell) b.setAttribute("aria-current", "page");
+    if (av) b.disabled = true; else b.addEventListener("click", function(){ visa(sida, true); });
+    return b;
+  }
+  function sidnummer(s){
+    // 1 … s-1 s s+1 … sista
+    var lista = [], i;
+    for (i = 1; i <= antalSidor; i++) {
+      if (i === 1 || i === antalSidor || Math.abs(i - s) <= 1) lista.push(i);
+      else if (lista[lista.length - 1] !== "…") lista.push("…");
+    }
+    return lista;
+  }
+  function visa(s, avAnvandare){
+    s = Math.min(Math.max(1, s), antalSidor);
+    items.forEach(function(el, i){ el.hidden = Math.floor(i / PER) + 1 !== s; });
+    nav.innerHTML = "";
+    nav.hidden = antalSidor < 2;
+    if (antalSidor > 1) {
+      nav.appendChild(knapp("← Föregående", s - 1, "Föregående sida", false, s === 1));
+      sidnummer(s).forEach(function(n){
+        if (n === "…") { var g = document.createElement("span"); g.className = "gap"; g.textContent = "…"; nav.appendChild(g); }
+        else nav.appendChild(knapp(String(n), n, "Sida " + n, n === s, false));
+      });
+      nav.appendChild(knapp("Nästa →", s + 1, "Nästa sida", false, s === antalSidor));
+      var info = document.createElement("span");
+      info.className = "info";
+      var fran = (s - 1) * PER + 1, till = Math.min(s * PER, items.length);
+      info.textContent = "Visar " + fran + "–" + till + " av " + items.length + " artiklar";
+      nav.appendChild(info);
+    }
+    if (avAnvandare) {
+      try { history.replaceState(null, "", s > 1 ? "#sida-" + s : location.pathname + location.search); } catch (e) {}
+      document.getElementById("flode").scrollIntoView();
+      // be den inbäddande sidan rulla upp till modulens början
+      try { parent.postMessage({typ: "tyngdlyftning-topp"}, "*"); } catch (e) {}
+    }
+  }
+  var m = /^#sida-(\d+)$/.exec(location.hash);
+  visa(m ? parseInt(m[1], 10) : 1, false);
+})();
+</script>
 <script>
 (function(){
   var senast = 0;
