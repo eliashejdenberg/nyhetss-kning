@@ -59,6 +59,12 @@ with open(UT / "artiklar.csv", "w", newline="", encoding="utf-8-sig") as f:
 print("skrev arkiv/artiklar.csv", len(artiklar))
 
 try:
+    import openpyxl  # noqa: F401
+except ImportError:
+    import subprocess, sys
+    subprocess.run([sys.executable, "-m", "pip", "install", "-q", "openpyxl"], check=False)
+
+try:
     from openpyxl import Workbook
     from openpyxl.styles import Font, PatternFill, Alignment
     from openpyxl.utils import get_column_letter
