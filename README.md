@@ -38,3 +38,10 @@ Höjden i `style` gäller bara tills sidan laddat. När man byter sida i listan 
 ## Sidbläddring
 
 Hela sidan visar 50 artiklar per sida med knappar för att bläddra. Antalet ändras med `?per=`, t.ex. `https://eliashejdenberg.github.io/nyhetss-kning/?per=25`. Bläddringen visas bara när det finns fler artiklar än så. Den dagliga bevakningen tar inte bort gamla artiklar, så listan fungerar som arkiv.
+
+## Sökord
+
+`sokord.json` innehåller namnen som den dagliga bevakningen söker på:
+
+- `lyftare` – svenska tyngdlyftare (underhålls av bevakningen och för hand).
+- `forbund` – förbundsstyrelse, personal, landslagsstaber, ETH och medicinskt team. Uppdateras varje kvartal av `hamta_namn.py`, som läser tyngdlyftning.com. Bara namn och roll sparas.

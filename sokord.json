@@ -1,0 +1,241 @@
+{
+  "beskrivning": "Sökord för den dagliga bevakningen. 'lyftare' underhålls av bevakningen och för hand; 'forbund' uppdateras kvartalsvis av hamta_namn.py från tyngdlyftning.com.",
+  "lyftare": [
+    "Patricia Strenius",
+    "Angelica Roos",
+    "Joen Vikingsson Sjöblom",
+    "Donna Berglund",
+    "Irma Berglund",
+    "Eddie Berglund",
+    "Daniela Gherman",
+    "Hanna Ögren",
+    "Lovisa Bundgaard",
+    "Vanessa Kamga",
+    "Cornelia Lind",
+    "Filippa Ferm",
+    "Frida Söderman",
+    "Hampus Lithén",
+    "Henrik Arvidsson",
+    "Ida Rönn",
+    "Josefine Reiser",
+    "Martin Zung",
+    "Ragnar Öhman",
+    "Sara Almroth",
+    "Emma Wennerström",
+    "Victor Ahlm",
+    "Wilma Arvidsson",
+    "Hugo Ottosson",
+    "Victor Sundh",
+    "Jennifer Andersson",
+    "Fanny Köhler",
+    "Simon Liedholm",
+    "Tilde Muhrman",
+    "Ida Hultin",
+    "Surya Sundqvist",
+    "Katarina Bohman",
+    "Simon Lang",
+    "Anders Lindsjö",
+    "Moa Henriksson",
+    "Freya Koskela",
+    "Stefan Ågren"
+  ],
+  "forbund": [
+    {
+      "namn": "Anders Brorsson",
+      "roller": [
+        "Landslagsstab senior: Assisterande",
+        "Landslagsstab ungdom/junior: Assisterande"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/seniorer"
+    },
+    {
+      "namn": "Bertil Sollevi",
+      "roller": [
+        "Förbundsstyrelsen: ledamot"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/forbundsstyrelsen"
+    },
+    {
+      "namn": "Bijan Rezai",
+      "roller": [
+        "Landslagsstab senior: Assisterande",
+        "Landslagsstab ungdom/junior: Huvudcoach"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/seniorer"
+    },
+    {
+      "namn": "Christian Kraft",
+      "roller": [
+        "Landslagsstab senior: Huvudcoach",
+        "Landslagsstab ungdom/junior: Assisterande"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/seniorer"
+    },
+    {
+      "namn": "Christopher Vilagi",
+      "roller": [
+        "Landslagsstab ungdom/junior: Assisterande"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/ungdom--junior"
+    },
+    {
+      "namn": "Elias Hejdenberg",
+      "roller": [
+        "Personal: Utvecklingsansvarig"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/personal"
+    },
+    {
+      "namn": "Emelie Smiding",
+      "roller": [
+        "Förbundsstyrelsen: ledamot"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/forbundsstyrelsen"
+    },
+    {
+      "namn": "Emil Rinse",
+      "roller": [
+        "Medicinskt team: leg sjugymnast med påbyggd masterutbildning inom fysioterapi",
+        "Medicinskt team: Fysioterapeut"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/medicinskt-team"
+    },
+    {
+      "namn": "Helena Plüss",
+      "roller": [
+        "Personal: Utbildningsutvecklare"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/personal"
+    },
+    {
+      "namn": "Helene Johage",
+      "roller": [
+        "Förbundsstyrelsen: ordförande"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/forbundsstyrelsen"
+    },
+    {
+      "namn": "Henrik Sundh",
+      "roller": [
+        "Förbundsstyrelsen: sekreterare"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/forbundsstyrelsen"
+    },
+    {
+      "namn": "John Söderholm",
+      "roller": [
+        "Landslagsstab senior: Huvudcoach"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/seniorer"
+    },
+    {
+      "namn": "Jonas Hänninen",
+      "roller": [
+        "Medicinskt team: leg läkare ortopedspecialist",
+        "Medicinskt team: Ortopedläkare"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/medicinskt-team"
+    },
+    {
+      "namn": "Linda Pettersson",
+      "roller": [
+        "Förbundsstyrelsen: ledamot"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/forbundsstyrelsen"
+    },
+    {
+      "namn": "Linus Nilsson",
+      "roller": [
+        "Landslagsstab ungdom/junior: Assisterande"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/ungdom--junior"
+    },
+    {
+      "namn": "Mats Lindqvist",
+      "roller": [
+        "Personal: Sportchef"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/personal"
+    },
+    {
+      "namn": "Oskar Stillman",
+      "roller": [
+        "Landslagsstab ungdom/junior: Assisterande",
+        "Landslagsstab ungdom/junior: Huvudcoach"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/ungdom--junior"
+    },
+    {
+      "namn": "Patric Bettembourg",
+      "roller": [
+        "Personal: Juniorkapten & ETH-tränare",
+        "Landslagsstab senior: Assisterande",
+        "Landslagsstab ungdom/junior: Assisterande",
+        "Landslagsstab ungdom/junior: Huvudcoach",
+        "Landslagsstab ungdom/junior: Mentor",
+        "Elitmiljö (ETH): huvudtränare"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/personal"
+    },
+    {
+      "namn": "Paula Junhov-Rindberg",
+      "roller": [
+        "Landslagsstab senior: Assisterande"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/seniorer"
+    },
+    {
+      "namn": "Philipe Ferreria Rodrigues",
+      "roller": [
+        "Landslagsstab senior: Assisterande",
+        "Landslagsstab senior: Huvudcoach"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/seniorer"
+    },
+    {
+      "namn": "PärJohan Fredrickson",
+      "roller": [
+        "Förbundsstyrelsen: ledamot"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/forbundsstyrelsen"
+    },
+    {
+      "namn": "Sebastiian Nurmi",
+      "roller": [
+        "Personal: Generalsekreterare"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/personal"
+    },
+    {
+      "namn": "Simon Johansson",
+      "roller": [
+        "Landslagsstab senior: Assisterande"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/seniorer"
+    },
+    {
+      "namn": "Thomas Norlander",
+      "roller": [
+        "Förbundsstyrelsen: vice ordförande"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/forbundet/kontakt/forbundsstyrelsen"
+    },
+    {
+      "namn": "Tom Söderholm",
+      "roller": [
+        "Landslagsstab senior: Huvudcoach",
+        "Landslagsstab senior: Assisterande",
+        "Elitmiljö (ETH): assisterande tränare"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/seniorer"
+    },
+    {
+      "namn": "Åsa Mårtensson",
+      "roller": [
+        "Landslagsstab senior: Assisterande"
+      ],
+      "kalla": "https://www.tyngdlyftning.com/landslaget/seniorer"
+    }
+  ],
+  "forbund_uppdaterad": "2026-11-10"
+}
