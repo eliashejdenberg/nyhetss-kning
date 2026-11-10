@@ -6,7 +6,7 @@
 <atom:link href="https://eliashejdenberg.github.io/nyhetss-kning/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Daglig bevakning av svensk tyngdlyftning i svenska och utländska redaktionella medier.</description>
 <language>sv</language>
-<lastBuildDate>Tue, 10 Nov 2026 13:27:22 +0000</lastBuildDate>
+<lastBuildDate>Tue, 10 Nov 2026 13:32:41 +0000</lastBuildDate>
 <item>
 <title>Succén på VM – slog svenskt och nordiskt rekord</title>
 <link>https://www.expressen.se/tv/sport/succen-pa-vm-slog-svenskt-och-nordiskt-rekord/</link>
@@ -94,6 +94,14 @@
 <pubDate>Wed, 28 Oct 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">ETC.se</source>
 <description>ETC.se</description>
+</item>
+<item>
+<title>”Det är okej att vara ledsen en dag”</title>
+<link>https://www.falkopingstidning.se/sport/fanny-samlad-efter-missen-i-albanien-forsoka-ta-lardom-av-det/</link>
+<guid isPermaLink="false">Falköpings Tidning|”Det är okej att vara ledsen en dag”</guid>
+<pubDate>Tue, 27 Oct 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Falköpings Tidning</source>
+<description>Falköpings Tidning</description>
 </item>
 <item>
 <title>Svenska beskedet: Ingen bojkott mot VM i Moskva</title>
@@ -184,6 +192,14 @@
 <description>Siljan News</description>
 </item>
 <item>
+<title>Ännu ett junior-EM väntar för FAIK-Fanny</title>
+<link>https://www.falkopingstidning.se/sport/annu-ett-stort-uppdrag-for-lyftarloftet-fanny-fran-falkoping/</link>
+<guid isPermaLink="false">Falköpings Tidning|Ännu ett junior-EM väntar för FAIK-Fanny</guid>
+<pubDate>Wed, 23 Sep 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Falköpings Tidning</source>
+<description>Falköpings Tidning</description>
+</item>
+<item>
 <title>Wilma Arvidsson är nu även bäst i Europa: ”Underbar känsla”</title>
 <link>https://www.kristianstadsbladet.se/sport/wilma-arvidsson-ar-nu-aven-bast-i-europa-underbar-kansla/</link>
 <guid isPermaLink="false">Kristianstadsbladet|Wilma Arvidsson är nu även bäst i Europa: ”Underbar känsla”</guid>
@@ -200,6 +216,14 @@
 <description>SVT Nyheter</description>
 </item>
 <item>
+<title>Nioåriga Sophie från Trelleborg tävlar i tyndlyftning</title>
+<link>https://www.sverigesradio.se/artikel/nioariga-sophie-fran-trelleborg-tavlar-i-tyndlyftning</link>
+<guid isPermaLink="false">Sveriges Radio|Nioåriga Sophie från Trelleborg tävlar i tyndlyftning</guid>
+<pubDate>Sun, 09 Aug 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Sveriges Radio</source>
+<description>Sveriges Radio</description>
+</item>
+<item>
 <title>Från skador till SM-guld – Donna, 28, tillbaka på topp</title>
 <link>https://www.sodran.se/hedemora/fran-skador-till-sm-guld-donna-28-tillbaka-pa-topp/</link>
 <guid isPermaLink="false">Södra Dalarnes Tidning|Från skador till SM-guld – Donna, 28, tillbaka på topp</guid>
@@ -208,44 +232,20 @@
 <description>Södra Dalarnes Tidning</description>
 </item>
 <item>
+<title>Systrarna från Hallstahammar tog tre guld var i tyngdlyftnings-SM</title>
+<link>https://www.sverigesradio.se/artikel/systrarna-fran-hallstahammar-tog-tre-guld-var-i-tyngdlyftnings-sm</link>
+<guid isPermaLink="false">Sveriges Radio|Systrarna från Hallstahammar tog tre guld var i tyngdlyftnings-SM</guid>
+<pubDate>Sat, 13 Jun 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Sveriges Radio</source>
+<description>Sveriges Radio</description>
+</item>
+<item>
 <title>Moraläraren starkast i Sverige: “Helt otroligt”</title>
 <link>https://www.moratidning.se/mora/moralararen-starkast-i-sverige-helt-otroligt-GOdiz/</link>
 <guid isPermaLink="false">Mora Tidning|Moraläraren starkast i Sverige: “Helt otroligt”</guid>
 <pubDate>Sat, 06 Jun 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">Mora Tidning</source>
 <description>Mora Tidning</description>
-</item>
-<item>
-<title>SM-medaljer till Jönköpings AK</title>
-<link>https://www.jp.se/sport/sm-medaljer-till-jonkopings-ak/</link>
-<guid isPermaLink="false">Jönköpings-Posten|SM-medaljer till Jönköpings AK</guid>
-<pubDate>Tue, 02 Jun 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Jönköpings-Posten</source>
-<description>Jönköpings-Posten</description>
-</item>
-<item>
-<title>Drömmen i kras – då slutade Moa, 27: ”Gav allt”</title>
-<link>https://www.barometern.se/sport/det-var-alltid-det-mest-sannolika-att-det-skulle-ga-at-helvete/</link>
-<guid isPermaLink="false">Barometern-OT|Drömmen i kras – då slutade Moa, 27: ”Gav allt”</guid>
-<pubDate>Mon, 01 Jun 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Barometern-OT</source>
-<description>Barometern-OT</description>
-</item>
-<item>
-<title>17-åriga Freya slog till på SM – tog sina tre första seniorguld</title>
-<link>https://www.blt.se/sport/17-ariga-freya-slog-till-pa-sm-tog-sina-tre-forsta-seniorguld</link>
-<guid isPermaLink="false">Blekinge Läns Tidning|17-åriga Freya slog till på SM – tog sina tre första seniorguld</guid>
-<pubDate>Mon, 01 Jun 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Blekinge Läns Tidning</source>
-<description>Blekinge Läns Tidning</description>
-</item>
-<item>
-<title>Supertalangen Wilma, 14, tog SM-guld: ”Jättestort”</title>
-<link>https://www.barometern.se/sport/supertalangen-wilma-14-tog-sm-guld-jattestort/</link>
-<guid isPermaLink="false">Barometern-OT|Supertalangen Wilma, 14, tog SM-guld: ”Jättestort”</guid>
-<pubDate>Fri, 29 May 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Barometern-OT</source>
-<description>Barometern-OT</description>
 </item>
 </channel>
 </rss>
