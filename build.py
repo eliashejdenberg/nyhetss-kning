@@ -57,6 +57,41 @@ def items(block):
 
 alla = items(section(SRC, 'id="flode"', "</section>"))
 
+
+# Loggor: logos/<domän>.png hämtas av hamta_loggor.py. Saknas en logga visas
+# källans första bokstav i en liten ruta.
+def doman(url):
+    m = re.match(r"https?://([^/]+)", url or "")
+    d = m.group(1).lower() if m else ""
+    return d[4:] if d.startswith("www.") else d
+
+
+def logga(url, kalla):
+    d = doman(url)
+    for ext in ("png", "ico", "svg", "jpg"):
+        if d and (ROOT / "logos" / f"{d}.{ext}").exists():
+            return f'<img class="logo" src="logos/{d}.{ext}" alt="" width="16" height="16" loading="lazy">'
+    bokstav = html.escape((kalla.strip()[:1] or "?").upper())
+    return f'<span class="logo logo-txt" aria-hidden="true">{bokstav}</span>'
+
+
+LOGGA_CSS = """<style>
+.logo{width:16px;height:16px;flex:none;border-radius:3px;vertical-align:-3px;margin-right:6px}
+.logo-txt{display:inline-flex;align-items:center;justify-content:center;background:#e9edf5;color:#1d428e;font-size:10px;font-weight:700;line-height:1}
+.feed .item .src::before{content:none}
+.feed .item .src{display:flex;align-items:center;flex-wrap:wrap;row-gap:2px}
+.feed .item .src .logo{vertical-align:0}
+</style>"""
+
+
+def med_loggor(text):
+    def ers(m):
+        blk = m.group(0)
+        href = re.search(r'<a href="([^"]*)"', blk)
+        kalla = re.sub(r"<[^>]+>", "", re.sub(r'<span class="lang">.*?</span>', "", m.group(1)))
+        return blk.replace('<span class="src">', '<span class="src">' + logga(href.group(1) if href else "", html.unescape(kalla)), 1)
+    return re.sub(r'<div class="item"><span class="src">(.*?)</span><div class="body">.*?</div></div>', ers, text, flags=re.S)
+
 HEAD = """<!doctype html>
 <html lang="sv">
 <head>
@@ -165,7 +200,7 @@ def write(name, text):
 
 
 # index.html – hela sidan
-write("index.html", HEAD + "</head>\n<body>\n" + SRC + "\n" + PAGINERING + "\n" + HOJD_JS + "\n</body>\n</html>\n")
+write("index.html", HEAD + LOGGA_CSS + "\n</head>\n<body>\n" + med_loggor(SRC) + "\n" + PAGINERING + "\n" + HOJD_JS + "\n</body>\n</html>\n")
 
 
 # RSS-flöden
@@ -205,7 +240,7 @@ rss("feed.xml", "Tyngdlyftning i media",
 
 # modul.html – kompakt lista
 li = "\n".join(
-    f'<li><span class="d">{r["date"]}</span><span class="s">{html.escape(r["src"])}'
+    f'<li><span class="d">{r["date"]}</span><span class="s">{logga(r["href"], r["src"])}{html.escape(r["src"])}'
     + "".join(f'<span class="lg">{html.escape(x)}</span>' for x in r["lang"]) + '</span>'
     f'<a href="{html.escape(r["href"])}" target="_blank" rel="noopener">{html.escape(r["title"])}</a></li>'
     for r in alla[:20]
@@ -225,7 +260,9 @@ li{{display:grid;grid-template-columns:auto 1fr;column-gap:8px;padding:10px 0;bo
 li[hidden]{{display:none}}
 .d{{font-variant-numeric:tabular-nums;color:#000;font-size:14px}}
 .s{{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);align-self:center}}
-.s::before{{content:"· ";color:#ccc}}
+.s{{display:inline-flex;align-items:center;flex-wrap:wrap;gap:0}}
+.logo{{width:16px;height:16px;flex:none;border-radius:3px;margin-right:6px}}
+.logo-txt{{display:inline-flex;align-items:center;justify-content:center;background:#e9edf5;color:#1d428e;font-size:10px;font-weight:700;line-height:1}}
 .lg{{display:inline-block;margin-left:6px;padding:1px 6px;background:var(--yellow);color:#000;font-size:10px;font-weight:700;letter-spacing:.06em}}
 a{{grid-column:1/-1;color:var(--blue);font-weight:700;text-decoration:none}}
 a:hover,a:focus-visible{{text-decoration:underline}}

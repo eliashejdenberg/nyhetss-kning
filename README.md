@@ -16,6 +16,7 @@ Uppdateras automatiskt varje morgon cirka 06:47.
 ## Så fungerar det
 
 - `src/sida.html` är källan. Den uppdateras av den dagliga bevakningen.
+- `python3 hamta_loggor.py` hämtar loggor (favicons) för nya mediehus till `logos/`. Källor utan logga visas med sin första bokstav.
 - `python3 build.py` bygger `index.html`, `modul.html` och `feed.xml` från källan.
 - Ändra inte de byggda filerna för hand; de skrivs över vid nästa körning.
 
