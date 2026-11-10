@@ -6,7 +6,7 @@
 <atom:link href="https://eliashejdenberg.github.io/nyhetss-kning/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Daglig bevakning av svensk tyngdlyftning i svenska och utländska redaktionella medier.</description>
 <language>sv</language>
-<lastBuildDate>Tue, 10 Nov 2026 12:56:07 +0000</lastBuildDate>
+<lastBuildDate>Tue, 10 Nov 2026 13:25:27 +0000</lastBuildDate>
 <item>
 <title>Succén på VM – slog svenskt och nordiskt rekord</title>
 <link>https://www.expressen.se/tv/sport/succen-pa-vm-slog-svenskt-och-nordiskt-rekord/</link>
@@ -72,12 +72,28 @@
 <description>Västerbotten | Folkbladet</description>
 </item>
 <item>
+<title>Från lärarjobbet i Mora till VM i Kina</title>
+<link>https://www.siljannews.se/sport/fran-lararjobbet-i-mora-till-vm-i-kina/</link>
+<guid isPermaLink="false">Siljan News|Från lärarjobbet i Mora till VM i Kina</guid>
+<pubDate>Thu, 29 Oct 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Siljan News</source>
+<description>Siljan News</description>
+</item>
+<item>
 <title>Sigge, 16, bytte hockey mot tyngdlyftning</title>
 <link>https://www.arbetarbladet.se/sport/sigge-16-bytte-hockey-mot-tyngdlyftning-historisk/</link>
 <guid isPermaLink="false">Arbetarbladet|Sigge, 16, bytte hockey mot tyngdlyftning</guid>
 <pubDate>Wed, 28 Oct 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">Arbetarbladet</source>
 <description>Arbetarbladet</description>
+</item>
+<item>
+<title>Svenska tyngdlyftaren: USA bombar och kidnappar utan konsekvenser</title>
+<link>https://www.etc.se/sport/svenska-tyngdlyftaren-usa-bombar-och-kidnappar-utan-konsekvenser</link>
+<guid isPermaLink="false">ETC.se|Svenska tyngdlyftaren: USA bombar och kidnappar utan konsekvenser</guid>
+<pubDate>Wed, 28 Oct 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">ETC.se</source>
+<description>ETC.se</description>
 </item>
 <item>
 <title>Svenska beskedet: Ingen bojkott mot VM i Moskva</title>
@@ -216,36 +232,20 @@
 <description>Blekinge Läns Tidning</description>
 </item>
 <item>
-<title>40 år sedan senast – nu lyfter de bästa om SM-guld i Kalmar</title>
-<link>https://www.barometern.se/sport/40-ar-sedan-senast-nu-lyfter-de-basta-om-sm-guld-i-kalmar/</link>
-<guid isPermaLink="false">Barometern-OT|40 år sedan senast – nu lyfter de bästa om SM-guld i Kalmar</guid>
-<pubDate>Mon, 25 May 2026 06:00:00 +0000</pubDate>
+<title>Supertalangen Wilma, 14, tog SM-guld: ”Jättestort”</title>
+<link>https://www.barometern.se/sport/supertalangen-wilma-14-tog-sm-guld-jattestort/</link>
+<guid isPermaLink="false">Barometern-OT|Supertalangen Wilma, 14, tog SM-guld: ”Jättestort”</guid>
+<pubDate>Fri, 29 May 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">Barometern-OT</source>
 <description>Barometern-OT</description>
 </item>
 <item>
-<title>Tranås ”power couple” som ska rycka hem SM-medaljer</title>
-<link>https://www.tranastidning.se/sport/paret-ska-rycka-hem-sm-medaljer-hamnar-jag-inte-pa-pallen-lagger-jag-ner/</link>
-<guid isPermaLink="false">Tranås Tidning|Tranås ”power couple” som ska rycka hem SM-medaljer</guid>
-<pubDate>Sun, 24 May 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Tranås Tidning</source>
-<description>Tranås Tidning</description>
-</item>
-<item>
-<title>Arvid, 13, fixade dubbla guld</title>
-<link>https://www.nlt.se/sport/arvid-13-tog-dubbla-guld-och-satte-tva-svenska-rekord/</link>
-<guid isPermaLink="false">Nya Lidköpings-Tidningen|Arvid, 13, fixade dubbla guld</guid>
-<pubDate>Mon, 11 May 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Nya Lidköpings-Tidningen</source>
-<description>Nya Lidköpings-Tidningen</description>
-</item>
-<item>
-<title>TV: Här slår lokala profilen tre svenska rekord</title>
-<link>https://www.vn.se/varnamo/har-slar-kristoffer-fran-hillerstorp-tre-svenska-rekord/</link>
-<guid isPermaLink="false">Värnamo Nyheter|TV: Här slår lokala profilen tre svenska rekord</guid>
-<pubDate>Mon, 27 Apr 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Värnamo Nyheter</source>
-<description>Värnamo Nyheter</description>
+<title>Ny succé för supertalangen – SM-guld och rekord</title>
+<link>https://www.kristianstadsbladet.se/sport/ny-succe-for-14-aringen-sm-guld-och-svenskt-rekord/</link>
+<guid isPermaLink="false">Kristianstadsbladet|Ny succé för supertalangen – SM-guld och rekord</guid>
+<pubDate>Fri, 29 May 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Kristianstadsbladet</source>
+<description>Kristianstadsbladet</description>
 </item>
 </channel>
 </rss>
