@@ -11,6 +11,8 @@ Uppdateras automatiskt varje morgon cirka 06:47.
 |---|---|---|
 | Hela sidan | https://eliashejdenberg.github.io/nyhetss-kning/ | iframe i Sitevision, eller länk |
 | Kompakt modul | https://eliashejdenberg.github.io/nyhetss-kning/modul.html?antal=5 | iframe i Sitevision |
+| Excel: antal per år + alla länkar | https://eliashejdenberg.github.io/nyhetss-kning/arkiv/tyngdlyftning_i_media.xlsx | ladda ner |
+| CSV: alla artiklar | https://eliashejdenberg.github.io/nyhetss-kning/arkiv/artiklar.csv | ladda ner |
 | RSS, alla medier | https://eliashejdenberg.github.io/nyhetss-kning/feed.xml | RSS-modulen i Sitevision |
 
 ## Så fungerar det
@@ -18,6 +20,8 @@ Uppdateras automatiskt varje morgon cirka 06:47.
 - `src/sida.html` är källan. Den uppdateras av den dagliga bevakningen.
 - `python3 hamta_loggor.py` hämtar loggor (favicons) för nya mediehus till `logos/`. Källor utan logga visas med sin första bokstav.
 - `python3 build.py` bygger `index.html`, `modul.html` och `feed.xml` från källan.
+- `python3 bygg_rapport.py` bygger `arkiv/tyngdlyftning_i_media.xlsx` (antal per år, alla artiklar, fynd i öppna arkiv) och `arkiv/artiklar.csv`.
+- `arkiv/oppna_arkiv.json` innehåller bilder, film och ljud från öppna arkiv (Europeana, Internet Archive, Filmarkivet.se, Sveriges Radio).
 - Ändra inte de byggda filerna för hand; de skrivs över vid nästa körning.
 
 ## Inbäddning i Sitevision utan rullningslist
