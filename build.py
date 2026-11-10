@@ -40,11 +40,11 @@ def items(block):
         d = m["date"].strip()
         if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", d):
             continue  # t.ex. "Äldre" – utan datum, hoppas över i flöden
-        lang = re.search(r'<span class="lang">(.*?)</span>', m["src"])
+        lang = re.findall(r'<span class="lang">(.*?)</span>', m["src"])
         out.append(
             {
                 "src": html.unescape(re.sub(r"<[^>]+>", "", re.sub(r'<span class="lang">.*?</span>', "", m["src"]))).strip(),
-                "lang": html.unescape(lang[1]) if lang else "",
+                "lang": [html.unescape(x) for x in lang],
                 "date": d,
                 "href": html.unescape(m["href"]),
                 "title": html.unescape(re.sub(r"<[^>]+>", "", m["title"])),
@@ -90,7 +90,7 @@ def rss(name, title, desc, rows):
     ]
     for r in rows[:30]:
         dt = datetime.strptime(r["date"], "%Y-%m-%d").replace(hour=6, tzinfo=timezone.utc)
-        kalla = r["src"] + (f" ({r['lang']})" if r["lang"] else "")
+        kalla = r["src"] + (f" ({', '.join(r['lang'])})" if r["lang"] else "")
         description = kalla + (" – " + r["p"] if r["p"] else "")
         parts += [
             "<item>",
@@ -112,7 +112,7 @@ rss("feed.xml", "Tyngdlyftning i media",
 # modul.html – kompakt lista
 li = "\n".join(
     f'<li><span class="d">{r["date"]}</span><span class="s">{html.escape(r["src"])}'
-    + (f'<span class="lg">{html.escape(r["lang"])}</span>' if r["lang"] else "") + '</span>'
+    + "".join(f'<span class="lg">{html.escape(x)}</span>' for x in r["lang"]) + '</span>'
     f'<a href="{html.escape(r["href"])}" target="_blank" rel="noopener">{html.escape(r["title"])}</a></li>'
     for r in alla[:20]
 )
