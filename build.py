@@ -4,8 +4,7 @@ src/sida.html är den enda källan (samma innehåll som bevakningssidan på clau
 Skriptet skapar:
   index.html                 hela bevakningssidan
   modul.html                 kompakt lista för inbäddning (?antal=5)
-  feed.xml                   RSS: svenska medier
-  feed-internationellt.xml   RSS: internationella medier
+  feed.xml                   RSS: alla medier (utländska märkta med språk)
 
 Kör: python3 build.py
 """
@@ -41,9 +40,11 @@ def items(block):
         d = m["date"].strip()
         if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", d):
             continue  # t.ex. "Äldre" – utan datum, hoppas över i flöden
+        lang = re.search(r'<span class="lang">(.*?)</span>', m["src"])
         out.append(
             {
-                "src": html.unescape(m["src"]),
+                "src": html.unescape(re.sub(r"<[^>]+>", "", re.sub(r'<span class="lang">.*?</span>', "", m["src"]))).strip(),
+                "lang": html.unescape(lang[1]) if lang else "",
                 "date": d,
                 "href": html.unescape(m["href"]),
                 "title": html.unescape(re.sub(r"<[^>]+>", "", m["title"])),
@@ -54,8 +55,7 @@ def items(block):
     return out
 
 
-sv = items(section(SRC, 'id="flode"', "</section>"))
-intl = items(section(SRC, 'id="intl"', "</section>"))
+alla = items(section(SRC, 'id="flode"', "</section>"))
 
 HEAD = """<!doctype html>
 <html lang="sv">
@@ -90,14 +90,15 @@ def rss(name, title, desc, rows):
     ]
     for r in rows[:30]:
         dt = datetime.strptime(r["date"], "%Y-%m-%d").replace(hour=6, tzinfo=timezone.utc)
-        description = r["src"] + (" – " + r["p"] if r["p"] else "")
+        kalla = r["src"] + (f" ({r['lang']})" if r["lang"] else "")
+        description = kalla + (" – " + r["p"] if r["p"] else "")
         parts += [
             "<item>",
             f"<title>{html.escape(r['title'])}</title>",
             f"<link>{html.escape(r['href'])}</link>",
             f'<guid isPermaLink="false">{html.escape(r["src"] + "|" + r["title"])}</guid>',
             f"<pubDate>{format_datetime(dt)}</pubDate>",
-            f"<source url=\"{BASE}\">{html.escape(r['src'])}</source>",
+            f"<source url=\"{BASE}\">{html.escape(kalla)}</source>",
             f"<description>{html.escape(description)}</description>",
             "</item>",
         ]
@@ -105,16 +106,15 @@ def rss(name, title, desc, rows):
     write(name, "\n".join(parts))
 
 
-rss("feed.xml", "Tyngdlyftning i svenska medier",
-    "Daglig bevakning av olympisk tyngdlyftning i svenska redaktionella medier.", sv)
-rss("feed-internationellt.xml", "Tyngdlyftning i internationella medier",
-    "Internationella artiklar om tyngdlyftning som är relevanta för Sverige.", intl)
+rss("feed.xml", "Tyngdlyftning i media",
+    "Daglig bevakning av svensk tyngdlyftning i svenska och utländska redaktionella medier.", alla)
 
 # modul.html – kompakt lista
 li = "\n".join(
-    f'<li><span class="d">{r["date"]}</span><span class="s">{html.escape(r["src"])}</span>'
+    f'<li><span class="d">{r["date"]}</span><span class="s">{html.escape(r["src"])}'
+    + (f'<span class="lg">{html.escape(r["lang"])}</span>' if r["lang"] else "") + '</span>'
     f'<a href="{html.escape(r["href"])}" target="_blank" rel="noopener">{html.escape(r["title"])}</a></li>'
-    for r in sv[:20]
+    for r in alla[:20]
 )
 updated = re.search(r"Senast uppdaterad <b>(.*?)</b>", SRC)
 updated = updated[1] if updated else ""
@@ -132,6 +132,7 @@ li[hidden]{{display:none}}
 .d{{font-variant-numeric:tabular-nums;color:#000;font-size:14px}}
 .s{{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);align-self:center}}
 .s::before{{content:"· ";color:#ccc}}
+.lg{{display:inline-block;margin-left:6px;padding:1px 6px;background:var(--yellow);color:#000;font-size:10px;font-weight:700;letter-spacing:.06em}}
 a{{grid-column:1/-1;color:var(--blue);font-weight:700;text-decoration:none}}
 a:hover,a:focus-visible{{text-decoration:underline}}
 a:focus-visible{{outline:2px solid var(--yellow);outline-offset:2px}}

@@ -47,6 +47,7 @@ section{display:flex;flex-direction:column;gap:20px}
 .item .tag.old{color:var(--muted);font-style:italic}
 .item .src{grid-row:1;grid-column:2;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);align-self:center;overflow-wrap:anywhere}
 .item .src::before{content:"· ";color:var(--line)}
+.item .lang{display:inline-block;margin-left:6px;padding:1px 6px;background:var(--yellow);color:#000;font-size:11px;font-weight:700;letter-spacing:.06em;vertical-align:1px}
 .item a{grid-column:1 / -1;color:var(--blue);font-weight:700;font-size:1.15rem;line-height:1.3;text-decoration:none}
 .item a:hover,.item a:focus-visible{text-decoration:underline;outline:none}
 .item a:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
@@ -64,7 +65,7 @@ section{display:flex;flex-direction:column;gap:20px}
   <header>
     <span class="eyebrow">Daglig mediebevakning · Ryck &amp; stöt</span>
     <h1>Tyngdlyftningsbevakningen</h1>
-    <p class="lede">Nyheter om svensk och internationell tyngdlyftning från svenska medier. Sidan uppdateras varje morgon.</p>
+    <p class="lede">Nyheter om svensk tyngdlyftning från svenska och utländska medier. Sidan uppdateras varje morgon.</p>
     <div class="meta"><span>Senast uppdaterad <b>2026-11-10</b></span><span>Nästa körning <b>2026-11-11, ca 06:47</b></span></div>
   </header>
 
@@ -78,7 +79,7 @@ section{display:flex;flex-direction:column;gap:20px}
   </section>
 
   <section aria-labelledby="flode">
-    <h2 id="flode">Svenska medier</h2>
+    <h2 id="flode">Nyheter</h2>
     <div class="feed">
       <div class="item"><span class="src">TV4 Nyheterna</span><div class="body"><span class="tag">2026-11-05</span><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPc2dQNGdrQ19yOVpxSWpxT0RpblV3VkJiVmhidG5yaXBQd3p0Yjg4bWRxSWdFQ2dvS1RILW90RVY4TW8zVGlDMlF1Ujl4dUlVekdiNmt2ZWpYc2dxSzNrUjJram00ZVBnSGRJRlp3VHdvUnBjajl2cTNpaWM5UXZlS3dxZXdUYjFHQlhkRlhtZTE0X2xZMUZLMjZ6SWpqRkFvUEE?oc=5" target="_blank" rel="noopener">56-åring ska tävla i veteran-VM i tyngdlyftning: ”Aldrig för sent"</a><p>Reportage om en 56-årig lyftare inför veteran-VM.</p></div></div>
       <div class="item"><span class="src">Sveriges Radio</span><div class="body"><span class="tag">2026-11-02</span><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPNlJsak4xa3NaelQ3VThIalUzWWtpbHk1bmF4Tm54VmlmV2xRYXpSOFV0VGVEV1NNOG43U0oweU1leFdMMnBnNHhLaG9QRS1GbXgxbF9vQ1B3NWhMZXRmV1FnZ1hxVHBPRWJQNXVfMzEwekFEb1pBaUFPUlc3Tkh1VU9xTC00WEM3OWVTWDZB?oc=5" target="_blank" rel="noopener">Patricia Strenius vill bojkotta VM i Moskva 2030</a></div></div>
@@ -97,35 +98,6 @@ section{display:flex;flex-direction:column;gap:20px}
       <div class="item"><span class="src">svt.se</span><div class="body"><span class="tag old">Äldre</span><a href="https://www.svt.se/nyheter/lokalt/orebro/okk-satsar-pa-sm-i-tyngdlyftning-kul-med-manga-tjejer" target="_blank" rel="noopener">ÖKK satsar på SM i tyngdlyftning</a><p>SVT Örebro om klubbens SM-satsning. Med som bakgrund inför Lag-SM i Örebro.</p></div></div>
     </div>
   </section>
-
-  <section aria-labelledby="intl">
-    <h2 id="intl">Internationella medier</h2>
-    <p class="boardmeta">Engelska, norska, danska och finska medier. Med kommer artiklar som nämner Sverige eller svenska lyftare, och stora internationella nyheter.</p>
-    <div class="feed" id="intl-feed">
-      <div class="item"><span class="src">Olympics.com · engelska</span><div class="body"><span class="tag">2026-11-07</span><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNV3lUR21FdFRlRDlLcE1pMUtoS3E0MGdpaXFyemNDX3hCdHpLaTlkTXBmNFViZENQTVNhcEc3Z0lLZjA2SVlLWUh4LTgydWRtWVRlR2lXZnYtM3ZKQzJwWVVJMzNRbXF3Q2NMZk9EUlpxX0hRQU5UUWpORHR4SHdJdjkwX2dqeUN3N2Z5UDgyNGJEaWdxOERv?oc=5" target="_blank" rel="noopener" lang="en">Weightlifting - 2026 IWF World Championships: Stars in action, schedule, all results</a><p>Översikt med schema och samtliga resultat från VM i Ningbo.</p></div></div>
-      <div class="item"><span class="src">Fitness Volt · engelska</span><div class="body"><span class="tag">2026-11-05</span><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPcjgyUllPMFBTWjRUMW1zci1WTmF0XzFfMXBXRlluUDFrd0RMWER6NFlxVHpIQzBiWXIyQ0hrY1JDUkVwX2syYlotTjFmenBQMjNCMGkzcGUtRzVTUGxzMlRFMWd0Y1NNVnFsTW11N01JN3J5eTZkdjhydXIxdEZ3dWlLMUJvYUl1a091dVlwYTg4UTU3RHFTeE9kR0JodXFld1E?oc=5" target="_blank" rel="noopener" lang="en">Karlos Nasar (U95KG) Sweeps Three World Records at 2026 IWF World Weightlifting Championships</a><p>Bulgariens Karlos Nasar satte tre världsrekord i 95-kilosklassen på VM.</p></div></div>
-      <div class="item"><span class="src">Idrettspolitikk.no · norska</span><div class="body"><span class="tag">2026-10-28</span><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxNYjRLbGVRRXpCcmN1VzFmWGNTRnRYSFVKeDJhSFJaWXk5MDhaczBLUVJCcS1sSENXT2JMakNEeVNQTlQxYnFLVWtLb1JoRGRCd1RZdFNQRVJndjVlYUhHSndxb1NlLW5fZ3RIWHBDdzRrWC0wUUR2amNGVFk3ZWE0ZGNDa21vVzVjbVZncTlDWEU0aTFYZ0V3dnJqUTcxLUplT1lEWHpla253U3ZFdzlfMzZGc1M5aS1kcnk2azJsWndyTVZUenc?oc=5" target="_blank" rel="noopener" lang="no">Vektløfterforbundet første som gir VM til Russland etter fullskalainvasjonen: – Sjokkerende!</a><p>På svenska: Tyngdlyftningsförbundet först med att ge VM till Ryssland efter fullskaleinvasionen.</p></div></div>
-      <div class="item"><span class="src">Inside The Games · engelska</span><div class="body"><span class="tag">2026-10-27</span><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5mZ2xtcjFLOEJ2MF8yZWNPQ1RBbWtUbFhsR0tWQU1mcUFQenZXQUlONjNwZlVZVDh0SklqNl9fSk1ueWtxWFRNaUY0cUV5Nm5tT3ZKUTdSSmtuSGRxeGs1Zm1JMzF3aXNNVFhnYm91bFRBM0pUemxQRkQxeTluQzA?oc=5" target="_blank" rel="noopener" lang="en">IWF's Moscow decision sparks outrage</a><p>På svenska: IWF:s Moskvabeslut väcker ilska.</p></div></div>
-      <div class="item"><span class="src">UNITED24 Media · engelska</span><div class="body"><span class="tag">2026-10-26</span><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOeERRUmdoX3d6cWRMSHU5SlNsM05TMzZuZE9tdE80SjFsREJ4SVd6dWhOYkYwVjg2ZlBObW8xODJfVjRvRnFHNG42SEhkR0x0R3FnU3hTX1dDR2RsQTZWRERSb3J2Y3o3RjM1ZmJJbzM0QnNTWnNMRWRjcXVBTXE0Y3JzNG5aQ3U4YVBNbnpGOTgtY29qQkUxSDJURUozZHZfa29Vcnh5UXFod0E?oc=5" target="_blank" rel="noopener" lang="en">Ukraine Will Boycott 2030 World Weightlifting Championships in Moscow</a><p>På svenska: Ukraina bojkottar VM 2030 i Moskva.</p></div></div>
-      <div class="item"><span class="src">Dagbladet · norska</span><div class="body"><span class="tag">2026-10-26</span><a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5iOVZIeUJyYk0tWjgtRjMyb3Mtc3N3N2lLWTh6WTloT3A1d0I5ZXZKVlFULTY3LU1lanBPbUxsNXk4STRFbmpoVlZ0NkVqY19oVHJNUXRSUTNJR0tVVkxXdjl2N3BUV253WTNaYmRMcjdkb2J5aHFPZQ?oc=5" target="_blank" rel="noopener" lang="no">VM i Russland: - Jeg er sjokkert</a><p>På svenska: VM i Ryssland: ”Jag är chockad”.</p></div></div>
-      <div class="item"><span class="src">Yle · finska</span><div class="body"><span class="tag">2026-10-25</span><a href="https://news.google.com/rss/articles/CBMiQkFVX3lxTFBxcmNVSTBWZG5zNml4WjJNZXlLd2RqRHNHNHVqSW43WnhzakJQRHlKbmwyaDh1ZXFxZERFU0g5aHkzUQ?oc=5" target="_blank" rel="noopener" lang="fi">Venäjälle myönnettiin painonnoston MM-kisat</a><p>På svenska: Ryssland tilldelades VM i tyngdlyftning.</p></div></div>
-    </div>
-  </section>
-
-  <section aria-labelledby="kal">
-    <h2 id="kal">Kommande tävlingar</h2>
-    <div class="cal">
-      <div><time>20–22 nov</time><span>NM för seniorer, ungdomar och juniorer i Norge. Datumet skiljer sig mellan förbundets sidor.</span></div>
-      <div><time>28 nov</time><span>Lag-SM, Örebro</span></div>
-      <div><time>5–6 dec</time><span>Junior-SM, Göteborg. Startlistor och tidsschema är publicerade.</span></div>
-    </div>
-  </section>
-
-  <div class="note">
-    <b>Om källorna</b>
-    <span>Bevakningen läser Google Nyheters flöde för svenska nyheter om tyngdlyftning. Där ingår Aftonbladet, Expressen, DN, SvD, SVT, Sveriges Radio, TV4 och lokaltidningar. Länkarna går via Google Nyheter till artikeln. Internationella artiklar hämtas på samma sätt från engelska, norska, danska och finska utgåvor av Google Nyheter. Artiklar bakom betalvägg visas med rubrik.</span>
-    <span>Svenska Tyngdlyftningsförbundets egna nyheter och pressmeddelanden ingår inte. Bara redaktionella medier visas.</span>
-  </div>
 </div>
 
 </body>
