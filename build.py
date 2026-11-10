@@ -85,7 +85,6 @@ HOJD_JS = """<script>
 })();
 </script>"""
 
-NO_SCROLL_CSS = "<style>html,body{overflow:hidden}</style>"
 
 
 def write(name, text):
@@ -94,7 +93,7 @@ def write(name, text):
 
 
 # index.html – hela sidan
-write("index.html", HEAD + NO_SCROLL_CSS + "\n</head>\n<body>\n" + SRC + "\n" + HOJD_JS + "\n</body>\n</html>\n")
+write("index.html", HEAD + "</head>\n<body>\n" + SRC + "\n" + HOJD_JS + "\n</body>\n</html>\n")
 
 
 # RSS-flöden
@@ -146,7 +145,7 @@ write("modul.html", HEAD + f"""<title>Tyngdlyftning i media</title>
 <style>
 :root{{--fg:#404040;--muted:#666;--line:#e6e6e6;--blue:#1d428e;--yellow:#f6ca30;
   --font:"Clear Sans","Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif}}
-html,body{{margin:0;overflow:hidden;background:#fff;color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.45}}
+html,body{{margin:0;background:#fff;color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.45}}
 .m{{padding:4px 2px}}
 h2{{margin:0 0 6px;font-size:1.25rem;font-weight:700;text-transform:uppercase;color:var(--blue);padding-bottom:8px;border-bottom:1px solid #ccc}}
 ul{{list-style:none;margin:0;padding:0}}
