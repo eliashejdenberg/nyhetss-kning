@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>html,body{overflow:hidden}</style>
 </head>
 <body>
 <title>Tyngdlyftningsbevakningen</title>
@@ -92,5 +93,21 @@ section{display:flex;flex-direction:column;gap:20px}
   <p class="updated">Senast uppdaterad <b>2026-11-10</b> · uppdateras varje morgon</p>
 </div>
 
+<script>
+(function(){
+  var senast = 0;
+  function skicka(){
+    var h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    if (h === senast) return;
+    senast = h;
+    try { parent.postMessage({typ: "tyngdlyftning-hojd", hojd: h}, "*"); } catch (e) {}
+  }
+  window.addEventListener("load", skicka);
+  window.addEventListener("resize", skicka);
+  if (window.ResizeObserver) new ResizeObserver(skicka).observe(document.documentElement);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(skicka);
+  skicka();
+})();
+</script>
 </body>
 </html>

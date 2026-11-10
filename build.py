@@ -65,13 +65,36 @@ HEAD = """<!doctype html>
 """
 
 
+# Skickar sidans höjd till den inbäddande sidan (Sitevision), så att iframen
+# kan växa med innehållet i stället för att få en egen rullningslist.
+# Mottagaren är inbadda.js.
+HOJD_JS = """<script>
+(function(){
+  var senast = 0;
+  function skicka(){
+    var h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    if (h === senast) return;
+    senast = h;
+    try { parent.postMessage({typ: "tyngdlyftning-hojd", hojd: h}, "*"); } catch (e) {}
+  }
+  window.addEventListener("load", skicka);
+  window.addEventListener("resize", skicka);
+  if (window.ResizeObserver) new ResizeObserver(skicka).observe(document.documentElement);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(skicka);
+  skicka();
+})();
+</script>"""
+
+NO_SCROLL_CSS = "<style>html,body{overflow:hidden}</style>"
+
+
 def write(name, text):
     (ROOT / name).write_text(text, encoding="utf-8")
     print("skrev", name)
 
 
 # index.html – hela sidan
-write("index.html", HEAD + "</head>\n<body>\n" + SRC + "\n</body>\n</html>\n")
+write("index.html", HEAD + NO_SCROLL_CSS + "\n</head>\n<body>\n" + SRC + "\n" + HOJD_JS + "\n</body>\n</html>\n")
 
 
 # RSS-flöden
@@ -123,7 +146,7 @@ write("modul.html", HEAD + f"""<title>Tyngdlyftning i media</title>
 <style>
 :root{{--fg:#404040;--muted:#666;--line:#e6e6e6;--blue:#1d428e;--yellow:#f6ca30;
   --font:"Clear Sans","Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif}}
-html,body{{margin:0;background:#fff;color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.45}}
+html,body{{margin:0;overflow:hidden;background:#fff;color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.45}}
 .m{{padding:4px 2px}}
 h2{{margin:0 0 6px;font-size:1.25rem;font-weight:700;text-transform:uppercase;color:var(--blue);padding-bottom:8px;border-bottom:1px solid #ccc}}
 ul{{list-style:none;margin:0;padding:0}}
@@ -154,11 +177,9 @@ a:focus-visible{{outline:2px solid var(--yellow);outline-offset:2px}}
   var n = parseInt(new URLSearchParams(location.search).get("antal") || "5", 10);
   var li = document.querySelectorAll("#l li");
   for (var i = n; i < li.length; i++) li[i].hidden = true;
-  // meddela inbäddande sida höjden (för automatisk iframe-höjd)
-  function h(){{ try {{ parent.postMessage({{tyngdlyftningModulHojd: document.documentElement.scrollHeight}}, "*"); }} catch(e){{}} }}
-  window.addEventListener("load", h); h();
 }})();
 </script>
+""" + HOJD_JS + """
 </body>
 </html>
 """)
