@@ -4,8 +4,13 @@ on:
   # Morgonkörningen pushar en uppdaterad sida -> mejla det som är nytt
   push:
     branches: [main]
-    paths: ["src/sida.html"]
+    paths: ["src/sida.html", "state/provmejl.txt"]
   workflow_dispatch:
+    inputs:
+      prov:
+        description: "Skicka ett testmejl med de 3 senaste artiklarna"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -19,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
 
       - uses: actions/setup-python@v6
         with:
@@ -34,7 +41,15 @@ jobs:
           MAIL_FROM_NAME: "Tyngdlyftning i media"
           # Repot är publikt – mottagarna ligger därför i en secret, inte här i klartext
           MAIL_TO: ${{ secrets.MAIL_TO }}
-        run: python skicka_mejl.py
+          PROV: ${{ inputs.prov }}
+        run: |
+          # Testmejl: knappen "prov" i Run workflow, eller en push som ändrar state/provmejl.txt
+          if [ "$PROV" = "true" ] || { [ "${{ github.event_name }}" = "push" ] && git diff --name-only HEAD~1 HEAD | grep -qx state/provmejl.txt; }; then
+            python skicka_mejl.py --test
+          fi
+          if [ "$PROV" != "true" ]; then
+            python skicka_mejl.py
+          fi
 
       - name: Spara vilka artiklar som har mejlats
         run: |

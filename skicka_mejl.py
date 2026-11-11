@@ -11,6 +11,8 @@ Miljövariabler (GitHub-secrets, samma upplägg som i story-generator):
 Kör:  python3 skicka_mejl.py            skicka nya artiklar
       python3 skicka_mejl.py --init     markera alla nuvarande artiklar som skickade
       python3 skicka_mejl.py --prov     skriv ut mejlet utan att skicka
+      python3 skicka_mejl.py --test     skicka ett testmejl med de 3 senaste artiklarna
+                                        (märkt TEST, ändrar inte state/skickade.json)
 """
 import html
 import json
@@ -138,6 +140,12 @@ def main():
     if "--init" in sys.argv:
         spara_state(lankar)
         print(f"Markerade {len(lankar)} artiklar som skickade.")
+        return
+    if "--test" in sys.argv:
+        senaste = sorted((a for a in alla if re.fullmatch(r"\d{4}-\d\d-\d\d", a["datum"])),
+                         key=lambda a: a["datum"], reverse=True)[:3]
+        rubrik, text, html_body = bygg_mejl(senaste, "Det här är ett testutskick med de tre senaste artiklarna i bevakningen.")
+        skicka("TEST – " + rubrik, text, html_body)
         return
     skickade = las_state()
     if skickade is None:
