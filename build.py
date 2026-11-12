@@ -277,7 +277,7 @@ a:focus-visible{{outline:2px solid var(--yellow);outline-offset:2px}}
 <ul id="l">
 {li}
 </ul>
-<div class="f"><span>Uppdaterad {html.escape(updated)}</span><a href="{BASE}" target="_blank" rel="noopener">Alla nyheter →</a></div>
+<div class="f"><span>Uppdaterad {html.escape(updated)}</span><a href="https://www.tyngdlyftning.com/forbundet/tyngdlyftning-i-media" target="_top">Alla nyheter →</a></div>
 </div>
 <script>
 // ?antal=5 styr hur många rubriker som visas (standard 5)
