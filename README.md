@@ -13,13 +13,14 @@ Uppdateras automatiskt varje morgon cirka 06:47.
 | Kompakt modul | https://eliashejdenberg.github.io/nyhetss-kning/modul.html?antal=5 | iframe i Sitevision |
 | Excel: antal per år + alla länkar | https://eliashejdenberg.github.io/nyhetss-kning/arkiv/tyngdlyftning_i_media.xlsx | ladda ner |
 | CSV: alla artiklar | https://eliashejdenberg.github.io/nyhetss-kning/arkiv/artiklar.csv | ladda ner |
+| Nyhetsrulle (TV-stil) | https://eliashejdenberg.github.io/nyhetss-kning/rullande.html | iframe i Sitevision, höjd 48 px |
 | RSS, alla medier | https://eliashejdenberg.github.io/nyhetss-kning/feed.xml | RSS-modulen i Sitevision |
 
 ## Så fungerar det
 
 - `src/sida.html` är källan. Den uppdateras av den dagliga bevakningen.
 - `python3 hamta_loggor.py` hämtar loggor (favicons) för nya mediehus till `logos/`. Källor utan logga visas med sin första bokstav.
-- `python3 build.py` bygger `index.html`, `modul.html` och `feed.xml` från källan.
+- `python3 build.py` bygger `index.html`, `modul.html`, `rullande.html` och `feed.xml` från källan.
 - `python3 bygg_rapport.py` bygger `arkiv/tyngdlyftning_i_media.xlsx` (antal per år, alla artiklar, fynd i öppna arkiv) och `arkiv/artiklar.csv`.
 - `arkiv/oppna_arkiv.json` innehåller bilder, film och ljud från öppna arkiv (Europeana, Internet Archive, Filmarkivet.se, Sveriges Radio).
 - Ändra inte de byggda filerna för hand; de skrivs över vid nästa körning.
@@ -34,6 +35,14 @@ Iframen växer automatiskt med innehållet om sidan också laddar `inbadda.js` e
 ```
 
 Höjden i `style` gäller bara tills sidan laddat. När man byter sida i listan rullar Sitevision-sidan upp till modulens början. Samma skript fungerar för hela sidan (`/nyhetss-kning/`) och för flera iframes på samma sida.
+
+## Nyhetsrulle
+
+`rullande.html` är ett rullande band med de 10 senaste artiklarna, som nyhetsrullen längst ner i TV-nyheter. Det stannar när man håller muspekaren över det och har en pausknapp. Den som har valt minskade animationer i sin dator får en lista som man själv bläddrar i sidled. `?antal=` ändrar antalet artiklar och `?hastighet=` farten i pixlar per sekund (standard 70).
+
+```html
+<iframe src="https://eliashejdenberg.github.io/nyhetss-kning/rullande.html" title="Tyngdlyftning i media – senaste artiklarna" style="width:100%;height:48px;border:0;display:block" scrolling="no"></iframe>
+```
 
 ## Sidbläddring
 

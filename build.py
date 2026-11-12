@@ -291,3 +291,86 @@ a:focus-visible{{outline:2px solid var(--yellow);outline-offset:2px}}
 </body>
 </html>
 """)
+
+
+# rullande.html – nyhetsrulle i TV-stil med de senaste artiklarna
+def rull_post(r):
+    tag = "".join(f'<span class="lg">{html.escape(x)}</span>' for x in r["lang"])
+    return (f'<a class="p" href="{html.escape(r["href"])}" target="_blank" rel="noopener">'
+            f'<span class="s">{logga(r["href"], r["src"])}{html.escape(r["src"])}{tag}</span>'
+            f'<span class="t">{html.escape(r["title"])}</span></a>')
+
+
+rull = "".join(rull_post(r) for r in alla[:10])
+write("rullande.html", HEAD + f"""<title>Tyngdlyftning i media – nyhetsrulle</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+<style>
+:root{{--blue:#1d428e;--blue2:#16336f;--yellow:#f6ca30;
+  --font:"Clear Sans","Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif}}
+html,body{{margin:0;background:var(--blue);font-family:var(--font)}}
+.r{{display:flex;align-items:stretch;height:48px;background:var(--blue);color:#fff;overflow:hidden}}
+.etikett{{flex:none;display:flex;align-items:center;gap:8px;padding:0 14px;background:var(--yellow);color:#000;
+  font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;white-space:nowrap}}
+.etikett:hover,.etikett:focus-visible{{text-decoration:underline}}
+.kort{{display:none}}
+.fonster{{flex:1;min-width:0;overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}}
+.band{{display:flex;width:max-content;height:100%;animation:rulla var(--tid,80s) linear infinite}}
+.grupp{{display:flex;align-items:center;flex:none}}
+.r:hover .band,.r:focus-within .band,.r.paus .band{{animation-play-state:paused}}
+@keyframes rulla{{from{{transform:translateX(0)}}to{{transform:translateX(-50%)}}}}
+.p{{display:inline-flex;align-items:center;gap:10px;padding:0 22px;height:100%;color:#fff;text-decoration:none;white-space:nowrap;font-size:15px}}
+.p::after{{content:"";width:6px;height:6px;background:var(--yellow);margin-left:22px;transform:rotate(45deg)}}
+.p:hover .t,.p:focus-visible .t{{text-decoration:underline}}
+.p:focus-visible{{outline:2px solid var(--yellow);outline-offset:-4px}}
+.s{{display:inline-flex;align-items:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#c9d4ec}}
+.t{{font-weight:600}}
+.logo{{width:16px;height:16px;flex:none;border-radius:3px;margin-right:6px;background:#fff}}
+.logo-txt{{display:inline-flex;align-items:center;justify-content:center;background:#e9edf5;color:#1d428e;font-size:10px;font-weight:700;line-height:1}}
+.lg{{display:inline-block;margin-left:6px;padding:1px 6px;background:var(--yellow);color:#000;font-size:10px;font-weight:700;letter-spacing:.06em}}
+.knapp{{flex:none;width:44px;border:0;background:var(--blue2);color:#fff;font-size:15px;cursor:pointer;font-family:inherit}}
+.knapp:hover{{background:#0f2552}}
+.knapp:focus-visible{{outline:2px solid var(--yellow);outline-offset:-3px}}
+@media (max-width:560px){{.etikett .lang{{display:none}}.etikett .kort{{display:inline}}.etikett{{padding:0 10px}}.p{{font-size:14px}}}}
+@media (prefers-reduced-motion:reduce){{
+  .band{{animation:none}} .grupp+.grupp{{display:none}}
+  .fonster{{overflow-x:auto;-webkit-mask-image:none;mask-image:none}} .knapp{{display:none}}
+}}
+</style>
+</head>
+<body>
+<div class="r" id="r" role="region" aria-label="Tyngdlyftning i media – senaste artiklarna">
+<a class="etikett" href="https://www.tyngdlyftning.com/forbundet/tyngdlyftning-i-media" target="_top"><span class="lang">Tyngdlyftning i media</span><span class="kort" aria-hidden="true">I media</span><span aria-hidden="true">›</span></a>
+<div class="fonster"><div class="band" id="band"><div class="grupp">{rull}</div><div class="grupp" aria-hidden="true">{rull}</div></div></div>
+<button class="knapp" id="knapp" type="button" aria-label="Pausa nyhetsrullen" aria-pressed="false">❚❚</button>
+</div>
+<script>
+// ?antal=10 (antal artiklar) och ?hastighet=70 (pixlar per sekund)
+(function(){{
+  var q = new URLSearchParams(location.search);
+  var n = parseInt(q.get("antal") || "10", 10), v = parseFloat(q.get("hastighet") || "70");
+  document.querySelectorAll(".grupp").forEach(function(g, gi){{
+    g.querySelectorAll(".p").forEach(function(p, i){{
+      if (i >= n) p.remove(); else if (gi) p.tabIndex = -1;
+    }});
+  }});
+  function tid(){{
+    var g = document.querySelector(".grupp");
+    document.getElementById("band").style.setProperty("--tid", Math.max(10, g.offsetWidth / v) + "s");
+  }}
+  tid(); addEventListener("resize", tid);
+  if (document.fonts) document.fonts.ready.then(tid);
+  var r = document.getElementById("r"), k = document.getElementById("knapp");
+  k.addEventListener("click", function(){{
+    var p = r.classList.toggle("paus");
+    k.textContent = p ? "▶" : "❚❚";
+    k.setAttribute("aria-pressed", p ? "true" : "false");
+    k.setAttribute("aria-label", p ? "Starta nyhetsrullen" : "Pausa nyhetsrullen");
+  }});
+}})();
+</script>
+""" + HOJD_JS + """
+</body>
+</html>
+""")
