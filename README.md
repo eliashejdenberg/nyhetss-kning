@@ -38,7 +38,7 @@ Höjden i `style` gäller bara tills sidan laddat. När man byter sida i listan 
 
 ## Nyhetsrulle
 
-`rullande.html` är ett rullande band med de 10 senaste artiklarna, som nyhetsrullen längst ner i TV-nyheter. Det stannar när man håller muspekaren över det och har en pausknapp. Den som har valt minskade animationer i sin dator får en lista som man själv bläddrar i sidled. `?antal=` ändrar antalet artiklar och `?hastighet=` farten i pixlar per sekund (standard 70).
+`rullande.html` är ett rullande band med de 10 senaste artiklarna, som nyhetsrullen längst ner i TV-nyheter. Det stannar när man håller muspekaren över det och har en pausknapp. Den som har valt minskade animationer i sin dator får en lista som man själv bläddrar i sidled. `?antal=` ändrar antalet artiklar och `?hastighet=` farten i pixlar per sekund (standard 70). `?tema=ljus` ger vit bakgrund med blå text och blå etikett: `rullande.html?tema=ljus`.
 
 ```html
 <iframe src="https://eliashejdenberg.github.io/nyhetss-kning/rullande.html" title="Tyngdlyftning i media – senaste artiklarna" style="width:100%;height:48px;border:0;display:block" scrolling="no"></iframe>
