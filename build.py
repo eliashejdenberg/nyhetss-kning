@@ -121,9 +121,21 @@ HOJD_JS = """<script>
 </script>"""
 
 
-# Sidbläddring för hela sidan: visar PER_SIDA artiklar åt gången
-# (ändras med ?per=…). Sidnumret står i adressen som #sida-2.
+# Filter (år, källa, svenska/internationella, typ, fritext, sortering) och
+# sidbläddring för hela sidan.
 PAGINERING = """<style>
+.filter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 12px;margin:0 0 14px;padding:14px;background:var(--soft);border:1px solid #e6e6e6}
+.filter label{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.filter .sok{grid-column:1/-1}
+.filter input,.filter select{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;font-weight:400;color:var(--fg);background:#fff;border:1px solid var(--line);border-radius:0;padding:8px 10px;min-height:40px;box-sizing:border-box;width:100%}
+.filter input:focus-visible,.filter select:focus-visible,.filter button:focus-visible{outline:2px solid var(--yellow);outline-offset:1px;border-color:var(--blue)}
+.filter .rad{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;font-size:14px;color:var(--fg)}
+.filter .antal{font-weight:600}
+.filter button{font:inherit;font-size:14px;font-weight:600;padding:6px 12px;border:1px solid var(--blue);background:#fff;color:var(--blue);cursor:pointer}
+.filter button:hover{background:var(--blue);color:#fff}
+.filter button[hidden]{display:none}
+.tomt{padding:24px 0;text-align:center;color:var(--muted)}
+.tomt[hidden]{display:none}
 .pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin-top:4px}
 .pager[hidden],.feed > .item[hidden]{display:none}
 .pager button{font:inherit;font-size:14px;font-weight:600;min-width:40px;padding:8px 12px;border:1px solid var(--line);background:var(--surface);color:var(--blue);cursor:pointer}
@@ -135,61 +147,175 @@ PAGINERING = """<style>
 .pager .info{flex-basis:100%;text-align:center;font-size:13px;color:var(--muted);margin-top:4px}
 </style>
 <script>
+// Filter och sidbläddring för hela sidan.
+// ?per=50 styr antal per sida. Valda filter och sida sparas i adressen,
+// t.ex. #ar=2024&media=intl&sida=2, så att en filtrerad vy kan delas som länk.
 (function(){
   var PER = parseInt(new URLSearchParams(location.search).get("per") || "50", 10) || 50;
+  var SPRAK = ["ENGELSKA", "NORSKA", "DANSKA", "FINSKA"];
   var feed = document.querySelector('section[aria-labelledby="flode"] .feed');
   if (!feed) return;
-  var items = Array.prototype.slice.call(feed.querySelectorAll(":scope > .item"));
-  var antalSidor = Math.max(1, Math.ceil(items.length / PER));
-  var nav = document.createElement("nav");
-  nav.className = "pager";
-  nav.setAttribute("aria-label", "Sidor");
-  feed.parentNode.insertBefore(nav, feed.nextSibling);
+  var alla = Array.prototype.slice.call(feed.querySelectorAll(":scope > .item")).map(function(el, i){
+    var src = el.querySelector(".src"), tag = el.querySelector(".tag"), a = el.querySelector(".body a");
+    var etiketter = Array.prototype.map.call(src.querySelectorAll(".lang"), function(s){ return s.textContent.trim().toUpperCase(); });
+    var kalla = Array.prototype.filter.call(src.childNodes, function(n){ return n.nodeType === 3; })
+      .map(function(n){ return n.textContent; }).join("").trim();
+    var datum = (tag && tag.textContent.trim()) || "";
+    return {
+      el: el, i: i, kalla: kalla, datum: datum,
+      ar: /^\\d{4}-/.test(datum) ? datum.slice(0, 4) : "aldre",
+      intl: etiketter.some(function(e){ return SPRAK.indexOf(e) >= 0; }),
+      video: etiketter.indexOf("VIDEO") >= 0, ljud: etiketter.indexOf("LJUD") >= 0,
+      text: (el.textContent || "").toLowerCase()
+    };
+  });
 
-  function knapp(text, sida, etikett, aktuell, av){
-    var b = document.createElement("button");
-    b.type = "button"; b.textContent = text;
+  // --- filterpanel ---
+  function el(tagg, attr, barn){
+    var e = document.createElement(tagg);
+    for (var k in attr || {}) { if (k === "text") e.textContent = attr[k]; else e.setAttribute(k, attr[k]); }
+    (barn || []).forEach(function(b){ e.appendChild(b); });
+    return e;
+  }
+  function lista(namn, etikett, val){
+    var s = el("select", {name: namn});
+    val.forEach(function(v){ s.appendChild(el("option", {value: v[0], text: v[1]})); });
+    return {lbl: el("label", {}, [document.createTextNode(etikett), s]), sel: s};
+  }
+  function rakna(f){ var c = {}; alla.forEach(function(x){ var k = f(x); c[k] = (c[k] || 0) + 1; }); return c; }
+  var perAr = rakna(function(x){ return x.ar; });
+  var arVal = [["", "Alla år"]].concat(Object.keys(perAr).filter(function(a){ return a !== "aldre"; }).sort().reverse()
+    .map(function(a){ return [a, a + " (" + perAr[a] + ")"]; }));
+  if (perAr.aldre) arVal.push(["aldre", "Utan datum (" + perAr.aldre + ")"]);
+  var perKalla = rakna(function(x){ return x.kalla; });
+  var kallVal = [["", "Alla källor"]].concat(Object.keys(perKalla).sort(function(a, b){ return a.localeCompare(b, "sv"); })
+    .map(function(k){ return [k, k + " (" + perKalla[k] + ")"]; }));
+  var antIntl = alla.filter(function(x){ return x.intl; }).length;
+
+  var sok = el("input", {type: "search", name: "q", placeholder: "Sök på rubrik, namn, källa …", autocomplete: "off"});
+  var f = {
+    q: sok,
+    ar: lista("ar", "År", arVal),
+    kalla: lista("kalla", "Källa", kallVal),
+    media: lista("media", "Medier", [["", "Alla medier"], ["sv", "Svenska medier (" + (alla.length - antIntl) + ")"], ["intl", "Internationella medier (" + antIntl + ")"]]),
+    typ: lista("typ", "Typ", [["", "Alla typer"], ["video", "Video"], ["ljud", "Ljud"], ["text", "Endast text"]]),
+    sort: lista("sort", "Sortera", [["", "Nyast först"], ["aldst", "Äldst först"], ["kalla", "Källa A–Ö"]])
+  };
+  var antal = el("span", {"class": "antal", "aria-live": "polite"});
+  var rensa = el("button", {type: "button", text: "Rensa filter"});
+  var panel = el("form", {"class": "filter", role: "search", "aria-label": "Filtrera artiklar"}, [
+    el("label", {"class": "sok"}, [document.createTextNode("Sök"), sok]),
+    f.ar.lbl, f.kalla.lbl, f.media.lbl, f.typ.lbl, f.sort.lbl,
+    el("div", {"class": "rad"}, [antal, rensa])
+  ]);
+  panel.addEventListener("submit", function(e){ e.preventDefault(); });
+  feed.parentNode.insertBefore(panel, feed);
+  var tomt = el("p", {"class": "tomt", text: "Inga artiklar matchar filtret."});
+  feed.parentNode.insertBefore(tomt, feed.nextSibling);
+  var nav = el("nav", {"class": "pager", "aria-label": "Sidor"});
+  feed.parentNode.insertBefore(nav, tomt.nextSibling);
+
+  function varde(k){ return k === "q" ? sok.value.trim() : f[k].sel.value; }
+  function satt(k, v){ if (k === "q") sok.value = v; else { f[k].sel.value = v; if (f[k].sel.value !== v) f[k].sel.value = ""; } }
+  var NYCKLAR = ["q", "ar", "kalla", "media", "typ", "sort"];
+
+  var urval = alla;
+  function filtrera(){
+    var q = varde("q").toLowerCase(), ar = varde("ar"), kalla = varde("kalla"), media = varde("media"), typ = varde("typ"), sort = varde("sort");
+    var ord = q.split(/\\s+/).filter(Boolean);
+    urval = alla.filter(function(x){
+      if (ar && x.ar !== ar) return false;
+      if (kalla && x.kalla !== kalla) return false;
+      if (media === "sv" && x.intl) return false;
+      if (media === "intl" && !x.intl) return false;
+      if (typ === "video" && !x.video) return false;
+      if (typ === "ljud" && !x.ljud) return false;
+      if (typ === "text" && (x.video || x.ljud)) return false;
+      for (var i = 0; i < ord.length; i++) if (x.text.indexOf(ord[i]) < 0) return false;
+      return true;
+    });
+    var nyckel = function(x){ return x.ar === "aldre" ? "0000" : x.datum; };
+    urval.sort(function(a, b){
+      if (sort === "kalla") return a.kalla.localeCompare(b.kalla, "sv") || (nyckel(b) < nyckel(a) ? -1 : nyckel(b) > nyckel(a) ? 1 : a.i - b.i);
+      if (sort === "aldst") return nyckel(a) < nyckel(b) ? -1 : nyckel(a) > nyckel(b) ? 1 : b.i - a.i;
+      return a.i - b.i;  // sidan är redan sorterad med nyaste först
+    });
+    var aktiv = NYCKLAR.some(function(k){ return varde(k); });
+    rensa.hidden = !aktiv;
+    antal.textContent = (aktiv ? urval.length + " av " + alla.length : alla.length) + " artiklar";
+    tomt.hidden = urval.length > 0;
+    // lägg artiklarna i vald ordning
+    var frag = document.createDocumentFragment();
+    alla.forEach(function(x){ x.el.hidden = true; });
+    urval.forEach(function(x){ frag.appendChild(x.el); });
+    alla.forEach(function(x){ if (urval.indexOf(x) < 0) frag.appendChild(x.el); });
+    feed.appendChild(frag);
+  }
+
+  var sida = 1;
+  function antalSidor(){ return Math.max(1, Math.ceil(urval.length / PER)); }
+  function knapp(text, s, etikett, aktuell, av){
+    var b = el("button", {type: "button", text: text});
     if (etikett) b.setAttribute("aria-label", etikett);
     if (aktuell) b.setAttribute("aria-current", "page");
-    if (av) b.disabled = true; else b.addEventListener("click", function(){ visa(sida, true); });
+    if (av) b.disabled = true; else b.addEventListener("click", function(){ visa(s, true); });
     return b;
   }
-  function sidnummer(s){
-    // 1 … s-1 s s+1 … sista
-    var lista = [], i;
-    for (i = 1; i <= antalSidor; i++) {
-      if (i === 1 || i === antalSidor || Math.abs(i - s) <= 1) lista.push(i);
-      else if (lista[lista.length - 1] !== "…") lista.push("…");
+  function sidnummer(s, n){
+    var ut = [], i;
+    for (i = 1; i <= n; i++) {
+      if (i === 1 || i === n || Math.abs(i - s) <= 1) ut.push(i);
+      else if (ut[ut.length - 1] !== "…") ut.push("…");
     }
-    return lista;
+    return ut;
+  }
+  function spara(){
+    var p = new URLSearchParams();
+    NYCKLAR.forEach(function(k){ if (varde(k)) p.set(k, varde(k)); });
+    if (sida > 1) p.set("sida", sida);
+    var h = p.toString();
+    try { history.replaceState(null, "", h ? "#" + h : location.pathname + location.search); } catch (e) {}
   }
   function visa(s, avAnvandare){
-    s = Math.min(Math.max(1, s), antalSidor);
-    items.forEach(function(el, i){ el.hidden = Math.floor(i / PER) + 1 !== s; });
+    var n = antalSidor();
+    sida = Math.min(Math.max(1, s), n);
+    urval.forEach(function(x, i){ x.el.hidden = Math.floor(i / PER) + 1 !== sida; });
     nav.innerHTML = "";
-    nav.hidden = antalSidor < 2;
-    if (antalSidor > 1) {
-      nav.appendChild(knapp("← Föregående", s - 1, "Föregående sida", false, s === 1));
-      sidnummer(s).forEach(function(n){
-        if (n === "…") { var g = document.createElement("span"); g.className = "gap"; g.textContent = "…"; nav.appendChild(g); }
-        else nav.appendChild(knapp(String(n), n, "Sida " + n, n === s, false));
+    nav.hidden = n < 2;
+    if (n > 1) {
+      nav.appendChild(knapp("← Föregående", sida - 1, "Föregående sida", false, sida === 1));
+      sidnummer(sida, n).forEach(function(k){
+        if (k === "…") nav.appendChild(el("span", {"class": "gap", text: "…"}));
+        else nav.appendChild(knapp(String(k), k, "Sida " + k, k === sida, false));
       });
-      nav.appendChild(knapp("Nästa →", s + 1, "Nästa sida", false, s === antalSidor));
-      var info = document.createElement("span");
-      info.className = "info";
-      var fran = (s - 1) * PER + 1, till = Math.min(s * PER, items.length);
-      info.textContent = "Visar " + fran + "–" + till + " av " + items.length + " artiklar";
-      nav.appendChild(info);
+      nav.appendChild(knapp("Nästa →", sida + 1, "Nästa sida", false, sida === n));
+      var fran = (sida - 1) * PER + 1, till = Math.min(sida * PER, urval.length);
+      nav.appendChild(el("span", {"class": "info", text: "Visar " + fran + "–" + till + " av " + urval.length + " artiklar"}));
     }
+    spara();
     if (avAnvandare) {
-      try { history.replaceState(null, "", s > 1 ? "#sida-" + s : location.pathname + location.search); } catch (e) {}
       document.getElementById("flode").scrollIntoView();
       // be den inbäddande sidan rulla upp till modulens början
       try { parent.postMessage({typ: "tyngdlyftning-topp"}, "*"); } catch (e) {}
     }
   }
-  var m = /^#sida-(\\d+)$/.exec(location.hash);
-  visa(m ? parseInt(m[1], 10) : 1, false);
+
+  var vantar;
+  function andrat(){ filtrera(); visa(1, false); }
+  sok.addEventListener("input", function(){ clearTimeout(vantar); vantar = setTimeout(andrat, 200); });
+  ["ar", "kalla", "media", "typ", "sort"].forEach(function(k){ f[k].sel.addEventListener("change", andrat); });
+  rensa.addEventListener("click", function(){ NYCKLAR.forEach(function(k){ satt(k, ""); }); andrat(); sok.focus(); });
+
+  // läs filter och sida från adressen (#ar=2024&sida=2, eller äldre #sida-2)
+  var h = location.hash.replace(/^#/, ""), start = 1, gammal = /^sida-(\\d+)$/.exec(h);
+  if (gammal) start = parseInt(gammal[1], 10);
+  else if (h) {
+    var p = new URLSearchParams(h);
+    NYCKLAR.forEach(function(k){ if (p.get(k)) satt(k, p.get(k)); });
+    start = parseInt(p.get("sida") || "1", 10) || 1;
+  }
+  filtrera();
+  visa(start, false);
 })();
 </script>"""
 

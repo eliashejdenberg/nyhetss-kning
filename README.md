@@ -44,6 +44,10 @@ Höjden i `style` gäller bara tills sidan laddat. När man byter sida i listan 
 <iframe src="https://eliashejdenberg.github.io/nyhetss-kning/rullande.html" title="Tyngdlyftning i media – senaste artiklarna" style="width:100%;height:48px;border:0;display:block" scrolling="no"></iframe>
 ```
 
+## Filter
+
+Överst på hela sidan finns fritextsök och filter för år, källa, svenska/internationella medier och typ (video, ljud, endast text), plus sortering (nyast, äldst, källa A–Ö). Valen sparas i adressen, så en filtrerad vy kan delas som länk, t.ex. `https://eliashejdenberg.github.io/nyhetss-kning/#ar=2024&media=sv`.
+
 ## Sidbläddring
 
 Hela sidan visar 50 artiklar per sida med knappar för att bläddra. Antalet ändras med `?per=`, t.ex. `https://eliashejdenberg.github.io/nyhetss-kning/?per=25`. Bläddringen visas bara när det finns fler artiklar än så. Den dagliga bevakningen tar inte bort gamla artiklar, så listan fungerar som arkiv.
