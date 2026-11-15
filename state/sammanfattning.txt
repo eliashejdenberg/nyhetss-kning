@@ -1,8 +1,13 @@
 BORTSORTERAT (annat sammanhang):
-- TV4 Nyheterna: "Stefan Holm om dopnings-OS: ”En freakshow”" (2026-11-11) – om Enhanced Games, inte svensk tyngdlyftning.
-- Jönköpings-Posten: "Läkaren Elias lyfter tungt: ”Många tror man är macho”" (2026-11-10) – styrkelyft, inte tyngdlyftning (bedömt även i gårdagens körning).
-- Mariestads-Tidningen: "Mikael Bohman tog silver i Sveriges starkaste man" (2026-11-10) – strongman.
-- SVT Nyheter/Allehanda: träffar på Jennifer Andersson (2026-11-10–12) – politik, annat sammanhang.
+- Aftonbladet: "Wow! Här är Sveriges okända världsmästare!" (2026-11-13) – lista över svenska världsmästare där Eddie Berglund nämns. Gäller troligen hans VM-guld i styrkelyft. Sidan gick inte att läsa, så kontrollera gärna.
+- Kristianstadsbladet: "Byggföretagen hyllar Östra Göinge – fick ta emot pris" (2026-11-14) – träff på Henrik Arvidsson, handlar om annat.
+- Skaraborgs Allehanda/Svenskalag: handbollsmatch med HK Country (2026-11-14) – träff på Hugo Ottosson, handlar om handboll.
+- Borås Tidning/Allehanda: träffar på Jennifer Andersson (2026-11-12–14) – annat sammanhang.
+- Ålandstidningen: "Två ÅKK:are till FM i styrkelyft" (2026-11-14) – styrkelyft.
+- SVT: "Tolvårige Emil Åström från Örnsköldsvik lyfter 170 kilo i marklyft" – marklyft/styrkelyft.
 
 ÅTERPUBLICERAT (ej med):
 - TV4 Nyheterna: "56-åring ska tävla i veteran-VM i tyngdlyftning: ”Aldrig för sent”" – verkligt datum 2022-11-21, finns redan i arkivet.
+
+KUNDE INTE KONTROLLERA:
+- aftonbladet.se gick inte att hämta (proxyn nekade anslutningen), så Aftonbladet-artikeln ovan kunde inte läsas.
