@@ -68,5 +68,5 @@ Secrets (Settings → Secrets and variables → Actions):
 - `SMTP_PORT` (valfri, standard 587) och `MAIL_FROM` (valfri)
 - `MAIL_TO` – mottagare, kommaseparerade. Ligger som secret eftersom repot är publikt.
 
-Inga nya artiklar ger inget mejl. Morgonkörningens sammanfattning (t.ex. bortsorterade artiklar) skrivs till `state/sammanfattning.txt` och tas med i mejlet.
+Morgonkörningens sammanfattning – bortsorterade och osäkra artiklar med länkar – skrivs till `state/sammanfattning.txt` och tas med i mejlet med klickbara länkar. Mejl skickas om det finns nya artiklar eller något bortsorterat att granska; annars inget mejl. Efter utskicket töms filen.
 Testa: Actions → Mejla nya artiklar → Run workflow.

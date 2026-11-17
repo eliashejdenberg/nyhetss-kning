@@ -69,9 +69,28 @@ def spara_state(lankar):
     STATE.write_text(json.dumps(sorted(lankar), ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
 
 
+URL = re.compile(r"https?://[^\s<>\"')]+")
+
+
+def lanka_text(t):
+    """Gör adresser i sammanfattningen klickbara (texten escapas först)."""
+    ut, pos = [], 0
+    for m in URL.finditer(t):
+        ut.append(html.escape(t[pos:m.start()]))
+        u = m.group(0).rstrip(".,;:")
+        ut.append(f'<a href="{html.escape(u)}" style="color:{BLA};word-break:break-all">{html.escape(u)}</a>')
+        ut.append(html.escape(m.group(0)[len(u):]))
+        pos = m.end()
+    ut.append(html.escape(t[pos:]))
+    return "".join(ut)
+
+
 def bygg_mejl(nya, sammanfattning):
     n = len(nya)
-    rubrik = f"Tyngdlyftning i media – {n} {'ny artikel' if n == 1 else 'nya artiklar'} ({date.today().isoformat()})"
+    if n:
+        rubrik = f"Tyngdlyftning i media – {n} {'ny artikel' if n == 1 else 'nya artiklar'} ({date.today().isoformat()})"
+    else:
+        rubrik = f"Tyngdlyftning i media – inga nya artiklar, bortsorterat att granska ({date.today().isoformat()})"
     text = [f"{rubrik}\n"]
     rader = []
     for a in nya:
@@ -90,14 +109,17 @@ def bygg_mejl(nya, sammanfattning):
             + "</td></tr>")
     sam_html = ""
     if sammanfattning:
-        text.append("\nFrån morgonkörningen:\n" + sammanfattning)
+        text.append("\nFrån morgonkörningen – granska och säg till om något ska läggas till:\n" + sammanfattning)
         sam_html = (f'<div style="margin-top:20px;padding:12px 14px;background:#fafafa;border-left:4px solid {GUL};'
-                    f'font-size:13px;color:#404040;white-space:pre-wrap">{html.escape(sammanfattning)}</div>')
+                    f'font-size:13px;color:#404040;white-space:pre-wrap">'
+                    f'<div style="font-weight:bold;color:#000;margin-bottom:6px;white-space:normal">Från morgonkörningen – '
+                    f'bortsorterat och osäkert. Klicka för att läsa; säg till om något ska läggas till.</div>'
+                    f'{lanka_text(sammanfattning)}</div>')
     text.append(f"\nAlla artiklar: {SIDA}\nRapport (Excel): {RAPPORT}")
     html_body = f"""\
 <div style="font-family:'Open Sans',Arial,sans-serif;max-width:640px;color:#404040">
 <h2 style="margin:0 0 8px;color:{BLA};text-transform:uppercase;font-size:20px;border-bottom:1px solid #ccc;padding-bottom:8px">Tyngdlyftning i media</h2>
-<p style="margin:0 0 4px;font-size:14px">{n} {'ny artikel' if n == 1 else 'nya artiklar'} sedan förra utskicket.</p>
+<p style="margin:0 0 4px;font-size:14px">{f"{n} {'ny artikel' if n == 1 else 'nya artiklar'} sedan förra utskicket." if n else "Inga nya artiklar sedan förra utskicket."}</p>
 <table role="presentation" width="100%" cellspacing="0" cellpadding="0">{''.join(rader)}</table>
 {sam_html}
 <p style="margin-top:20px;font-size:13px"><a href="{SIDA}" style="color:{BLA}">Alla artiklar</a> ·
@@ -155,8 +177,8 @@ def main():
         return
     nya = [a for a in alla if a["lank"] not in skickade]
     sammanfattning = SAMMANFATTNING.read_text(encoding="utf-8").strip() if SAMMANFATTNING.exists() else ""
-    if not nya:
-        print("Inga nya artiklar – inget mejl.")
+    if not nya and not sammanfattning:
+        print("Inga nya artiklar och inget bortsorterat – inget mejl.")
         return
     rubrik, text, html_body = bygg_mejl(nya, sammanfattning)
     if "--prov" in sys.argv:
@@ -164,6 +186,9 @@ def main():
         return
     skicka(rubrik, text, html_body)
     spara_state(skickade | {a["lank"] for a in nya})
+    # samma sammanfattning ska inte skickas igen vid nästa push
+    if SAMMANFATTNING.exists():
+        SAMMANFATTNING.write_text("", encoding="utf-8")
 
 
 if __name__ == "__main__":
