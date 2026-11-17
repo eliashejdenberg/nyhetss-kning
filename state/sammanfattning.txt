@@ -1,8 +1,0 @@
-BORTSORTERAT (annat sammanhang):
-- TV4 Nyheterna – "Stefan Holm om dopnings-OS: ”En freakshow”" (2026-11-14) – handlar om Enhanced Games, inte om svensk tyngdlyftning.
-- TV4 Nyheterna – "Hennes bästa vän mördades av sin tränare" och Borås Tidning – "DIREKT: Gulddrömmen svischade bort på en kvart" (via Jennifer Andersson) – inte tyngdlyftning.
-- Kristianstadsbladet – "Byggföretagen hyllar Östra Göinge" (Henrik Arvidsson) och Skaraborgs Allehanda – "Tabellettan för tuff för Country" (Hugo Ottosson) – annat sammanhang.
-- Ålandstidningen – "Två ÅKK:are till FM i styrkelyft" – styrkelyft.
-- Vietnam.vn – "Nationella sportspel" – inte svensk tyngdlyftning.
-
-FEL: Google Nyheter begränsade antalet förfrågningar kraftigt. 10 av 138 sökningar misslyckades även efter tre försök: "Filippa Ferm" (utan tyngdlyftningsord), "Victor Ahlm" + tyngdlyftning, "Wilma Arvidsson" + tyngdlyftning, "VM tyngdlyftning", "Swedish weightlifter", en engelsk och en dansk gruppsökning på lyftarnamn, "Stefan Ågren" på norska och danska, samt "ruotsalainen painonnostaja". De utländska namnsökningarna kördes med flera namn per sökning (OR) för att minska antalet förfrågningar.
