@@ -48,7 +48,13 @@ SPORTORD = re.compile(r"tyngdlyft\w*|ryck och stöt|\bryck\b|\bstöt\b|weightlif
 ANNAN_SPORT = re.compile(r"styrkelyft\w*|bänkpress\w*|marklyft\w*|powerlift\w*|strongman|crossfit|knäböj", re.I)
 
 fel = []
-statistik = {"sokningar": 0, "misslyckade": 0}
+statistik = {"sokningar": 0, "misslyckade": 0, "i_rad": 0}
+START = time.time()
+BUDGET = 35 * 60  # sekunder för Google-sökningarna
+
+
+def logg(*a):
+    print(f"[{int(time.time() - START):4d}s]", *a, flush=True)
 
 
 def hamta(url, data=None, headers=None, tid=25, max_bytes=2_000_000):
@@ -61,15 +67,20 @@ def hamta(url, data=None, headers=None, tid=25, max_bytes=2_000_000):
 
 # ---------- Google Nyheter ----------
 def google(q, region="sv", nar="3d"):
-    """Returnerar lista av poster. Försöker igen om Google begränsar."""
+    """Returnerar lista av poster. Försöker igen om Google begränsar, inom tidsbudgeten."""
+    if time.time() - START > BUDGET:
+        statistik["misslyckade"] += 1
+        fel.append(f"Hann inte (tidsgräns): {q} ({region})")
+        return []
     qq = q + (f" when:{nar}" if nar else "")
     url = f"https://news.google.com/rss/search?q={urllib.parse.quote(qq)}&{REGION[region]}"
     statistik["sokningar"] += 1
-    for forsok in range(4):
+    sista = None
+    for forsok in range(3):
         try:
             text, _ = hamta(url)
             if not text.lstrip().startswith("<?xml"):
-                raise ValueError("inte RSS (begränsat?)")
+                raise ValueError("inte RSS – Google begränsar")
             text = re.sub(r"<title>[^<]*</title>", "", text, count=1)
             root = ET.fromstring(text)
             ut = []
@@ -82,11 +93,15 @@ def google(q, region="sv", nar="3d"):
                     d = None
                 ut.append({"kalla": kalla, "rubrik": html.unescape(rubrik), "datum": d,
                            "google": it.findtext("link") or "", "kalla_url": (it.find("source").get("url") if it.find("source") is not None else "")})
-            time.sleep(1.2)
+            statistik["i_rad"] = 0
+            time.sleep(1.5)
             return ut
         except Exception as e:  # noqa: BLE001
-            time.sleep(20 * (forsok + 1))
             sista = e
+            statistik["i_rad"] += 1
+            vanta = min(90, 10 * statistik["i_rad"])
+            logg(f"  fel ({e}), väntar {vanta} s: {q[:60]}")
+            time.sleep(vanta)
     statistik["misslyckade"] += 1
     fel.append(f"Google Nyheter: {q} ({region}) – {sista}")
     return []
@@ -184,11 +199,13 @@ def sokningar(snabb=False):
     for m in ("NM tyngdlyftning", "Lag-SM tyngdlyftning", "Junior-SM tyngdlyftning", "SM tyngdlyftning",
               "EM tyngdlyftning", "VM tyngdlyftning", "OS tyngdlyftning"):
         s.append(("sv", m, "mästerskap"))
-    for n in lyftare:
-        s.append(("sv", f'"{n}" (tyngdlyftning OR tyngdlyftare OR tyngdlyftaren)', f"lyftare: {n}"))
-        s.append(("sv", f'"{n}"', f"lyftare (namn): {n}"))
-    for n in forbund:
-        s.append(("sv", f'"{n}" (tyngdlyftning OR tyngdlyftare OR tyngdlyftningsförbundet OR landslaget)', f"förbund: {n}"))
+    for b in bitar(lyftare, 6):
+        namn = " OR ".join(f'"{n}"' for n in b)
+        s.append(("sv", f"({namn}) (tyngdlyftning OR tyngdlyftare OR tyngdlyftaren)", "lyftare"))
+        s.append(("sv", f"({namn})", "lyftare (bara namn)"))
+    for b in bitar(forbund, 6):
+        namn = " OR ".join(f'"{n}"' for n in b)
+        s.append(("sv", f"({namn}) (tyngdlyftning OR tyngdlyftare OR tyngdlyftningsförbundet OR landslaget)", "förbund"))
     for o in ("tyngdlyftning", "tyngdlyftare", "lyftare"):
         s.append(("sv", f"site:sverigesradio.se {o}", "Sveriges Radio"))
     for b in bitar(efternamn, 8):
@@ -294,7 +311,11 @@ def main():
     snabb = "--snabb" in sys.argv
     lankar, rubriker = befintliga()
     fynd = {}
-    for region, q, varfor in sokningar(snabb):
+    lista = sokningar(snabb)
+    logg(f"{len(lista)} sökningar att köra")
+    for nr, (region, q, varfor) in enumerate(lista, 1):
+        if nr % 20 == 0:
+            logg(f"sökning {nr}/{len(lista)}, {len(fynd)} träffar hittills, {statistik['misslyckade']} misslyckade")
         for p in google(q, region):
             if not p["datum"] or (IDAG - p["datum"]).days > 3:
                 continue
@@ -304,25 +325,33 @@ def main():
             post = fynd.setdefault(nyckel, {**p, "sprak": SPRAK.get(region[:2], ""), "hittad_via": []})
             if varfor not in post["hittad_via"]:
                 post["hittad_via"].append(varfor)
-    print(f"{statistik['sokningar']} sökningar, {len(fynd)} nya träffar efter dubblettrensning")
+    logg(f"{statistik['sokningar']} sökningar, {len(fynd)} nya träffar efter dubblettrensning")
+    allanamn = [*json.loads(SOKORD.read_text(encoding="utf-8")).get("lyftare", []),
+                *[p["namn"] for p in json.loads(SOKORD.read_text(encoding="utf-8")).get("forbund", [])]]
 
     kandidater, bort = [], []
-    for post in fynd.values():
+    for nr, post in enumerate(fynd.values(), 1):
+        if nr % 10 == 0:
+            logg(f"artikel {nr}/{len(fynd)}")
         lank = riktig_adress(post["google"]) or post["google"]
         if lank.rstrip("/") in lankar or uteslut(lank, post["kalla"]):
             continue
         art = las_artikel(lank) if "news.google.com" not in lank else {"las": False, "ingress": "", "text": "", "media": []}
         text = art["text"]
+        namn_i = [n for n in allanamn if n.lower() in (post["rubrik"] + " " + text).lower()]
         i_rubrik = bool(SPORTORD.search(post["rubrik"]))
         i_text = SPORTORD.findall(text)
         annan = ANNAN_SPORT.findall(post["rubrik"] + " " + text)
-        # datumkontroll: finns samma rubrik tidigare?
+        # datumkontroll: finns samma rubrik tidigare? (bara för troliga kandidater)
         tidigast = post["datum"]
-        for p in google(f'"{post["rubrik"]}"', "sv" if not post["sprak"] else "en", nar=None)[:10]:
-            if p["datum"] and norm(p["rubrik"]) == norm(post["rubrik"]) and p["datum"] < tidigast:
-                tidigast = p["datum"]
+        if i_rubrik or i_text:
+            for p in google(f'"{post["rubrik"]}"', "sv" if not post["sprak"] else "en", nar=None)[:10]:
+                if p["datum"] and norm(p["rubrik"]) == norm(post["rubrik"]) and p["datum"] < tidigast:
+                    tidigast = p["datum"]
         k = {"kalla": post["kalla"], "rubrik": post["rubrik"], "lank": lank, "datum": post["datum"].isoformat(),
              "hittad_via": post["hittad_via"], "sprak": post["sprak"], "las": art["las"], "media": art["media"]}
+        if namn_i:
+            k["namn"] = namn_i
         if tidigast < post["datum"]:
             k["tidigaste_datum"] = tidigast.isoformat()
             k["aterpublicerad"] = (IDAG - tidigast).days > 14
@@ -356,7 +385,7 @@ def main():
         "troligen_inte": [{k: v for k, v in x.items() if k in ("kalla", "rubrik", "lank", "datum", "hittad_via", "annan_sport")} for x in bort],
         "fel": fel,
     }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"{len(kandidater)} kandidater, {len(bort)} troligen inte, {len(special)} från specialkällor, "
+    logg(f"{len(kandidater)} kandidater, {len(bort)} troligen inte, {len(special)} från specialkällor, "
           f"{len(video)} Expressen-klipp, {len(fel)} fel")
 
 
