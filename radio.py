@@ -131,8 +131,20 @@ def personer():
     return ut
 
 
-def liknar(a, b, grans=0.84):
-    return a == b or (len(a) >= 5 and difflib.SequenceMatcher(None, a, b).ratio() >= grans)
+def ljud(w):
+    """Förenklar stavning som låter likadant: Wikingsson=Vikingsson, Sund=Sundh, Viktor=Victor."""
+    for a, b in (("ph", "f"), ("ck", "k"), ("dh", "d"), ("th", "t"), ("w", "v"), ("c", "k"), ("z", "s"),
+                 ("é", "e"), ("ü", "y"), ("qu", "kv"), ("q", "k"), ("x", "ks")):
+        w = w.replace(a, b)
+    w = re.sub(r"(.)\1+", r"\1", w)  # dubbelbokstäver
+    return w[:-1] if len(w) > 4 and w.endswith("h") else w
+
+
+def liknar(a, b, grans=0.88):
+    a, b = ljud(a), ljud(b)
+    if a == b:
+        return True
+    return len(b) >= 6 and a[:1] == b[:1] and difflib.SequenceMatcher(None, a, b).ratio() >= grans
 
 
 def traffar_i(segment, folk):
@@ -157,17 +169,25 @@ def traffar_i(segment, folk):
         for p in folk:
             if not any(liknar(w, p["efter"]) for w in ord_):
                 continue
-            hela = p["hela"] in fonster or p["for"] in fonster.split()
+            exakt = any(ljud(w) == ljud(p["efter"]) for w in ord_)
+            hela = any(liknar(w, p["for"]) for w in fonster.split())
             distinkt = p["efter"] not in VANLIGA and not p["efter"].endswith("sson") and len(p["efter"]) >= 5
             # vanliga namn kräver förnamn + tyngdlyftningsord i närheten; ovanliga räcker med efternamnet
-            if (hela and (distinkt or sport)) or (distinkt and sport):
-                namn[p["namn"]] = 2
-            elif distinkt:
-                namn[p["namn"]] = 1
-        # om förnamn+efternamn stämmer för någon, släpp andra med samma efternamn som bara matchade på efternamn
-        if any(v == 2 for v in namn.values()):
-            namn = {k: v for k, v in namn.items() if v == 2}
-        traff |= set(namn)
+            if hela and (distinkt or sport):
+                niva = 3
+            elif distinkt and sport:
+                niva = 2
+            elif distinkt and exakt:
+                niva = 1
+            else:
+                continue
+            namn[p["namn"]] = (niva, ljud(p["efter"]))
+        # samma efternamn (t.ex. Victor och Henrik Sundh): behåll bara den som passar bäst
+        basta = {}
+        for n, (niva, efter) in namn.items():
+            basta[efter] = max(basta.get(efter, 0), niva)
+        namn = {n for n, (niva, efter) in namn.items() if niva == basta[efter]}
+        traff |= namn
         if traff:
             rader.append((i, traff))
     grupper = []
@@ -219,8 +239,7 @@ def skriv(args):
     with wave.open(str(wav), "rb") as w:
         ljud = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768.0
     segs, _ = modell.transcribe(ljud, language="sv", beam_size=1, vad_filter=True,
-                                condition_on_previous_text=False,
-                                initial_prompt="Tyngdlyftning, ryck och stöt. " + ", ".join(p["namn"] for p in personer()[:40]))
+                                condition_on_previous_text=False)
     segment = []
     for s in segs:
         segment.append({"start": s.start, "slut": s.end, "text": s.text})
