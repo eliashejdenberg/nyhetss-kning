@@ -43,6 +43,7 @@ for m in ITEM.finditer(SRC):
         "Rubrik": ren(m["title"]),
         "Sammanfattning": ren(m["p"]),
         "Länk": html.unescape(m["href"]),
+        "Lyssna från": (re.search(r'data-start="([^"]+)"', m.group(0)) or [None, ""])[1],
     })
 artiklar.sort(key=lambda a: a["Datum"], reverse=True)
 
@@ -110,12 +111,12 @@ ws.append(["Källa: redaktionella medier via Google Nyheter (tidigast 2003), Exp
 ws.append(["Svenska Tyngdlyftningsförbundets egna nyheter och pressmeddelanden ingår inte."])
 
 ws = wb.create_sheet("Artiklar")
-kol = ["Datum", "År", "Källa", "Etiketter", "Rubrik", "Sammanfattning", "Länk"]
-rubriker(ws, kol, [12, 7, 24, 18, 60, 60, 50])
+kol = ["Datum", "År", "Källa", "Etiketter", "Rubrik", "Sammanfattning", "Länk", "Lyssna från"]
+rubriker(ws, kol, [12, 7, 24, 18, 60, 60, 50, 12])
 for a in artiklar:
     ws.append([a[k] for k in kol])
     lanka(ws.cell(row=ws.max_row, column=7), a["Länk"])
-ws.auto_filter.ref = f"A1:G{ws.max_row}"
+ws.auto_filter.ref = f"A1:H{ws.max_row}"
 
 ws = wb.create_sheet("Öppna arkiv")
 kol2 = ["år", "arkiv", "typ", "källa", "titel", "beskrivning", "länk", "rättigheter"]

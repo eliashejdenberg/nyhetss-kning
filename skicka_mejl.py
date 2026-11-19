@@ -56,6 +56,7 @@ def artiklar():
             "etiketter": [ren(x) for x in re.findall(r'<span class="lang">(.*?)</span>', m["src"])],
             "rubrik": ren(m["title"]),
             "text": ren(m["p"]),
+            "start": (re.search(r'data-start="([^"]+)"', m.group(0)) or [None, ""])[1],
         })
     return ut
 
@@ -95,7 +96,8 @@ def bygg_mejl(nya, sammanfattning):
     rader = []
     for a in nya:
         et = f" [{', '.join(a['etiketter'])}]" if a["etiketter"] else ""
-        text.append(f"{a['datum']} · {a['kalla']}{et}\n{a['rubrik']}\n{a['lank']}\n" + (f"{a['text']}\n" if a["text"] else ""))
+        text.append(f"{a['datum']} · {a['kalla']}{et}\n{a['rubrik']}\n{a['lank']}\n"
+                    + (f"Lyssna från {a['start']}\n" if a["start"] else "") + (f"{a['text']}\n" if a["text"] else ""))
         etiketter = "".join(
             f'<span style="display:inline-block;margin-left:6px;padding:1px 6px;background:{GUL};color:#000;'
             f'font-size:11px;font-weight:bold;letter-spacing:.05em">{html.escape(e)}</span>' for e in a["etiketter"])
@@ -105,6 +107,8 @@ def bygg_mejl(nya, sammanfattning):
             f'<span style="text-transform:uppercase;letter-spacing:.04em;font-weight:bold">{html.escape(a["kalla"])}</span>{etiketter}</div>'
             f'<div style="margin-top:4px;font-size:17px;font-weight:bold"><a href="{html.escape(a["lank"])}" '
             f'style="color:{BLA};text-decoration:none">{html.escape(a["rubrik"])}</a></div>'
+            + (f'<div style="margin-top:6px"><span style="display:inline-block;padding:3px 8px;background:#e9edf5;color:{BLA};'
+               f'font-size:12px;font-weight:600">&#9654; Lyssna från <b>{html.escape(a["start"])}</b></span></div>' if a["start"] else "")
             + (f'<div style="margin-top:4px;font-size:14px;color:#404040">{html.escape(a["text"])}</div>' if a["text"] else "")
             + "</td></tr>")
     sam_html = ""

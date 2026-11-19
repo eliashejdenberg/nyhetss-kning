@@ -49,6 +49,7 @@ def items(block):
                 "href": html.unescape(m["href"]),
                 "title": html.unescape(re.sub(r"<[^>]+>", "", m["title"])),
                 "p": html.unescape(m["p"] or ""),
+                "start": (re.search(r'data-start="([^"]+)"', m.group(0)) or [None, ""])[1],
             }
         )
     out.sort(key=lambda x: x["date"], reverse=True)
@@ -75,13 +76,34 @@ def logga(url, kalla):
     return f'<span class="logo logo-txt" aria-hidden="true">{bokstav}</span>'
 
 
+# Tidpunkt i långa sändningar (data-start="1:15:05" på länken i src/sida.html)
+SPELA = '<svg width="9" height="10" viewBox="0 0 9 10" aria-hidden="true" focusable="false"><path d="M0 0l9 5-9 5z" fill="currentColor"/></svg>'
+
+
+def start_etikett(t, klass="start"):
+    return (f'<span class="{klass}" title="Inslaget börjar {html.escape(t)} in i sändningen">'
+            f'{SPELA}<span>Lyssna från <b>{html.escape(t)}</b></span></span>') if t else ""
+
+
+START_CSS = """.start{display:inline-flex;align-items:center;gap:6px;width:max-content;max-width:100%;padding:3px 8px;
+  background:#e9edf5;color:#1d428e;font-size:12px;font-weight:600;line-height:1.3;font-variant-numeric:tabular-nums}
+.start b{font-weight:700}
+.start svg{flex:none}"""
+
 LOGGA_CSS = """<style>
 .logo{width:16px;height:16px;flex:none;border-radius:3px;vertical-align:-3px;margin-right:6px}
 .logo-txt{display:inline-flex;align-items:center;justify-content:center;background:#e9edf5;color:#1d428e;font-size:10px;font-weight:700;line-height:1}
 .feed .item .src::before{content:none}
 .feed .item .src{display:flex;align-items:center;flex-wrap:wrap;row-gap:2px}
 .feed .item .src .logo{vertical-align:0}
+.feed .item .start{grid-column:1/-1;justify-self:start;margin-top:2px}
+""" + START_CSS + """
 </style>"""
+
+
+def med_starttid(text):
+    return re.sub(r'(<a href="[^"]*"[^>]*data-start="([^"]+)"[^>]*>.*?</a>)',
+                  lambda m: m.group(1) + start_etikett(m.group(2)), text, flags=re.S)
 
 
 def med_loggor(text):
@@ -326,7 +348,7 @@ def write(name, text):
 
 
 # index.html – hela sidan
-write("index.html", HEAD + LOGGA_CSS + "\n</head>\n<body>\n" + med_loggor(SRC) + "\n" + PAGINERING + "\n" + HOJD_JS + "\n</body>\n</html>\n")
+write("index.html", HEAD + LOGGA_CSS + "\n</head>\n<body>\n" + med_starttid(med_loggor(SRC)) + "\n" + PAGINERING + "\n" + HOJD_JS + "\n</body>\n</html>\n")
 
 
 # RSS-flöden
@@ -346,7 +368,7 @@ def rss(name, title, desc, rows):
     for r in rows[:30]:
         dt = datetime.strptime(r["date"], "%Y-%m-%d").replace(hour=6, tzinfo=timezone.utc)
         kalla = r["src"] + (f" ({', '.join(r['lang'])})" if r["lang"] else "")
-        description = kalla + (" – " + r["p"] if r["p"] else "")
+        description = kalla + (" – " + r["p"] if r["p"] else "") + (f" Lyssna från {r['start']}." if r["start"] else "")
         parts += [
             "<item>",
             f"<title>{html.escape(r['title'])}</title>",
@@ -368,7 +390,8 @@ rss("feed.xml", "Tyngdlyftning i media",
 li = "\n".join(
     f'<li><span class="d">{r["date"]}</span><span class="s">{logga(r["href"], r["src"])}{html.escape(r["src"])}'
     + "".join(f'<span class="lg">{html.escape(x)}</span>' for x in r["lang"]) + '</span>'
-    f'<a href="{html.escape(r["href"])}" target="_blank" rel="noopener">{html.escape(r["title"])}</a></li>'
+    f'<a href="{html.escape(r["href"])}" target="_blank" rel="noopener">{html.escape(r["title"])}</a>'
+    + start_etikett(r["start"]) + '</li>'
     for r in alla[:20]
 )
 updated = re.search(r"Senast uppdaterad <b>(.*?)</b>", SRC)
@@ -393,6 +416,8 @@ li[hidden]{{display:none}}
 a{{grid-column:1/-1;color:var(--blue);font-weight:700;text-decoration:none}}
 a:hover,a:focus-visible{{text-decoration:underline}}
 a:focus-visible{{outline:2px solid var(--yellow);outline-offset:2px}}
+li .start{{grid-column:1/-1;justify-self:start;margin-top:4px}}
+{START_CSS}
 .f{{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--muted)}}
 .f a{{grid-column:auto;font-weight:600}}
 </style>
@@ -424,7 +449,8 @@ def rull_post(r):
     tag = "".join(f'<span class="lg">{html.escape(x)}</span>' for x in r["lang"])
     return (f'<a class="p" href="{html.escape(r["href"])}" target="_blank" rel="noopener">'
             f'<span class="s">{logga(r["href"], r["src"])}{html.escape(r["src"])}{tag}</span>'
-            f'<span class="t">{html.escape(r["title"])}</span></a>')
+            f'<span class="t">{html.escape(r["title"])}</span>'
+            + (f'<span class="st">{SPELA}{html.escape(r["start"])}</span>' if r["start"] else "") + '</a>')
 
 
 rull = "".join(rull_post(r) for r in alla[:10])
@@ -452,6 +478,8 @@ html,body{{margin:0;background:var(--blue);font-family:var(--font)}}
 .p:focus-visible{{outline:2px solid var(--yellow);outline-offset:-4px}}
 .s{{display:inline-flex;align-items:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#c9d4ec}}
 .t{{font-weight:600}}
+.st{{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--yellow);font-variant-numeric:tabular-nums}}
+.ljus .st{{color:var(--blue)}}
 .logo{{width:16px;height:16px;flex:none;border-radius:3px;margin-right:6px;background:#fff}}
 .logo-txt{{display:inline-flex;align-items:center;justify-content:center;background:#e9edf5;color:#1d428e;font-size:10px;font-weight:700;line-height:1}}
 .lg{{display:inline-block;margin-left:6px;padding:1px 6px;background:var(--yellow);color:#000;font-size:10px;font-weight:700;letter-spacing:.06em}}
