@@ -1,0 +1,40 @@
+name: Morgonens nyhetssökning
+
+# Kör alla sökningar (Google Nyheter, Expressen TV, Fygstermedia,
+# Weightlifting House), öppnar artiklarna och skriver state/kandidater.json.
+# Claude-körningen kl. 06:47 läser bara den filen och gör bedömningen.
+on:
+  schedule:
+    - cron: "11 4 * * *"   # 05:11 svensk vintertid, 06:11 sommartid
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sok
+  cancel-in-progress: false
+
+jobs:
+  sok:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Sök
+        run: python sok.py
+      - name: Spara kandidaterna
+        run: |
+          git config user.name "nyhets-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/kandidater.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Kandidater $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep $((i * 10))
+          done
+          exit 1
