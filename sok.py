@@ -66,7 +66,12 @@ def hamta(url, data=None, headers=None, tid=25, max_bytes=2_000_000):
 
 
 # ---------- Google Nyheter ----------
-def google(q, region="sv", nar="3d"):
+NAR = "3d"
+DAGAR = 3
+
+
+def google(q, region="sv", nar="standard"):
+    nar = NAR if nar == "standard" else nar
     """Returnerar lista av poster. Försöker igen om Google begränsar, inom tidsbudgeten."""
     if time.time() - START > BUDGET:
         statistik["misslyckade"] += 1
@@ -312,7 +317,19 @@ def expressen_video(lankar):
 
 # ---------- huvudprogram ----------
 def main():
+    global NAR, DAGAR
     snabb = "--snabb" in sys.argv
+    if "--dagar" in sys.argv:  # för test: sök längre bakåt
+        DAGAR = int(sys.argv[sys.argv.index("--dagar") + 1])
+        NAR = f"{DAGAR}d"
+    if "--bara-sok" in sys.argv:  # för test: lista bara sökträffarna
+        tracka = {}
+        for region, q, varfor in sokningar():
+            for p in google(q, region):
+                if p["datum"] and (IDAG - p["datum"]).days <= DAGAR:
+                    tracka.setdefault((norm(p["rubrik"]), norm(p["kalla"])), (p["datum"].isoformat(), p["kalla"], p["rubrik"], varfor))
+        print(json.dumps(sorted(tracka.values(), reverse=True), ensure_ascii=False))
+        return
     lankar, rubriker = befintliga()
     fynd = {}
     lista = sokningar(snabb)
@@ -321,7 +338,7 @@ def main():
         if nr % 20 == 0:
             logg(f"sökning {nr}/{len(lista)}, {len(fynd)} träffar hittills, {statistik['misslyckade']} misslyckade")
         for p in google(q, region):
-            if not p["datum"] or (IDAG - p["datum"]).days > 3:
+            if not p["datum"] or (IDAG - p["datum"]).days > DAGAR:
                 continue
             nyckel = (norm(p["rubrik"]), norm(p["kalla"]))
             if nyckel[0] in rubriker or uteslut(p["kalla_url"], p["kalla"]):

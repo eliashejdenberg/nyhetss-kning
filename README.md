@@ -25,6 +25,14 @@ Uppdateras automatiskt varje morgon cirka 06:47.
 - `arkiv/oppna_arkiv.json` innehåller bilder, film och ljud från öppna arkiv (Europeana, Internet Archive, Filmarkivet.se, Sveriges Radio).
 - Ändra inte de byggda filerna för hand; de skrivs över vid nästa körning.
 
+## Morgonens nyhetssökning (GitHub Actions)
+
+`.github/workflows/sok.yml` kör `sok.py` varje morgon kl. 05:11 (06:11 sommartid). Skriptet gör alla sökningar i Google Nyheter (svenska och utländska, namnen i `sokord.json`), läser Expressens sportvideoflöde, Fygstermedia och Weightlifting House, översätter Google-länkar till riktiga adresser, öppnar artiklarna och letar efter tyngdlyftningsord, video och ljud, kontrollerar återpublicerade datum och tar bort det som redan finns på sidan. Resultatet hamnar i `state/kandidater.json`.
+
+Claude-körningen kl. 06:47 läser bara den filen, bedömer kandidaterna och uppdaterar sidan. Det gör den betydligt billigare än när Claude gjorde sökningarna själv.
+
+Test: `python3 sok.py --dagar 14 --bara-sok` listar alla sökträffar 14 dagar bakåt.
+
 ## Sökning i P4-radio
 
 Långa direktsändningar (t.ex. Eftermiddag i P4 Halland) har bara en allmän titel, så intervjuer i dem syns inte i någon nyhetssökning. `.github/workflows/radio.yml` laddar därför varje kväll ner ljudet för programmen i `radio.json` via Sveriges Radios öppna API, skriver ut talet med svensk taligenkänning (KBLab:s Whisper-modell) och söker efter tyngdlyftningsord och namnen i `sokord.json`.
