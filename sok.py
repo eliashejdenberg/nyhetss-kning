@@ -192,7 +192,10 @@ def sokningar(snabb=False):
     d = json.loads(SOKORD.read_text(encoding="utf-8"))
     lyftare = d.get("lyftare", [])
     forbund = [p["namn"] for p in d.get("forbund", [])]
-    efternamn = sorted({n.split()[-1] for n in lyftare})
+    vanliga = {"lind", "ferm", "lang", "roos", "rönn", "öhman", "ågren", "kraft", "berglund", "lindqvist", "almroth", "reiser"}
+    # bara ovanliga efternamn – vanliga (Andersson, Lind …) ger träffar på allt
+    efternamn = sorted({n.split()[-1] for n in lyftare
+                        if not n.split()[-1].lower().endswith("sson") and n.split()[-1].lower() not in vanliga})
     s = [("sv", 'tyngdlyftning OR tyngdlyftare OR tyngdlyftaren OR tyngdlyftningen OR tyngdlyftningsförbundet OR "ryck och stöt"', "allmän")]
     if snabb:
         return s
@@ -208,12 +211,12 @@ def sokningar(snabb=False):
         s.append(("sv", f"({namn}) (tyngdlyftning OR tyngdlyftare OR tyngdlyftningsförbundet OR landslaget)", "förbund"))
     for o in ("tyngdlyftning", "tyngdlyftare", "lyftare"):
         s.append(("sv", f"site:sverigesradio.se {o}", "Sveriges Radio"))
-    for b in bitar(efternamn, 8):
-        s.append(("sv", "site:sverigesradio.se (" + " OR ".join(f'"{e}"' for e in b) + ")", "Sveriges Radio (efternamn)"))
+    for e in efternamn:
+        s.append(("sv", f'site:sverigesradio.se "{e}"', f"Sveriges Radio: {e}"))
     for o in ("site:hallandsposten.se tyngdlyftning", "site:hallandsposten.se lyftare", "site:hn.se tyngdlyftning"):
         s.append(("sv", o, "Halland"))
-    for b in bitar(efternamn, 8):
-        s.append(("sv", "site:hallandsposten.se (" + " OR ".join(f'"{e}"' for e in b) + ")", "Halland (efternamn)"))
+    for e in efternamn:
+        s.append(("sv", f'site:hallandsposten.se "{e}"', f"Hallandsposten: {e}"))
     # utländska
     for reg in ("en", "en-gb"):
         for q in ('"Swedish weightlifter"', '"Swedish Weightlifting Federation"', "Sweden weightlifting"):
