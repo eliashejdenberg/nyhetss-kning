@@ -141,10 +141,14 @@ def ljud(w):
 
 
 def liknar(a, b, grans=0.88):
-    a, b = ljud(a), ljud(b)
+    """a = ord i utskriften, b = namn. Lika ljud räcker bara om stavningen också är nära
+    (annars blir t.ex. Lithén = "liten")."""
+    ra = difflib.SequenceMatcher(None, a, b).ratio()
     if a == b:
         return True
-    return len(b) >= 6 and a[:1] == b[:1] and difflib.SequenceMatcher(None, a, b).ratio() >= grans
+    if ljud(a) == ljud(b):
+        return ra >= 0.8
+    return len(b) >= 6 and a[:1] == b[:1] and ra >= grans
 
 
 def traffar_i(segment, folk):
@@ -169,7 +173,7 @@ def traffar_i(segment, folk):
         for p in folk:
             if not any(liknar(w, p["efter"]) for w in ord_):
                 continue
-            exakt = any(ljud(w) == ljud(p["efter"]) for w in ord_)
+            exakt = p["efter"] in ord_
             hela = any(liknar(w, p["for"]) for w in fonster.split())
             distinkt = p["efter"] not in VANLIGA and not p["efter"].endswith("sson") and len(p["efter"]) >= 5
             # vanliga namn kräver förnamn + tyngdlyftningsord i närheten; ovanliga räcker med efternamnet
