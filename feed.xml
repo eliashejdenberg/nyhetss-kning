@@ -6,7 +6,15 @@
 <atom:link href="https://eliashejdenberg.github.io/nyhetss-kning/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Daglig bevakning av svensk tyngdlyftning i svenska och utländska redaktionella medier.</description>
 <language>sv</language>
-<lastBuildDate>Wed, 18 Nov 2026 06:08:08 +0000</lastBuildDate>
+<lastBuildDate>Thu, 19 Nov 2026 06:06:23 +0000</lastBuildDate>
+<item>
+<title>Anette tog en tung seger i Portugal</title>
+<link>https://www.lokalpressen.se/anette-tog-en-tung-seger-i-portugal-6.2.12432.fc80aa0589</link>
+<guid isPermaLink="false">Lokalpressen|Anette tog en tung seger i Portugal</guid>
+<pubDate>Wed, 18 Nov 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Lokalpressen</source>
+<description>Lokalpressen – Om veteranlyftaren Anette Nordgren från Floda och hennes seger vid en mastertävling i Lissabon.</description>
+</item>
 <item>
 <title>Succén på VM – slog svenskt och nordiskt rekord</title>
 <link>https://www.expressen.se/tv/sport/succen-pa-vm-slog-svenskt-och-nordiskt-rekord/</link>
@@ -238,14 +246,6 @@
 <pubDate>Sat, 13 Jun 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">Sveriges Radio</source>
 <description>Sveriges Radio</description>
-</item>
-<item>
-<title>Moraläraren starkast i Sverige: “Helt otroligt”</title>
-<link>https://www.moratidning.se/mora/moralararen-starkast-i-sverige-helt-otroligt-GOdiz/</link>
-<guid isPermaLink="false">Mora Tidning|Moraläraren starkast i Sverige: “Helt otroligt”</guid>
-<pubDate>Sat, 06 Jun 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Mora Tidning</source>
-<description>Mora Tidning</description>
 </item>
 </channel>
 </rss>
