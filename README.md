@@ -31,7 +31,7 @@ Långa direktsändningar (t.ex. Eftermiddag i P4 Halland) har bara en allmän ti
 
 Träffarna mejlas som "Möjliga radioinslag" med program, datum, tidpunkt i sändningen och ett utdrag ur utskriften. De läggs inte in på sidan automatiskt – lyssna och avgör. Genomsökta avsnitt sparas i `state/radio_kollade.json` och träffarna i `state/radio_traffar.json`.
 
-Bevakade program: Morgon och Eftermiddag i P4 Halland, P4 Kristianstad, P4 Skaraborg och P4 Dalarna. Lägg till fler i `radio.json` (program-id finns i SR:s API: `https://api.sr.se/api/v2/programs/index?channelid=KANAL&format=json`).
+Bevakade program: Morgon och Eftermiddag i P4 Halland, P4 Kristianstad, P4 Skaraborg, P4 Dalarna och P4 Sörmland. Lägg till fler i `radio.json` (program-id finns i SR:s API: `https://api.sr.se/api/v2/programs/index?channelid=KANAL&format=json`).
 
 Testa på enskilda avsnitt: Actions → Sök i P4-radio → Run workflow, fyll i avsnittens id (siffrorna i `sverigesradio.se/avsnitt/…`).
 
