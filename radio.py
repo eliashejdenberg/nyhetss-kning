@@ -214,7 +214,11 @@ def skriv(args):
     subprocess.run(["ffmpeg", "-nostdin", "-loglevel", "error", "-y", "-i", "ljud.m4a", "-ac", "1", "-ar", "16000", str(wav)], check=True)
     print(f"ljud hämtat på {time.time() - t0:.0f} s")
     modell, modellnamn = ladda_modell()
-    segs, _ = modell.transcribe(str(wav), language="sv", beam_size=1, vad_filter=True,
+    import wave
+    import numpy as np
+    with wave.open(str(wav), "rb") as w:
+        ljud = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768.0
+    segs, _ = modell.transcribe(ljud, language="sv", beam_size=1, vad_filter=True,
                                 condition_on_previous_text=False,
                                 initial_prompt="Tyngdlyftning, ryck och stöt. " + ", ".join(p["namn"] for p in personer()[:40]))
     segment = []
