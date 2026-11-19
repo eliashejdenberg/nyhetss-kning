@@ -211,12 +211,13 @@ def sokningar(snabb=False):
         s.append(("sv", f"({namn}) (tyngdlyftning OR tyngdlyftare OR tyngdlyftningsförbundet OR landslaget)", "förbund"))
     for o in ("tyngdlyftning", "tyngdlyftare", "lyftare"):
         s.append(("sv", f"site:sverigesradio.se {o}", "Sveriges Radio"))
+    idrott = "(tyngdlyftning OR tyngdlyftare OR lyfte OR lyftare OR lyft OR ryck OR stöt OR kilo OR VM OR EM OR SM OR landslaget)"
     for e in efternamn:
-        s.append(("sv", f'site:sverigesradio.se "{e}"', f"Sveriges Radio: {e}"))
+        s.append(("sv", f'site:sverigesradio.se "{e}" {idrott}', f"Sveriges Radio: {e}"))
     for o in ("site:hallandsposten.se tyngdlyftning", "site:hallandsposten.se lyftare", "site:hn.se tyngdlyftning"):
         s.append(("sv", o, "Halland"))
     for e in efternamn:
-        s.append(("sv", f'site:hallandsposten.se "{e}"', f"Hallandsposten: {e}"))
+        s.append(("sv", f'site:hallandsposten.se "{e}" {idrott}', f"Hallandsposten: {e}"))
     # utländska
     for reg in ("en", "en-gb"):
         for q in ('"Swedish weightlifter"', '"Swedish Weightlifting Federation"', "Sweden weightlifting"):
