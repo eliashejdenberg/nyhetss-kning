@@ -25,6 +25,16 @@ Uppdateras automatiskt varje morgon cirka 06:47.
 - `arkiv/oppna_arkiv.json` innehåller bilder, film och ljud från öppna arkiv (Europeana, Internet Archive, Filmarkivet.se, Sveriges Radio).
 - Ändra inte de byggda filerna för hand; de skrivs över vid nästa körning.
 
+## Sökning i P4-radio
+
+Långa direktsändningar (t.ex. Eftermiddag i P4 Halland) har bara en allmän titel, så intervjuer i dem syns inte i någon nyhetssökning. `.github/workflows/radio.yml` laddar därför varje kväll ner ljudet för programmen i `radio.json` via Sveriges Radios öppna API, skriver ut talet med svensk taligenkänning (KBLab:s Whisper-modell) och söker efter tyngdlyftningsord och namnen i `sokord.json`.
+
+Träffarna mejlas som "Möjliga radioinslag" med program, datum, tidpunkt i sändningen och ett utdrag ur utskriften. De läggs inte in på sidan automatiskt – lyssna och avgör. Genomsökta avsnitt sparas i `state/radio_kollade.json` och träffarna i `state/radio_traffar.json`.
+
+Bevakade program: Morgon och Eftermiddag i P4 Halland, P4 Kristianstad, P4 Skaraborg och P4 Dalarna. Lägg till fler i `radio.json` (program-id finns i SR:s API: `https://api.sr.se/api/v2/programs/index?channelid=KANAL&format=json`).
+
+Testa på enskilda avsnitt: Actions → Sök i P4-radio → Run workflow, fyll i avsnittens id (siffrorna i `sverigesradio.se/avsnitt/…`).
+
 ## Inbäddning i Sitevision utan rullningslist
 
 Iframen växer automatiskt med innehållet om sidan också laddar `inbadda.js` en gång:
