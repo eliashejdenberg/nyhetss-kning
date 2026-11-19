@@ -1,0 +1,13 @@
+{
+  "dagar_bakat": 2,
+  "program": [
+    {"id": 4380, "namn": "Morgon i P4 Halland", "kanal": "P4 Halland"},
+    {"id": 4027, "namn": "Eftermiddag i P4 Halland", "kanal": "P4 Halland"},
+    {"id": 3352, "namn": "Morgon i P4 Kristianstad", "kanal": "P4 Kristianstad"},
+    {"id": 2162, "namn": "Eftermiddag i P4 Kristianstad", "kanal": "P4 Kristianstad"},
+    {"id": 344, "namn": "Morgon i P4 Skaraborg", "kanal": "P4 Skaraborg"},
+    {"id": 399, "namn": "Eftermiddag i P4 Skaraborg", "kanal": "P4 Skaraborg"},
+    {"id": 2813, "namn": "Morgon i P4 Dalarna", "kanal": "P4 Dalarna"},
+    {"id": 4479, "namn": "Eftermiddag i P4 Dalarna", "kanal": "P4 Dalarna"}
+  ]
+}
