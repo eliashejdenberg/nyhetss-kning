@@ -1,5 +1,5 @@
 {
- "skapad": "2026-11-19T22:43+01:00",
+ "skapad": "2026-11-20T13:51+01:00",
  "sokningar": 114,
  "misslyckade_sokningar": 0,
  "kandidater": [
@@ -21,6 +21,78 @@
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Svahns utspel: ”Jag var så jobbig”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/svahns-utspel-jag-var-sa-jobbig/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Grahn vann sprinten – Ekberg skrälltvåa",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/grahn-vann-sprinten-ekberg-skralltvaa/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Karlssons svar på Svahns utspel: ”Alltid stök”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/karlssons-svar-pa-svahns-utspel-alltid-stok/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Svahns glädje: ”Har aldrig hänt”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/svahns-gladje-har-aldrig-hant/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Allsvenskan avgörs av Blåvitt: ”En nyckelroll i guldstriden”",
+   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/allsvenskan-avgors-av-blavitt-en-nyckelroll-i-guldstriden/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "OS-guldmedaljören bäst i Bruksvallarnas sprint",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/os-guldmedaljoren-bast-i-bruksvallarnas-sprint/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Halfvarsson efter uttåget: ”Struligt”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/halfvarsson-efter-uttaget-struligt/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Angers ord efter fiaskostarten",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/angers-ord-efter-fiaskostarten/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Genborg visar upp hattrickpucken",
+   "lank": "https://www.expressen.se/tv/sport/hockey/shl/genborg-visar-upp-hattrickpucken/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Anton Grahn visade upp sig i Sverigepremiären",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/anton-grahn-visade-upp-sig-i-sverigepremiaren/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Sundling starkast i sprintkvalet",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/sundling-starkast-i-sprintkvalet/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Tacklade Friedman ur matchen: ”Hans fel”",
+   "lank": "https://www.expressen.se/tv/sport/hockey/shl/tacklade-friedman-ur-matchen-hans-fel/",
+   "datum": "2026-11-19",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Sågar allt: ”Skäms – det är pinsamt”",
    "lank": "https://www.expressen.se/tv/sport/hockey/shl/sagar-allt-skams-det-ar-pinsamt/",
@@ -68,99 +140,8 @@
    "lank": "https://www.expressen.se/tv/sport/trav/vann-10-miljoner-efter-spontankopet-pa-bussen/",
    "datum": "2026-11-19",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Märta Rosenberg slår larm: \"Jorden gråter\"",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/marta-rosenberg-slar-larm-jorden-grater/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "NHL-puls: Wallstedt borde tjäna tio miljoner dollar",
-   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/nhl-puls-wallstedt-borde-tjana-tio-miljoner-dollar/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Stjärnorna har lika många poäng: ”Intresseklubben antecknar”",
-   "lank": "https://www.expressen.se/tv/sport/hockey/stjarnorna-har-lika-manga-poang-intresseklubben-antecknar/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Frida Karlsson hyllar pojkvännen: ”Gör supermycket jobb”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/frida-karlsson-hyllar-pojkvannen-gor-supermycket-jobb/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Pekas ut: de blir ministrar i skidlandslagets regering",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/pekas-ut-de-blir-ministrar-i-skidlandslagets-regering/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "”Det är dags att Kläbo fuckar upp”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/det-ar-dags-att-klabo-fuckar-upp/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "\"Calle Halfvarsson väljer Förrädarna framför VM\"",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/calle-halfvarsson-valjer-forradarna-framfor-vm/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Samtalet med Stina Blackstenius: ”Kommer vara här”",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/landslaget/beskedet-om-stina-blackstenius-kommer-vara-har/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Sanningen om Kulusevski: ”Som bäst centralt”",
-   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/sanningen-om-kulusevski-som-bast-centralt/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Chocken: Stjärnhästen dumpad på soptippen",
-   "lank": "https://www.expressen.se/tv/sport/trav/chocken-stjarnhasten-dumpad-pa-soptippen/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Vallaboden: Hemma hos Frida Karlsson i Sierra Nevada",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/skidsnack/vallaboden-hemma-hos-frida-karlsson-i-sierra-nevada/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Skavet med Elanga: ”Håller inte med honom om någonting”",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/landslaget/skavet-med-elanga-haller-inte-med-honom-om-nagonting/",
-   "datum": "2026-11-18",
-   "nämner_tyngdlyftning": false
   }
  ],
- "troligen_inte": [
-  {
-   "kalla": "Kristianstadsbladet",
-   "rubrik": "Chefens nya ord om den kritiserade vägen i Hanaskog",
-   "lank": "https://www.kristianstadsbladet.se/ostra-goinge/chefens-nya-ord-om-den-kritiserade-vagen-i-hanaskog/",
-   "datum": "2026-11-19",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  },
-  {
-   "kalla": "TV4 Nyheterna",
-   "rubrik": "Hennes bästa vän mördades av sin tränare",
-   "lank": "https://www.tv4.se/artikel/2TmTqHGVvFqqramm4RzwD5/hennes-baesta-vaen-moerdades-av-sin-traenare",
-   "datum": "2026-11-17",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  }
- ],
+ "troligen_inte": [],
  "fel": []
 }
