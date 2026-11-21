@@ -1,8 +1,21 @@
 {
- "skapad": "2026-11-21T06:51+01:00",
+ "skapad": "2026-11-21T13:37+01:00",
  "sokningar": 114,
  "misslyckade_sokningar": 0,
  "kandidater": [
+  {
+   "kalla": "Sveriges Radio",
+   "rubrik": "Ny studie: Styrketräning kan minska vallningar i klimakteriet",
+   "lank": "https://www.sverigesradio.se/artikel/ny-studie-styrketraning-kan-minska-vallningar-i-klimakteriet",
+   "datum": "2026-11-21",
+   "hittad_via": [
+    "Sveriges Radio"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
   {
    "kalla": "Sveriges Radio",
    "rubrik": "Lennart Jähkel och Rolf Lassgård: ”Det finns nåt vilt i det norrländska”",
@@ -16,19 +29,6 @@
    "media": [
     "LJUD"
    ],
-   "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Kristianstadsbladet",
-   "rubrik": "Chefens nya ord om den kritiserade vägen i Hanaskog",
-   "lank": "https://www.kristianstadsbladet.se/ostra-goinge/chefens-nya-ord-om-den-kritiserade-vagen-i-hanaskog/",
-   "datum": "2026-11-19",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [],
    "hint": "kunde inte läsa artikeln"
   },
   {
@@ -47,6 +47,48 @@
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Halfvarssons pik mot Myhlback: ”Dödligt virus?”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/halfvarssons-pik-mot-myhlback-dodligt-virus/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Poromaa funderar på ny karriär: ”Lastbilschaffis?”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/poromaa-funderar-pa-ny-karriar-lastbilschaffis/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Alvar Myhlback vinner trots sjukdom: ”Blev förbannad”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/alvar-myhlback-vinner-trots-sjukdom-blev-forbannad/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Hånet mot Alvar: ”Måste vara ett dödligt virus”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/hanet-mot-alvar-maste-vara-ett-dodligt-virus/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Truls Gisselman ska fira: ”Får se om man tar sig upp ur sängen”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/truls-gisselman-ska-fira-far-se-om-man-tar-sig-upp-ur-sangen/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Heino-Lindberg: ”För många importer i svensk hockey”",
+   "lank": "https://www.expressen.se/tv/sport/hockey/shl/heino-lindberg-for-manga-importer-i-svensk-hockey/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Edvin Törnbloms förälskelse i Färjestad BK ",
+   "lank": "https://www.expressen.se/tv/sport/hockey/shl/edvin-tornbloms-foralskelse-i-farjestad-bk-/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "SHL:s tio största kaptener - någonsin",
    "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/shls-tio-storsta-kaptener-nagonsin/",
@@ -124,50 +166,18 @@
    "lank": "https://www.expressen.se/tv/sport/langdskidor/angers-ord-efter-fiaskostarten/",
    "datum": "2026-11-20",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Genborg visar upp hattrickpucken",
-   "lank": "https://www.expressen.se/tv/sport/hockey/shl/genborg-visar-upp-hattrickpucken/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Anton Grahn visade upp sig i Sverigepremiären",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/anton-grahn-visade-upp-sig-i-sverigepremiaren/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Sundling starkast i sprintkvalet",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/sundling-starkast-i-sprintkvalet/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Tacklade Friedman ur matchen: ”Hans fel”",
-   "lank": "https://www.expressen.se/tv/sport/hockey/shl/tacklade-friedman-ur-matchen-hans-fel/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Sågar allt: ”Skäms – det är pinsamt”",
-   "lank": "https://www.expressen.se/tv/sport/hockey/shl/sagar-allt-skams-det-ar-pinsamt/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Frida Karlssons första ord efter rättegången: ”Tufft”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/skidsnack/frida-karlssons-forsta-ord-efter-rattegangen-tufft/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Frida Karlsson om hajpen: ”Ville bara få polisen efter mig”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/frida-karlsson-om-hajpen-ville-bara-fa-polisen-efter-mig/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
   }
  ],
- "troligen_inte": [],
+ "troligen_inte": [
+  {
+   "kalla": "Kristianstadsbladet",
+   "rubrik": "Chefens nya ord om den kritiserade vägen i Hanaskog",
+   "lank": "https://www.kristianstadsbladet.se/ostra-goinge/chefens-nya-ord-om-den-kritiserade-vagen-i-hanaskog/",
+   "datum": "2026-11-19",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ]
+  }
+ ],
  "fel": []
 }
