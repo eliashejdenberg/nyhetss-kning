@@ -1,15 +1,15 @@
 {
- "skapad": "2026-11-20T13:51+01:00",
+ "skapad": "2026-11-21T06:51+01:00",
  "sokningar": 114,
  "misslyckade_sokningar": 0,
  "kandidater": [
   {
    "kalla": "Sveriges Radio",
-   "rubrik": "Så försöker Sverige stoppa ryska skidåkare från VM",
-   "lank": "https://www.sverigesradio.se/avsnitt/sa-forsoker-sverige-stoppa-ryska-skidakare-fran-vm",
-   "datum": "2026-11-18",
+   "rubrik": "Lennart Jähkel och Rolf Lassgård: ”Det finns nåt vilt i det norrländska”",
+   "lank": "https://www.sverigesradio.se/avsnitt/lennart-jahkel-och-rolf-lassgard-det-finns-nat-vilt-i-det-norrlandska",
+   "datum": "2026-11-20",
    "hittad_via": [
-    "Sveriges Radio: Ahlm"
+    "lyftare (bara namn)"
    ],
    "sprak": "",
    "las": false,
@@ -17,10 +17,66 @@
     "LJUD"
    ],
    "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "Kristianstadsbladet",
+   "rubrik": "Chefens nya ord om den kritiserade vägen i Hanaskog",
+   "lank": "https://www.kristianstadsbladet.se/ostra-goinge/chefens-nya-ord-om-den-kritiserade-vagen-i-hanaskog/",
+   "datum": "2026-11-19",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "Sveriges Radio",
+   "rubrik": "Recensioner från Sveriges Radios kulturredaktion",
+   "lank": "https://www.sverigesradio.se/tema/recensioner-kultur",
+   "datum": "2026-11-19",
+   "hittad_via": [
+    "Sveriges Radio: Bohman"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
   }
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "SHL:s tio största kaptener - någonsin",
+   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/shls-tio-storsta-kaptener-nagonsin/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Oscar Linnér försvann: ”Vill in i värmen igen”",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/oscar-linner-forsvann-vill-in-i-varmen-igen/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Fredrik Johansson fälls – skriker ut sin smärta",
+   "lank": "https://www.expressen.se/tv/sport/bandy/fredrik-johansson-falls-skriker-ut-sin-smarta/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Nick Rajacic: ”Svåraste jobbet är att vara huvudtränare för Norrköping”",
+   "lank": "https://www.expressen.se/tv/sport/basket/nick-rajacic-svaraste-jobbet-ar-att-vara-huvudtranare-for-norrkoping/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Sankell avstängd efter pungattacken",
+   "lank": "https://www.expressen.se/tv/sport/innebandy/sankell-avstangd-efter-pungattacken/",
+   "datum": "2026-11-20",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Svahns utspel: ”Jag var så jobbig”",
    "lank": "https://www.expressen.se/tv/sport/langdskidor/svahns-utspel-jag-var-sa-jobbig/",
@@ -108,36 +164,6 @@
   {
    "rubrik": "Frida Karlsson om hajpen: ”Ville bara få polisen efter mig”",
    "lank": "https://www.expressen.se/tv/sport/langdskidor/frida-karlsson-om-hajpen-ville-bara-fa-polisen-efter-mig/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Max Verstappen rasar efter ändringen i formel 1",
-   "lank": "https://www.expressen.se/tv/sport/formel-1/max-verstappen-rasar-efter-andringen-i-formel-1/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Stoppades av polis: ”Handen har ställt till med jäkla saker”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/stoppades-av-polis-handen-har-stallt-till-med-jakla-saker/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "16-åringens avskedsvideo till United sågas: ”Exploaterande av barn”",
-   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/16-aringens-avskedsvideo-till-united-sagas-exploaterande-av-barn/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Expressen Fotboll DAM: Skadekaoset inför playoff-dramat oroar",
-   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/expressen-fotboll-dam-skadekaoset-infor-playoff-dramat-oroar/",
-   "datum": "2026-11-19",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Vann 10 miljoner – efter spontanköpet på bussen",
-   "lank": "https://www.expressen.se/tv/sport/trav/vann-10-miljoner-efter-spontankopet-pa-bussen/",
    "datum": "2026-11-19",
    "nämner_tyngdlyftning": false
   }
