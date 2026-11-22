@@ -1,5 +1,5 @@
 {
- "skapad": "2026-11-22T06:51+01:00",
+ "skapad": "2026-11-22T13:35+01:00",
  "sokningar": 114,
  "misslyckade_sokningar": 0,
  "kandidater": [
@@ -16,19 +16,6 @@
    "media": [
     "LJUD"
    ],
-   "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Kristianstadsbladet",
-   "rubrik": "Förlustsviten bruten för IF Kristianstad",
-   "lank": "https://www.kristianstadsbladet.se/sport/forlustsviten-bruten-for-if-kristianstad/",
-   "datum": "2026-11-21",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [],
    "hint": "kunde inte läsa artikeln"
   },
   {
@@ -58,23 +45,22 @@
     "LJUD"
    ],
    "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Kristianstadsbladet",
-   "rubrik": "Chefens nya ord om den kritiserade vägen i Hanaskog",
-   "lank": "https://www.kristianstadsbladet.se/ostra-goinge/chefens-nya-ord-om-den-kritiserade-vagen-i-hanaskog/",
-   "datum": "2026-11-19",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [],
-   "hint": "kunde inte läsa artikeln"
   }
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Huliganbråk i Stockholm – minst två till sjukhus",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/huliganbrak-i-stockholm-minst-tva-till-sjukhus/",
+   "datum": "2026-11-22",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Theo, 7, spelar hockey – med armprotes",
+   "lank": "https://www.expressen.se/tv/sport/hockey/theo-7-spelar-hockey-med-armprotes/",
+   "datum": "2026-11-22",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Gais–Västerås SK 3–1",
    "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/gais-vasteras-sk-3-1/",
@@ -182,20 +168,27 @@
    "lank": "https://www.expressen.se/tv/sport/hockey/shl/heino-lindberg-for-manga-importer-i-svensk-hockey/",
    "datum": "2026-11-21",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Edvin Törnbloms förälskelse i Färjestad BK ",
-   "lank": "https://www.expressen.se/tv/sport/hockey/shl/edvin-tornbloms-foralskelse-i-farjestad-bk-/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "SHL:s tio största kaptener - någonsin",
-   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/shls-tio-storsta-kaptener-nagonsin/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
   }
  ],
- "troligen_inte": [],
+ "troligen_inte": [
+  {
+   "kalla": "Kristianstadsbladet",
+   "rubrik": "Chefens nya ord om den kritiserade vägen i Hanaskog",
+   "lank": "https://www.kristianstadsbladet.se/ostra-goinge/chefens-nya-ord-om-den-kritiserade-vagen-i-hanaskog/",
+   "datum": "2026-11-19",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ]
+  },
+  {
+   "kalla": "Kristianstadsbladet",
+   "rubrik": "Förlustsviten bruten för IF Kristianstad",
+   "lank": "https://www.kristianstadsbladet.se/sport/forlustsviten-bruten-for-if-kristianstad/",
+   "datum": "2026-11-21",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ]
+  }
+ ],
  "fel": []
 }
