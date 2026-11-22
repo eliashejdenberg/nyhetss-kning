@@ -1,8 +1,36 @@
 {
- "skapad": "2026-11-21T13:37+01:00",
+ "skapad": "2026-11-22T06:51+01:00",
  "sokningar": 114,
  "misslyckade_sokningar": 0,
  "kandidater": [
+  {
+   "kalla": "Sveriges Radio",
+   "rubrik": "Lennart Jähkel och Rolf Lassgård: ”Det finns nåt vilt i det norrländska”",
+   "lank": "https://www.sverigesradio.se/avsnitt/lennart-jahkel-och-rolf-lassgard-det-finns-nat-vilt-i-det-norrlandska",
+   "datum": "2026-11-21",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [
+    "LJUD"
+   ],
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "Kristianstadsbladet",
+   "rubrik": "Förlustsviten bruten för IF Kristianstad",
+   "lank": "https://www.kristianstadsbladet.se/sport/forlustsviten-bruten-for-if-kristianstad/",
+   "datum": "2026-11-21",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
   {
    "kalla": "Sveriges Radio",
    "rubrik": "Ny studie: Styrketräning kan minska vallningar i klimakteriet",
@@ -18,11 +46,11 @@
   },
   {
    "kalla": "Sveriges Radio",
-   "rubrik": "Lennart Jähkel och Rolf Lassgård: ”Det finns nåt vilt i det norrländska”",
-   "lank": "https://www.sverigesradio.se/avsnitt/lennart-jahkel-och-rolf-lassgard-det-finns-nat-vilt-i-det-norrlandska",
-   "datum": "2026-11-20",
+   "rubrik": "Hårdrock i P4 Hårdrockens maskotar och mäktiga image-tänk",
+   "lank": "https://www.sverigesradio.se/avsnitt/hardrock-i-p4-hardrockens-maskotar-och-maktiga-image-tank",
+   "datum": "2026-11-21",
    "hittad_via": [
-    "lyftare (bara namn)"
+    "Sveriges Radio: Ahlm"
    ],
    "sprak": "",
    "las": false,
@@ -32,12 +60,12 @@
    "hint": "kunde inte läsa artikeln"
   },
   {
-   "kalla": "Sveriges Radio",
-   "rubrik": "Recensioner från Sveriges Radios kulturredaktion",
-   "lank": "https://www.sverigesradio.se/tema/recensioner-kultur",
+   "kalla": "Kristianstadsbladet",
+   "rubrik": "Chefens nya ord om den kritiserade vägen i Hanaskog",
+   "lank": "https://www.kristianstadsbladet.se/ostra-goinge/chefens-nya-ord-om-den-kritiserade-vagen-i-hanaskog/",
    "datum": "2026-11-19",
    "hittad_via": [
-    "Sveriges Radio: Bohman"
+    "lyftare (bara namn)"
    ],
    "sprak": "",
    "las": false,
@@ -47,6 +75,78 @@
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Gais–Västerås SK 3–1",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/gais-vasteras-sk-3-1/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Höjdpunkter Lund–Norrby: 1–1",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/superettan/hojdpunkter-lund-norrby-1-1/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Får ett slag i ansiktet: ”Den är inte vacker”",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/superettan/far-ett-slag-i-ansiktet-den-ar-inte-vacker/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Höjdpunkter: Mjällby – Malmö FF: 1–1",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-mjallby-malmo-ff-1-1/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Höjdpunkter AIK – Degerfors: 1–1",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/hojdpunkter-aik-degerfors-1-1/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Höjdpunkter Enköpings SK–Örebro SK: 2–4",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/superettan/hojdpunkter-enkopings-sk-orebro-sk-2-4/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Chocken i premiären – gick i mål på samma tiondel",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/chocken-i-premiaren-gick-i-mal-pa-samma-tiondel/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Höjdpunkter Östersund–Varberg: 0–2",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-ostersund-varberg-0-2/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Här åker Örebros Kalle Holmberg på ett slag i ansiktet",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/superettan/har-aker-orebros-kalle-holmberg-pa-ett-slag-i-ansiktet/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Här går stjärnorna i mål på samma tid",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/har-gar-stjarnorna-i-mal-pa-samma-tid/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Frida Karlsson: ”Det var så sjukt!”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/frida-karlsson-det-var-sa-sjukt/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Delar segern: ”Historisk dag”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/delar-segern-historisk-dag/",
+   "datum": "2026-11-21",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Halfvarssons pik mot Myhlback: ”Dödligt virus?”",
    "lank": "https://www.expressen.se/tv/sport/langdskidor/halfvarssons-pik-mot-myhlback-dodligt-virus/",
@@ -94,90 +194,8 @@
    "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/shls-tio-storsta-kaptener-nagonsin/",
    "datum": "2026-11-21",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Oscar Linnér försvann: ”Vill in i värmen igen”",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/oscar-linner-forsvann-vill-in-i-varmen-igen/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Fredrik Johansson fälls – skriker ut sin smärta",
-   "lank": "https://www.expressen.se/tv/sport/bandy/fredrik-johansson-falls-skriker-ut-sin-smarta/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Nick Rajacic: ”Svåraste jobbet är att vara huvudtränare för Norrköping”",
-   "lank": "https://www.expressen.se/tv/sport/basket/nick-rajacic-svaraste-jobbet-ar-att-vara-huvudtranare-for-norrkoping/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Sankell avstängd efter pungattacken",
-   "lank": "https://www.expressen.se/tv/sport/innebandy/sankell-avstangd-efter-pungattacken/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Svahns utspel: ”Jag var så jobbig”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/svahns-utspel-jag-var-sa-jobbig/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Grahn vann sprinten – Ekberg skrälltvåa",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/grahn-vann-sprinten-ekberg-skralltvaa/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Karlssons svar på Svahns utspel: ”Alltid stök”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/karlssons-svar-pa-svahns-utspel-alltid-stok/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Svahns glädje: ”Har aldrig hänt”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/svahns-gladje-har-aldrig-hant/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Allsvenskan avgörs av Blåvitt: ”En nyckelroll i guldstriden”",
-   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/allsvenskan-avgors-av-blavitt-en-nyckelroll-i-guldstriden/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "OS-guldmedaljören bäst i Bruksvallarnas sprint",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/os-guldmedaljoren-bast-i-bruksvallarnas-sprint/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Halfvarsson efter uttåget: ”Struligt”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/halfvarsson-efter-uttaget-struligt/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Angers ord efter fiaskostarten",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/angers-ord-efter-fiaskostarten/",
-   "datum": "2026-11-20",
-   "nämner_tyngdlyftning": false
   }
  ],
- "troligen_inte": [
-  {
-   "kalla": "Kristianstadsbladet",
-   "rubrik": "Chefens nya ord om den kritiserade vägen i Hanaskog",
-   "lank": "https://www.kristianstadsbladet.se/ostra-goinge/chefens-nya-ord-om-den-kritiserade-vagen-i-hanaskog/",
-   "datum": "2026-11-19",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  }
- ],
+ "troligen_inte": [],
  "fel": []
 }
