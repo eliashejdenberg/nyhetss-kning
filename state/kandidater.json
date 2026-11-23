@@ -1,8 +1,48 @@
 {
- "skapad": "2026-11-22T13:35+01:00",
+ "skapad": "2026-11-23T06:52+01:00",
  "sokningar": 114,
  "misslyckade_sokningar": 0,
  "kandidater": [
+  {
+   "kalla": "Arbetarbladet",
+   "rubrik": "16-åringen från Gävle starkast i Norden",
+   "lank": "https://www.arbetarbladet.se/sport/16-aringen-fran-gavle-starkast-i-norden-MhhFQ/",
+   "datum": "2026-11-22",
+   "hittad_via": [
+    "allmän"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "Hudiksvalls Tidning",
+   "rubrik": "Gustav ska till EM – pekar på utmaningarna med en liten sport",
+   "lank": "https://www.ht.se/sport/gustav-ska-till-em-pekar-pa-utmaningarna-med-en-liten-sport/",
+   "datum": "2026-11-22",
+   "hittad_via": [
+    "mästerskap"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "TV4 Nyheterna",
+   "rubrik": "Stefan Holm om dopnings-OS: ”En freakshow”",
+   "lank": "https://www.tv4.se/artikel/6uWwGubYFv8YwVmYVnar39/stefan-holm-om-dopnings-os-en-freakshow",
+   "datum": "2026-11-21",
+   "hittad_via": [
+    "allmän",
+    "mästerskap"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
   {
    "kalla": "Sveriges Radio",
    "rubrik": "Lennart Jähkel och Rolf Lassgård: ”Det finns nåt vilt i det norrländska”",
@@ -16,6 +56,19 @@
    "media": [
     "LJUD"
    ],
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "Kristianstadsbladet",
+   "rubrik": "Förlustsviten bruten för IF Kristianstad",
+   "lank": "https://www.kristianstadsbladet.se/sport/forlustsviten-bruten-for-if-kristianstad/",
+   "datum": "2026-11-21",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
    "hint": "kunde inte läsa artikeln"
   },
   {
@@ -49,6 +102,36 @@
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Kaptenens glädje: ”Lovat Bosse Andersson att fira på Sturehof”",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/damallsvenskan/kaptenens-gladje-lovat-bosse-andersson-att-fira-pa-sturehof/",
+   "datum": "2026-11-22",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Höjdpunkter BK Häcken–Elfsborg: 2–1",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-bk-hacken-elfsborg-2-1/",
+   "datum": "2026-11-22",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Höjdpunkter Sirius–Djurgården: 1–0",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-sirius-djurgarden-1-0/",
+   "datum": "2026-11-22",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Linn Svahns succé: ”Kommer aldrig att gå bättre”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/linn-svahns-succe-kommer-aldrig-att-ga-battre/",
+   "datum": "2026-11-22",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Stormatch i allsvenskan – mitt i stormen",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/stormatch-i-allsvenskan-mitt-i-stormen/",
+   "datum": "2026-11-22",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Huliganbråk i Stockholm – minst två till sjukhus",
    "lank": "https://www.expressen.se/tv/sport/fotboll/huliganbrak-i-stockholm-minst-tva-till-sjukhus/",
@@ -116,12 +199,6 @@
    "nämner_tyngdlyftning": false
   },
   {
-   "rubrik": "Här går stjärnorna i mål på samma tid",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/har-gar-stjarnorna-i-mal-pa-samma-tid/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
    "rubrik": "Frida Karlsson: ”Det var så sjukt!”",
    "lank": "https://www.expressen.se/tv/sport/langdskidor/frida-karlsson-det-var-sa-sjukt/",
    "datum": "2026-11-21",
@@ -144,51 +221,8 @@
    "lank": "https://www.expressen.se/tv/sport/langdskidor/poromaa-funderar-pa-ny-karriar-lastbilschaffis/",
    "datum": "2026-11-21",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Alvar Myhlback vinner trots sjukdom: ”Blev förbannad”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/alvar-myhlback-vinner-trots-sjukdom-blev-forbannad/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Hånet mot Alvar: ”Måste vara ett dödligt virus”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/hanet-mot-alvar-maste-vara-ett-dodligt-virus/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Truls Gisselman ska fira: ”Får se om man tar sig upp ur sängen”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/truls-gisselman-ska-fira-far-se-om-man-tar-sig-upp-ur-sangen/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Heino-Lindberg: ”För många importer i svensk hockey”",
-   "lank": "https://www.expressen.se/tv/sport/hockey/shl/heino-lindberg-for-manga-importer-i-svensk-hockey/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
   }
  ],
- "troligen_inte": [
-  {
-   "kalla": "Kristianstadsbladet",
-   "rubrik": "Chefens nya ord om den kritiserade vägen i Hanaskog",
-   "lank": "https://www.kristianstadsbladet.se/ostra-goinge/chefens-nya-ord-om-den-kritiserade-vagen-i-hanaskog/",
-   "datum": "2026-11-19",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  },
-  {
-   "kalla": "Kristianstadsbladet",
-   "rubrik": "Förlustsviten bruten för IF Kristianstad",
-   "lank": "https://www.kristianstadsbladet.se/sport/forlustsviten-bruten-for-if-kristianstad/",
-   "datum": "2026-11-21",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  }
- ],
+ "troligen_inte": [],
  "fel": []
 }
