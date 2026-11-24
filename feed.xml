@@ -6,7 +6,15 @@
 <atom:link href="https://eliashejdenberg.github.io/nyhetss-kning/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Daglig bevakning av svensk tyngdlyftning i svenska och utländska redaktionella medier.</description>
 <language>sv</language>
-<lastBuildDate>Tue, 24 Nov 2026 05:53:09 +0000</lastBuildDate>
+<lastBuildDate>Tue, 24 Nov 2026 09:19:01 +0000</lastBuildDate>
+<item>
+<title>16-åringen från Gävle starkast i Norden</title>
+<link>https://www.arbetarbladet.se/sport/16-aringen-fran-gavle-starkast-i-norden-MhhFQ/</link>
+<guid isPermaLink="false">Arbetarbladet|16-åringen från Gävle starkast i Norden</guid>
+<pubDate>Sun, 22 Nov 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Arbetarbladet</source>
+<description>Arbetarbladet – ”Jag är mest nöjd med resultatet i ryck”</description>
+</item>
 <item>
 <title>Eftermiddag i P4 Sörmland: tyngdlyftaren Jonathan Bergkvist laddar för Nordiska mästerskapen</title>
 <link>https://www.sverigesradio.se/avsnitt/2891180</link>
@@ -238,14 +246,6 @@
 <pubDate>Wed, 23 Sep 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">Falköpings Tidning</source>
 <description>Falköpings Tidning</description>
-</item>
-<item>
-<title>Wilma Arvidsson är nu även bäst i Europa: ”Underbar känsla”</title>
-<link>https://www.kristianstadsbladet.se/sport/wilma-arvidsson-ar-nu-aven-bast-i-europa-underbar-kansla/</link>
-<guid isPermaLink="false">Kristianstadsbladet|Wilma Arvidsson är nu även bäst i Europa: ”Underbar känsla”</guid>
-<pubDate>Tue, 15 Sep 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Kristianstadsbladet</source>
-<description>Kristianstadsbladet</description>
 </item>
 </channel>
 </rss>
