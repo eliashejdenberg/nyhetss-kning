@@ -1,8 +1,47 @@
 {
- "skapad": "2026-11-23T15:34+01:00",
- "sokningar": 116,
- "misslyckade_sokningar": 1,
+ "skapad": "2026-11-24T06:52+01:00",
+ "sokningar": 114,
+ "misslyckade_sokningar": 0,
  "kandidater": [
+  {
+   "kalla": "Skånesport",
+   "rubrik": "Lindsjö och Spasic leder BK Höllviken – Berggren ansluter i tränarstaben",
+   "lank": "https://skanesport.se/2026/11/24/lindsjo-och-spasic-leder-bk-hollviken-berggren-ansluter-i-tranarstaben/",
+   "datum": "2026-11-24",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "Sveriges Radio",
+   "rubrik": "Så svarar Open AI på Ekots granskning",
+   "lank": "https://www.sverigesradio.se/artikel/sa-svarar-open-ai-pa-granskningen",
+   "datum": "2026-11-24",
+   "hittad_via": [
+    "Sveriges Radio: Ahlm"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "Sveriges Radio",
+   "rubrik": "Därför granskade Ekot Chat GPT:s säkerhet kring skolattacker",
+   "lank": "https://www.sverigesradio.se/artikel/darfor-granskade-ekot-chat-gpts-sakerhet-kring-skolattacker",
+   "datum": "2026-11-24",
+   "hittad_via": [
+    "Sveriges Radio: Ahlm"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
   {
    "kalla": "Arbetarbladet",
    "rubrik": "16-åringen från Gävle starkast i Norden",
@@ -12,12 +51,37 @@
     "allmän"
    ],
    "sprak": "",
-   "las": true,
+   "las": false,
    "media": [],
-   "ingress": "På kort tid blev han bäst i Sverige.",
-   "utdrag": "…et är tänkt behöver du uppdatera till nyaste versionen. Klicka på knappen för att uppdatera! Uppdatera nu! Annons Annons Annons På kort tid blev han bäst i Sverige. Nu är 16-åriga tyngdlyftaren Sigge Malmberg bäst i Norden också. – Det här var ju mitt första landslagsuppdrag så det har gått väldigt fort, säger Sigge efter guldet i Nordiska mästerskapet för ungdomar. Chri…",
-   "sportord_i_texten": 1,
-   "hint": "osäker – nämner tyngdlyftning lite"
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "Hudiksvalls Tidning",
+   "rubrik": "Gustav ska till EM – pekar på utmaningarna med en liten sport",
+   "lank": "https://www.ht.se/sport/gustav-ska-till-em-pekar-pa-utmaningarna-med-en-liten-sport/",
+   "datum": "2026-11-22",
+   "hittad_via": [
+    "mästerskap"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
+   "kalla": "Sveriges Radio",
+   "rubrik": "Hårdrock i P4 Hårdrockens maskotar och mäktiga image-tänk",
+   "lank": "https://www.sverigesradio.se/avsnitt/hardrock-i-p4-hardrockens-maskotar-och-maktiga-image-tank",
+   "datum": "2026-11-22",
+   "hittad_via": [
+    "Sveriges Radio: Ahlm"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [
+    "LJUD"
+   ],
+   "hint": "kunde inte läsa artikeln"
   },
   {
    "kalla": "TV4 Nyheterna",
@@ -29,14 +93,9 @@
     "mästerskap"
    ],
    "sprak": "",
-   "las": true,
-   "media": [
-    "VIDEO"
-   ],
-   "ingress": "Backas av Trump Jr • Stefan Holm sågar tävlingen",
-   "utdrag": "…d Trump Jr och techmiljardärer, har fått mycket kritik från både experter och idrottare. – En freakshow, säger den tidigare höjdhopparen Stefan Holm. I tre grenar – sprintlöpning, tyngdlyftning och simning – får 42 idrottare i \"dopnings-OS\" fria tyglar när det gäller olika förbjudna preparat. Evenemanget startades av den australiensiske entreprenören Aron D'Souza och fin…",
-   "sportord_i_texten": 1,
-   "hint": "osäker – nämner tyngdlyftning lite"
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
   },
   {
    "kalla": "Sveriges Radio",
@@ -54,6 +113,19 @@
    "hint": "kunde inte läsa artikeln"
   },
   {
+   "kalla": "Kristianstadsbladet",
+   "rubrik": "Förlustsviten bruten för IF Kristianstad",
+   "lank": "https://www.kristianstadsbladet.se/sport/forlustsviten-bruten-for-if-kristianstad/",
+   "datum": "2026-11-21",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ],
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "hint": "kunde inte läsa artikeln"
+  },
+  {
    "kalla": "Sveriges Radio",
    "rubrik": "Ny studie: Styrketräning kan minska vallningar i klimakteriet",
    "lank": "https://www.sverigesradio.se/artikel/ny-studie-styrketraning-kan-minska-vallningar-i-klimakteriet",
@@ -65,25 +137,52 @@
    "las": false,
    "media": [],
    "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Sveriges Radio",
-   "rubrik": "Hårdrock i P4 Hårdrockens maskotar och mäktiga image-tänk",
-   "lank": "https://www.sverigesradio.se/avsnitt/hardrock-i-p4-hardrockens-maskotar-och-maktiga-image-tank",
-   "datum": "2026-11-21",
-   "hittad_via": [
-    "Sveriges Radio: Ahlm"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [
-    "LJUD"
-   ],
-   "hint": "kunde inte läsa artikeln"
   }
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Kiruna flyttas – men idrotten lämnas kvar",
+   "lank": "https://www.expressen.se/tv/sport/kiruna-flyttas-men-idrotten-lamnas-kvar/",
+   "datum": "2026-11-24",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Höjdpunkter Örgryte – Kalmar: 3-2",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-orgryte-kalmar-3-2/",
+   "datum": "2026-11-23",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Höjdpunkter Hammarby – IFK Göteborg: 3-1",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/hojdpunkter-hammarby-ifk-goteborg-3-1/",
+   "datum": "2026-11-23",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Sveket: ”Comeback” i Djurgårdströja",
+   "lank": "https://www.expressen.se/tv/sport/hockey/sveket-comeback-i-djurgardstroja/",
+   "datum": "2026-11-23",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Johanna Almgren använder motorsågen: ”Lite väl brutal”",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/johanna-almgren-anvander-motorsagen-lite-val-brutal/",
+   "datum": "2026-11-23",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Hammarbyprofilerna inför guldramat: ”Det här har vi väntat på”",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/hammarbyprofilerna-infor-guldramat-det-har-har-vi-vantat-pa/",
+   "datum": "2026-11-23",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "70-miljonersbygget hackar",
+   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/70-miljonersbygget-hackar/",
+   "datum": "2026-11-23",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Guldstriden avgörs – så svarar Bajen",
    "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/guldstriden-avgors-sa-svarar-bajen/",
@@ -161,75 +260,8 @@
    "lank": "https://www.expressen.se/tv/sport/fotboll/superettan/hojdpunkter-lund-norrby-1-1/",
    "datum": "2026-11-21",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Får ett slag i ansiktet: ”Den är inte vacker”",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/superettan/far-ett-slag-i-ansiktet-den-ar-inte-vacker/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Höjdpunkter: Mjällby – Malmö FF: 1–1",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-mjallby-malmo-ff-1-1/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Höjdpunkter AIK – Degerfors: 0–0",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/hojdpunkter-aik-degerfors-0-0/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Höjdpunkter Enköpings SK–Örebro SK: 2–4",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/superettan/hojdpunkter-enkopings-sk-orebro-sk-2-4/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Chocken i premiären – gick i mål på samma tiondel",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/chocken-i-premiaren-gick-i-mal-pa-samma-tiondel/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Höjdpunkter Östersund–Varberg: 0–2",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-ostersund-varberg-0-2/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Här åker Örebros Kalle Holmberg på ett slag i ansiktet",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/superettan/har-aker-orebros-kalle-holmberg-pa-ett-slag-i-ansiktet/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
   }
  ],
- "troligen_inte": [
-  {
-   "kalla": "Hudiksvalls Tidning",
-   "rubrik": "Gustav ska till EM – pekar på utmaningarna med en liten sport",
-   "lank": "https://www.ht.se/sport/gustav-ska-till-em-pekar-pa-utmaningarna-med-en-liten-sport/",
-   "datum": "2026-11-22",
-   "hittad_via": [
-    "mästerskap"
-   ],
-   "annan_sport": [
-    "styrkelyft"
-   ]
-  },
-  {
-   "kalla": "Kristianstadsbladet",
-   "rubrik": "Förlustsviten bruten för IF Kristianstad",
-   "lank": "https://www.kristianstadsbladet.se/sport/forlustsviten-bruten-for-if-kristianstad/",
-   "datum": "2026-11-21",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  }
- ],
- "fel": [
-  "Google Nyheter: site:sverigesradio.se \"Sundqvist\" (tyngdlyftning OR tyngdlyftare OR lyfte OR lyftare OR lyft OR ryck OR stöt OR kilo OR VM OR EM OR SM OR landslaget) (sv) – HTTP Error 429: Too Many Requests",
-  "Fygstermedia: HTTP Error 503: Service Unavailable"
- ]
+ "troligen_inte": [],
+ "fel": []
 }
