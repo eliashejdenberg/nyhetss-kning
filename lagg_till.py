@@ -99,6 +99,12 @@ def lagg_in(a):
         i = s.index("</div>\n  </section>") if "</div>\n  </section>" in s else s.rindex('<div class="item">')
         s = s[:i] + ny + s[i:]
     SIDA.write_text(s, encoding="utf-8")
+    # artikeln är redan sedd i mejlet – mejla den inte igen som ny
+    skickade = ROOT / "state" / "skickade.json"
+    if skickade.exists():
+        lista = set(json.loads(skickade.read_text(encoding="utf-8")))
+        lista.add(a["lank"])
+        skickade.write_text(json.dumps(sorted(lista), ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
     return True
 
 
