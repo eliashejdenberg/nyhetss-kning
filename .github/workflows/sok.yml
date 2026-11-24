@@ -5,7 +5,7 @@ name: Morgonens nyhetssökning
 # Claude-körningen kl. 06:47 läser bara den filen och gör bedömningen.
 on:
   schedule:
-    - cron: "11 4 * * *"   # 05:11 svensk vintertid, 06:11 sommartid
+    - cron: "23 2 * * *"   # reserv – morgonkörningen startar flödet själv kl. 06:47
   workflow_dispatch:
 
 permissions:

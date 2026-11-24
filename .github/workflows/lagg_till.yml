@@ -1,0 +1,79 @@
+name: Lägg till artikel
+
+# "Lägg till"-knappen i mejlet öppnar ett ärende med rubriken
+# "Lägg till: <adress>". Det här flödet lägger in artikeln på sidan.
+# Bara ärenden från ägaren eller personer med skrivrätt räknas.
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Visa vad som hittas för en adress (lägger inte till)"
+        required: true
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: lagg-till
+  cancel-in-progress: false
+
+jobs:
+  visa:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - env:
+          URL: ${{ inputs.url }}
+        run: python lagg_till.py --visa "$URL"
+
+  lagg-till:
+    if: >-
+      github.event_name == 'issues' &&
+      startsWith(github.event.issue.title, 'Lägg till') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -q openpyxl
+      - name: Lägg in artikeln
+        id: lagg
+        env:
+          TITEL: ${{ github.event.issue.title }}
+          TEXT: ${{ github.event.issue.body }}
+        run: |
+          python lagg_till.py "$TITEL" "$TEXT" | tee resultat.txt
+          python hamta_loggor.py || true
+          python build.py
+          python bygg_rapport.py
+      - name: Spara och publicera
+        run: |
+          git config user.name "nyhets-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A src logos arkiv index.html modul.html rullande.html feed.xml
+          git diff --cached --quiet && exit 0
+          git commit -m "Lägg till artikel (ärende #${{ github.event.issue.number }})"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep $((i * 10))
+          done
+          exit 1
+      - name: Svara och stäng ärendet
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rad=$(grep -E "LAGT TILL|FANNS REDAN" resultat.txt || echo "Något gick fel – se körningen.")
+          gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body "$rad
+
+          Hemsidan uppdateras inom några minuter: https://eliashejdenberg.github.io/nyhetss-kning/
+          Bevakningssidan på claude.ai uppdateras vid nästa morgonkörning."
+          gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}

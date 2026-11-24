@@ -73,17 +73,36 @@ def spara_state(lankar):
 URL = re.compile(r"https?://[^\s<>\"')]+")
 
 
+REPO = "https://github.com/eliashejdenberg/nyhetss-kning"
+
+
+def lagg_till_lank(url, beskrivning):
+    """Öppnar ett färdigifyllt GitHub-ärende; flödet lagg_till.yml lägger då in artikeln."""
+    from urllib.parse import quote
+    return (f"{REPO}/issues/new?title={quote('Lägg till: ' + url)}"
+            f"&body={quote(beskrivning + chr(10) + chr(10) + 'Skapat från mejlet. Klicka Create för att lägga in artikeln på sidan.')}")
+
+
 def lanka_text(t):
-    """Gör adresser i sammanfattningen klickbara (texten escapas först)."""
-    ut, pos = [], 0
-    for m in URL.finditer(t):
-        ut.append(html.escape(t[pos:m.start()]))
+    """Gör adresser i sammanfattningen klickbara och lägger en Lägg till-knapp efter varje
+    (texten escapas först). Raden före adressen skickas med som beskrivning."""
+    ut, forra = [], ""
+    for rad in t.split("\n"):
+        m = URL.search(rad)
+        if not m:
+            ut.append(html.escape(rad))
+            if rad.strip():
+                forra = rad.strip()
+            continue
         u = m.group(0).rstrip(".,;:")
-        ut.append(f'<a href="{html.escape(u)}" style="color:{BLA};word-break:break-all">{html.escape(u)}</a>')
-        ut.append(html.escape(m.group(0)[len(u):]))
-        pos = m.end()
-    ut.append(html.escape(t[pos:]))
-    return "".join(ut)
+        beskr = rad[:m.start()].strip(" -–:") or forra
+        knapp = (f' <a href="{html.escape(lagg_till_lank(u, beskr))}" style="display:inline-block;margin-left:6px;'
+                 f'padding:1px 8px;background:{BLA};color:#fff;font-size:12px;font-weight:bold;text-decoration:none;'
+                 f'white-space:nowrap">+ Lägg till</a>')
+        ut.append(html.escape(rad[:m.start()])
+                  + f'<a href="{html.escape(u)}" style="color:{BLA};word-break:break-all">{html.escape(u)}</a>'
+                  + html.escape(rad[m.start() + len(u):]) + knapp)
+    return "\n".join(ut)
 
 
 def bygg_mejl(nya, sammanfattning):
@@ -117,7 +136,7 @@ def bygg_mejl(nya, sammanfattning):
         sam_html = (f'<div style="margin-top:20px;padding:12px 14px;background:#fafafa;border-left:4px solid {GUL};'
                     f'font-size:13px;color:#404040;white-space:pre-wrap">'
                     f'<div style="font-weight:bold;color:#000;margin-bottom:6px;white-space:normal">Från morgonkörningen – '
-                    f'bortsorterat och osäkert. Klicka för att läsa; säg till om något ska läggas till.</div>'
+                    f'bortsorterat och osäkert. Klicka på länken för att läsa – och på <b>+ Lägg till</b> om artikeln ska med på sidan (öppnar GitHub, klicka sedan Create).</div>'
                     f'{lanka_text(sammanfattning)}</div>')
     text.append(f"\nAlla artiklar: {SIDA}\nRapport (Excel): {RAPPORT}")
     html_body = f"""\
