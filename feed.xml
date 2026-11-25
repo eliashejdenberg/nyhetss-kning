@@ -6,7 +6,15 @@
 <atom:link href="https://eliashejdenberg.github.io/nyhetss-kning/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Daglig bevakning av svensk tyngdlyftning i svenska och utländska redaktionella medier.</description>
 <language>sv</language>
-<lastBuildDate>Tue, 24 Nov 2026 09:19:01 +0000</lastBuildDate>
+<lastBuildDate>Wed, 25 Nov 2026 05:52:58 +0000</lastBuildDate>
+<item>
+<title>FAIK-lyftarna tog medalj vid NM i Norge</title>
+<link>https://www.falkopingstidning.se/sport/faik-lyftarna-akte-till-nm-i-norge-och-fixade-medaljer/</link>
+<guid isPermaLink="false">Falköpings Tidning|FAIK-lyftarna tog medalj vid NM i Norge</guid>
+<pubDate>Tue, 24 Nov 2026 06:00:00 +0000</pubDate>
+<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Falköpings Tidning</source>
+<description>Falköpings Tidning – Guld för Romeo Vergara.</description>
+</item>
 <item>
 <title>16-åringen från Gävle starkast i Norden</title>
 <link>https://www.arbetarbladet.se/sport/16-aringen-fran-gavle-starkast-i-norden-MhhFQ/</link>
@@ -238,14 +246,6 @@
 <pubDate>Sun, 04 Oct 2026 06:00:00 +0000</pubDate>
 <source url="https://eliashejdenberg.github.io/nyhetss-kning/">Siljan News</source>
 <description>Siljan News</description>
-</item>
-<item>
-<title>Ännu ett junior-EM väntar för FAIK-Fanny</title>
-<link>https://www.falkopingstidning.se/sport/annu-ett-stort-uppdrag-for-lyftarloftet-fanny-fran-falkoping/</link>
-<guid isPermaLink="false">Falköpings Tidning|Ännu ett junior-EM väntar för FAIK-Fanny</guid>
-<pubDate>Wed, 23 Sep 2026 06:00:00 +0000</pubDate>
-<source url="https://eliashejdenberg.github.io/nyhetss-kning/">Falköpings Tidning</source>
-<description>Falköpings Tidning</description>
 </item>
 </channel>
 </rss>
