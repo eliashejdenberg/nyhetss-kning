@@ -1,20 +1,30 @@
 {
- "skapad": "2026-11-24T06:52+01:00",
- "sokningar": 114,
+ "skapad": "2026-11-25T06:51+01:00",
+ "sokningar": 115,
  "misslyckade_sokningar": 0,
  "kandidater": [
   {
-   "kalla": "Skånesport",
-   "rubrik": "Lindsjö och Spasic leder BK Höllviken – Berggren ansluter i tränarstaben",
-   "lank": "https://skanesport.se/2026/11/24/lindsjo-och-spasic-leder-bk-hollviken-berggren-ansluter-i-tranarstaben/",
+   "kalla": "Falköpings Tidning",
+   "rubrik": "FAIK-lyftarna tog medalj vid NM i Norge",
+   "lank": "https://www.falkopingstidning.se/sport/faik-lyftarna-akte-till-nm-i-norge-och-fixade-medaljer/",
    "datum": "2026-11-24",
    "hittad_via": [
+    "allmän",
+    "mästerskap",
+    "lyftare",
     "lyftare (bara namn)"
    ],
    "sprak": "",
-   "las": false,
+   "las": true,
    "media": [],
-   "hint": "kunde inte läsa artikeln"
+   "namn": [
+    "Fanny Köhler",
+    "Simon Lang"
+   ],
+   "ingress": "Guld för Romeo Vergara.",
+   "utdrag": "FAIK-lyftarna åkte till NM i Norge och fixade medaljer – Falköpings Tidning Hej, Vi har en ny app! För att din app ska fortsätta fungera som det är tänkt behöver du uppdatera till nyaste versio…",
+   "sportord_i_texten": 10,
+   "hint": "trolig"
   },
   {
    "kalla": "Sveriges Radio",
@@ -43,14 +53,14 @@
    "hint": "kunde inte läsa artikeln"
   },
   {
-   "kalla": "Arbetarbladet",
-   "rubrik": "16-åringen från Gävle starkast i Norden",
-   "lank": "https://www.arbetarbladet.se/sport/16-aringen-fran-gavle-starkast-i-norden-MhhFQ/",
-   "datum": "2026-11-22",
+   "kalla": "Men's Fitness",
+   "rubrik": "Can Lifting Weights Raise Your Liver Enzymes Before a Blood Test?",
+   "lank": "https://www.mensfitness.com/wellness/can-lifting-weights-raise-your-liver-enzymes-before-a-blood-test",
+   "datum": "2026-11-24",
    "hittad_via": [
-    "allmän"
+    "utländsk"
    ],
-   "sprak": "",
+   "sprak": "ENGELSKA",
    "las": false,
    "media": [],
    "hint": "kunde inte läsa artikeln"
@@ -58,80 +68,10 @@
   {
    "kalla": "Hudiksvalls Tidning",
    "rubrik": "Gustav ska till EM – pekar på utmaningarna med en liten sport",
-   "lank": "https://www.ht.se/sport/gustav-ska-till-em-pekar-pa-utmaningarna-med-en-liten-sport/",
+   "lank": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbjRPS2hPUGVHYXM0X0ViTzczRmFaam1LMHBfSGVZY3h3eTRZVDVUU29iT2VrMGM3TlpHMDRCd3pyRjJmc2RQeF9JRktYYzlfeGZyTXNjQmVBTW9IRXFOcWFTVGE2RlBudU5mUmkxaHZSZ19YejNnMFczekVlTk1XVzFnMENTQ1UzT0ZYMw?oc=5",
    "datum": "2026-11-22",
    "hittad_via": [
     "mästerskap"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [],
-   "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Sveriges Radio",
-   "rubrik": "Hårdrock i P4 Hårdrockens maskotar och mäktiga image-tänk",
-   "lank": "https://www.sverigesradio.se/avsnitt/hardrock-i-p4-hardrockens-maskotar-och-maktiga-image-tank",
-   "datum": "2026-11-22",
-   "hittad_via": [
-    "Sveriges Radio: Ahlm"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [
-    "LJUD"
-   ],
-   "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "TV4 Nyheterna",
-   "rubrik": "Stefan Holm om dopnings-OS: ”En freakshow”",
-   "lank": "https://www.tv4.se/artikel/6uWwGubYFv8YwVmYVnar39/stefan-holm-om-dopnings-os-en-freakshow",
-   "datum": "2026-11-21",
-   "hittad_via": [
-    "allmän",
-    "mästerskap"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [],
-   "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Sveriges Radio",
-   "rubrik": "Lennart Jähkel och Rolf Lassgård: ”Det finns nåt vilt i det norrländska”",
-   "lank": "https://www.sverigesradio.se/avsnitt/lennart-jahkel-och-rolf-lassgard-det-finns-nat-vilt-i-det-norrlandska",
-   "datum": "2026-11-21",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [
-    "LJUD"
-   ],
-   "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Kristianstadsbladet",
-   "rubrik": "Förlustsviten bruten för IF Kristianstad",
-   "lank": "https://www.kristianstadsbladet.se/sport/forlustsviten-bruten-for-if-kristianstad/",
-   "datum": "2026-11-21",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [],
-   "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Sveriges Radio",
-   "rubrik": "Ny studie: Styrketräning kan minska vallningar i klimakteriet",
-   "lank": "https://www.sverigesradio.se/artikel/ny-studie-styrketraning-kan-minska-vallningar-i-klimakteriet",
-   "datum": "2026-11-21",
-   "hittad_via": [
-    "Sveriges Radio"
    ],
    "sprak": "",
    "las": false,
@@ -141,6 +81,54 @@
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Vallaboden: Anton Grahn handplockas i nytt miljonprojekt",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/skidsnack/vallaboden-anton-grahn-handplockas-i-nytt-miljonprojekt/",
+   "datum": "2026-11-25",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Hockeypuls on tour: Pelle Nyström-genombrottet",
+   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/hockeypuls-on-tour-pelle-nystrom-genombrottet/",
+   "datum": "2026-11-25",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Skriker ut sin smärta efter smällen: ”Ruggigt ont”",
+   "lank": "https://www.expressen.se/tv/sport/handboll/skriker-ut-sin-smarta-efter-smallen-ruggigt-ont/",
+   "datum": "2026-11-24",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Senegal får tillbaka titeln i Afrikanska mästerskapen",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/senegal-far-tillbaka-titeln-i-afrikanska-masterskapen/",
+   "datum": "2026-11-24",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Officiellt: Sam Saunders tar över Djurgården",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/officiellt-sam-saunders-tar-over-djurgarden/",
+   "datum": "2026-11-24",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "25 000 för en Bajenbiljett: ”Större än VM-final”",
+   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/25k-for-en-bajenbiljett-storre-an-vm-final/",
+   "datum": "2026-11-24",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Stjärnornas beslut om barnet: \"Kommer vara restriktiva\"",
+   "lank": "https://www.expressen.se/tv/sport/skidskytte/stjarnornas-beslut-om-barnet-kommer-vara-restriktiva/",
+   "datum": "2026-11-24",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Hockeypuls on tour: Nollan i taket",
+   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/hockeypuls-on-tour-nollan-i-taket/",
+   "datum": "2026-11-24",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Kiruna flyttas – men idrotten lämnas kvar",
    "lank": "https://www.expressen.se/tv/sport/kiruna-flyttas-men-idrotten-lamnas-kvar/",
@@ -212,56 +200,18 @@
    "lank": "https://www.expressen.se/tv/sport/fotboll/damallsvenskan/kaptenens-gladje-lovat-bosse-andersson-att-fira-pa-sturehof/",
    "datum": "2026-11-22",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Höjdpunkter BK Häcken–Elfsborg: 2–1",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-bk-hacken-elfsborg-2-1/",
-   "datum": "2026-11-22",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Höjdpunkter Sirius–Djurgården: 1–0",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-sirius-djurgarden-1-0/",
-   "datum": "2026-11-22",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Linn Svahns succé: ”Kommer aldrig att gå bättre”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/linn-svahns-succe-kommer-aldrig-att-ga-battre/",
-   "datum": "2026-11-22",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Stormatch i allsvenskan – mitt i stormen",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/stormatch-i-allsvenskan-mitt-i-stormen/",
-   "datum": "2026-11-22",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Huliganbråk i Stockholm – minst två till sjukhus",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/huliganbrak-i-stockholm-minst-tva-till-sjukhus/",
-   "datum": "2026-11-22",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Theo, 7, spelar hockey – med armprotes",
-   "lank": "https://www.expressen.se/tv/sport/hockey/theo-7-spelar-hockey-med-armprotes/",
-   "datum": "2026-11-22",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Gais–Västerås SK 3–1",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/gais-vasteras-sk-3-1/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Höjdpunkter Lund–Norrby: 1–1",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/superettan/hojdpunkter-lund-norrby-1-1/",
-   "datum": "2026-11-21",
-   "nämner_tyngdlyftning": false
   }
  ],
- "troligen_inte": [],
+ "troligen_inte": [
+  {
+   "kalla": "Skånesport",
+   "rubrik": "Lindsjö och Spasic leder BK Höllviken – Berggren ansluter i tränarstaben",
+   "lank": "https://skanesport.se/2026/11/24/lindsjo-och-spasic-leder-bk-hollviken-berggren-ansluter-i-tranarstaben/",
+   "datum": "2026-11-24",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ]
+  }
+ ],
  "fel": []
 }
