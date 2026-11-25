@@ -1,31 +1,8 @@
 {
- "skapad": "2026-11-25T06:51+01:00",
- "sokningar": 115,
+ "skapad": "2026-11-25T12:33+01:00",
+ "sokningar": 116,
  "misslyckade_sokningar": 0,
  "kandidater": [
-  {
-   "kalla": "Falköpings Tidning",
-   "rubrik": "FAIK-lyftarna tog medalj vid NM i Norge",
-   "lank": "https://www.falkopingstidning.se/sport/faik-lyftarna-akte-till-nm-i-norge-och-fixade-medaljer/",
-   "datum": "2026-11-24",
-   "hittad_via": [
-    "allmän",
-    "mästerskap",
-    "lyftare",
-    "lyftare (bara namn)"
-   ],
-   "sprak": "",
-   "las": true,
-   "media": [],
-   "namn": [
-    "Fanny Köhler",
-    "Simon Lang"
-   ],
-   "ingress": "Guld för Romeo Vergara.",
-   "utdrag": "FAIK-lyftarna åkte till NM i Norge och fixade medaljer – Falköpings Tidning Hej, Vi har en ny app! För att din app ska fortsätta fungera som det är tänkt behöver du uppdatera till nyaste versio…",
-   "sportord_i_texten": 10,
-   "hint": "trolig"
-  },
   {
    "kalla": "Sveriges Radio",
    "rubrik": "Så svarar Open AI på Ekots granskning",
@@ -64,23 +41,22 @@
    "las": false,
    "media": [],
    "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Hudiksvalls Tidning",
-   "rubrik": "Gustav ska till EM – pekar på utmaningarna med en liten sport",
-   "lank": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbjRPS2hPUGVHYXM0X0ViTzczRmFaam1LMHBfSGVZY3h3eTRZVDVUU29iT2VrMGM3TlpHMDRCd3pyRjJmc2RQeF9JRktYYzlfeGZyTXNjQmVBTW9IRXFOcWFTVGE2RlBudU5mUmkxaHZSZ19YejNnMFczekVlTk1XVzFnMENTQ1UzT0ZYMw?oc=5",
-   "datum": "2026-11-22",
-   "hittad_via": [
-    "mästerskap"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [],
-   "hint": "kunde inte läsa artikeln"
   }
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Tränaren blir av med historisk seger",
+   "lank": "https://www.expressen.se/tv/sport/trav/tranaren-blir-av-med-historisk-seger/",
+   "datum": "2026-11-25",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Anton Grahns nya sponsoravtal: ”4 miljarder om året”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/skidsnack/anton-grahns-nya-sponsoravtal-4-miljarder-om-aret/",
+   "datum": "2026-11-25",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Vallaboden: Anton Grahn handplockas i nytt miljonprojekt",
    "lank": "https://www.expressen.se/tv/sport/langdskidor/skidsnack/vallaboden-anton-grahn-handplockas-i-nytt-miljonprojekt/",
@@ -187,18 +163,6 @@
    "rubrik": "William Poromaas framtidsplan: lastbilschaffis",
    "lank": "https://www.expressen.se/tv/sport/langdskidor/william-poromaas-framtidsplan-lastbilschaffis/",
    "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Slår fast: Han är kaptenernas kapten i SHL",
-   "lank": "https://www.expressen.se/tv/sport/hockey/shl/slar-fast-han-ar-kaptenernas-kapten-i-shl/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Kaptenens glädje: ”Lovat Bosse Andersson att fira på Sturehof”",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/damallsvenskan/kaptenens-gladje-lovat-bosse-andersson-att-fira-pa-sturehof/",
-   "datum": "2026-11-22",
    "nämner_tyngdlyftning": false
   }
  ],
