@@ -70,7 +70,9 @@ def avsnitt_info(e, program):
     if not filer:
         return None
     t = sr_tid(e.get("publishdateutc"))
+    st = sr_tid(((e.get("broadcasttime") or {}).get("starttimeutc"))) or t
     return {
+        "sandning_start": st.astimezone(timezone(timedelta(hours=1))).strftime("%H:%M") if st else "",
         "id": e["id"], "program": program["namn"], "kanal": program["kanal"],
         "datum": t.astimezone(timezone(timedelta(hours=1))).strftime("%Y-%m-%d") if t else "",
         "lank": e.get("url") or f"https://www.sverigesradio.se/avsnitt/{e['id']}",
@@ -181,8 +183,6 @@ def traffar_i(segment, folk):
                 niva = 3
             elif distinkt and sport:
                 niva = 2
-            elif distinkt and exakt:
-                niva = 1
             else:
                 continue
             namn[p["namn"]] = (niva, ljud(p["efter"]))
@@ -205,9 +205,21 @@ def traffar_i(segment, folk):
     ut = []
     for g in grupper:
         delar = [x["text"].strip() for x in segment
-                 if g["start"] - 20 <= x["start"] <= g["slut"] + 20]
+                 if g["start"] - 3 <= x["start"] <= g["slut"] + 25]
         ut.append({"start": round(g["start"]), "ord": sorted(g["ord"]), "utdrag": " ".join(delar)[:700]})
     return ut
+
+
+def tid_lang(s, start=""):
+    """'10 min 39 s in i sändningen (ca kl. 15:09)'"""
+    s = int(s)
+    h, m, sek = s // 3600, s % 3600 // 60, s % 60
+    txt = (f"{h} tim {m} min" if h else f"{m} min") + f" {sek} s in i sändningen"
+    if re.fullmatch(r"\d\d:\d\d", start or ""):
+        hh, mm = map(int, start.split(":"))
+        kl = (hh * 60 + mm + s // 60) % (24 * 60)
+        txt += f" (ca kl. {kl // 60:02d}:{kl % 60:02d})"
+    return txt
 
 
 def tid(s):
@@ -268,7 +280,8 @@ def sammanstall(args):
         if r["id"] not in kollade:
             kollade.append(r["id"])
         for t in r["traffar"]:
-            post = {"avsnitt": r["id"], "program": r["program"], "datum": r["datum"], "lank": r["lank"], **t}
+            post = {"avsnitt": r["id"], "program": r["program"], "datum": r["datum"], "lank": r["lank"],
+                    "sandning_start": r.get("sandning_start", ""), **t}
             if not any(h["avsnitt"] == post["avsnitt"] and abs(h["start"] - post["start"]) < 60 for h in historik):
                 historik.append(post)
                 nya.append(post)
@@ -283,14 +296,15 @@ def sammanstall(args):
     rubrik = f"Möjliga radioinslag om tyngdlyftning – {len(nya)} {'träff' if len(nya) == 1 else 'träffar'} ({datetime.now().date()})"
     text, rader = [rubrik, "Automatisk utskrift av P4-program. Lyssna och avgör – svara om något ska läggas in.\n"], []
     for t in nya:
-        text.append(f"{t['datum']} · {t['program']} · {tid(t['start'])} in\n{', '.join(t['ord'])}\n{t['lank']}\n”{t['utdrag']}”\n")
+        text.append(f"{t['datum']} · {t['program']} · {tid_lang(t['start'], t.get('sandning_start'))}\n{', '.join(t['ord'])}\n{t['lank']}\n”{t['utdrag']}”\n")
         rader.append(
             f'<tr><td style="padding:14px 0;border-bottom:1px solid #e6e6e6">'
             f'<div style="font-size:13px;color:#666">{html.escape(t["datum"])} · '
             f'<span style="text-transform:uppercase;font-weight:bold;letter-spacing:.04em">{html.escape(t["program"])}</span>'
             f'<span style="display:inline-block;margin-left:6px;padding:1px 6px;background:{GUL};color:#000;font-size:11px;font-weight:bold">LJUD</span></div>'
             f'<div style="margin-top:4px;font-size:17px;font-weight:bold"><a href="{html.escape(t["lank"])}" style="color:{BLA};text-decoration:none">'
-            f'{tid(t["start"])} in i sändningen</a></div>'
+            f'Lyssna från {tid(t["start"])}</a> <span style="font-size:13px;font-weight:normal;color:#404040">– '
+            f'{html.escape(tid_lang(t["start"], t.get("sandning_start")))}</span></div>'
             f'<div style="margin-top:2px;font-size:13px;color:#000">Träff på: {html.escape(", ".join(t["ord"]))}</div>'
             f'<div style="margin-top:6px;font-size:14px;color:#404040;font-style:italic">”{html.escape(t["utdrag"])}”</div></td></tr>')
     body = f"""<div style="font-family:'Open Sans',Arial,sans-serif;max-width:640px;color:#404040">
