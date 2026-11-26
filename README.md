@@ -89,4 +89,6 @@ Secrets (Settings → Secrets and variables → Actions):
 Morgonkörningens sammanfattning – bortsorterade och osäkra artiklar med länkar – skrivs till `state/sammanfattning.txt` och tas med i mejlet med klickbara länkar. Mejl skickas om det finns nya artiklar eller något bortsorterat att granska; annars inget mejl. Efter utskicket töms filen.
 Testa: Actions → Mejla nya artiklar → Run workflow.
 
+**Bortsorterat visas högst tre gånger:** `state/visade.json` räknar hur många mejl varje bortsorterad länk har visats i. Efter tre gånger utan att den lagts till tas den bort ur mejlet, och `sok.py` slutar skicka den vidare till morgonkörningen.
+
 **Lägg till från mejlet:** varje bortsorterad artikel har en knapp "+ Lägg till". Den öppnar ett färdigifyllt GitHub-ärende ("Lägg till: <adress>"); klicka Create. Flödet `lagg_till.yml` hämtar artikeln (rubrik, ingress, datum, video/ljud), lägger in den i `src/sida.html` och bygger om hemsidan inom några minuter. Bara ägaren och personer med skrivrätt till repot kan lägga till. `src/sida.html` är därför huvudversionen av sidan; morgonkörningen för över tillägg till bevakningssidan på claude.ai.

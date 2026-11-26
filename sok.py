@@ -331,6 +331,10 @@ def main():
         print(json.dumps(sorted(tracka.values(), reverse=True), ensure_ascii=False))
         return
     lankar, rubriker = befintliga()
+    # länkar som redan visats tre gånger som bortsorterade i mejlet utan att läggas till
+    visade_fil = ROOT / "state" / "visade.json"
+    visade = json.loads(visade_fil.read_text(encoding="utf-8")) if visade_fil.exists() else {}
+    tjatat = {u.rstrip("/") for u, n in visade.items() if n >= 3}
     fynd = {}
     lista = sokningar(snabb)
     logg(f"{len(lista)} sökningar att köra")
@@ -355,7 +359,7 @@ def main():
         if nr % 10 == 0:
             logg(f"artikel {nr}/{len(fynd)}")
         lank = riktig_adress(post["google"]) or post["google"]
-        if lank.rstrip("/") in lankar or uteslut(lank, post["kalla"]):
+        if lank.rstrip("/") in lankar or lank.rstrip("/") in tjatat or uteslut(lank, post["kalla"]):
             continue
         art = las_artikel(lank) if "news.google.com" not in lank else {"las": False, "ingress": "", "text": "", "media": []}
         text = art["text"]
@@ -394,8 +398,8 @@ def main():
             k["hint"] = "troligen inte – inget tyngdlyftningsord i artikeln"
         (bort if k["hint"].startswith("troligen inte") else kandidater).append(k)
 
-    special = specialkallor(lankar)
-    video = expressen_video(lankar)
+    special = [x for x in specialkallor(lankar) if x["lank"].rstrip("/") not in tjatat]
+    video = [x for x in expressen_video(lankar) if x["lank"].rstrip("/") not in tjatat]
     UT.parent.mkdir(exist_ok=True)
     UT.write_text(json.dumps({
         "skapad": datetime.now(SVT).isoformat(timespec="minutes"),

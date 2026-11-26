@@ -30,6 +30,8 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "sida.html"
 STATE = ROOT / "state" / "skickade.json"
 SAMMANFATTNING = ROOT / "state" / "sammanfattning.txt"
+VISADE = ROOT / "state" / "visade.json"   # hur många gånger varje bortsorterad länk visats i mejlet
+MAX_VISNINGAR = 3
 SIDA = "https://eliashejdenberg.github.io/nyhetss-kning/"
 RAPPORT = SIDA + "arkiv/tyngdlyftning_i_media.xlsx"
 BLA, GUL = "#1d428e", "#f6ca30"
@@ -179,6 +181,39 @@ def skicka(rubrik, text, html_body):
     print("Skickade mejl till", len(mottagare), "mottagare")
 
 
+def las_visade():
+    return json.loads(VISADE.read_text(encoding="utf-8")) if VISADE.exists() else {}
+
+
+def rensa_visade(text, visade):
+    """Tar bort artiklar (beskrivningsrad + adressrad) vars länk redan visats MAX_VISNINGAR gånger.
+    Rubriker som blir tomma tas också bort. Returnerar (ny text, länkar som visas nu)."""
+    rader, visas = text.split("\n"), []
+    ut = []
+    for rad in rader:
+        m = URL.search(rad)
+        if m:
+            u = m.group(0).rstrip(".,;:")
+            if visade.get(u, 0) >= MAX_VISNINGAR:
+                # ta bort beskrivningsraden ovanför om den hör till samma artikel
+                if ut and ut[-1].lstrip().startswith("-") and not URL.search(ut[-1]):
+                    ut.pop()
+                if rad[:m.start()].strip(" -–:"):
+                    pass  # beskrivning och adress på samma rad – hela raden tas bort
+                continue
+            visas.append(u)
+        ut.append(rad)
+    # rubriker (VERSALER: …) utan innehåll under sig
+    rent = []
+    for i, rad in enumerate(ut):
+        if re.match(r"^[A-ZÅÄÖ /()-]{6,}.*:\s*$", rad.strip()):
+            nasta = next((r for r in ut[i + 1:] if r.strip()), "")
+            if not (nasta.lstrip().startswith("-") or URL.search(nasta)):
+                continue
+        rent.append(rad)
+    return "\n".join(rent).strip(), visas
+
+
 def main():
     alla = artiklar()
     lankar = {a["lank"] for a in alla}
@@ -200,6 +235,8 @@ def main():
         return
     nya = [a for a in alla if a["lank"] not in skickade]
     sammanfattning = SAMMANFATTNING.read_text(encoding="utf-8").strip() if SAMMANFATTNING.exists() else ""
+    visade = las_visade()
+    sammanfattning, visas_nu = rensa_visade(sammanfattning, visade)
     if not nya and not sammanfattning:
         print("Inga nya artiklar och inget bortsorterat – inget mejl.")
         return
@@ -209,6 +246,9 @@ def main():
         return
     skicka(rubrik, text, html_body)
     spara_state(skickade | {a["lank"] for a in nya})
+    for u in set(visas_nu):
+        visade[u] = visade.get(u, 0) + 1
+    VISADE.write_text(json.dumps(visade, ensure_ascii=False, indent=0, sort_keys=True) + "\n", encoding="utf-8")
     # samma sammanfattning ska inte skickas igen vid nästa push
     if SAMMANFATTNING.exists():
         SAMMANFATTNING.write_text("", encoding="utf-8")
