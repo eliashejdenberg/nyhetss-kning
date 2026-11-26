@@ -1,5 +1,5 @@
 {
- "skapad": "2026-11-25T12:33+01:00",
+ "skapad": "2026-11-26T06:52+01:00",
  "sokningar": 116,
  "misslyckade_sokningar": 0,
  "kandidater": [
@@ -45,6 +45,36 @@
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Sågar svenskan: ”Du måste anstränga dig lite”",
+   "lank": "https://www.expressen.se/tv/sport/skidskytte/sagar-svenskan-du-maste-anstranga-dig-lite/",
+   "datum": "2026-11-25",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Hejar på gamla klubben: ”Håller alla tummar”",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/hejar-pa-gamla-klubben-haller-alla-tummar/",
+   "datum": "2026-11-25",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Frantzén rasar mot alkohollagen: ”Trams”",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/frantzen-rasar-mot-alkohollagen-trams/",
+   "datum": "2026-11-25",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Frantzén hyllar AIK-talangen: ”Leo messi”",
+   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/frantzen-hyllar-aik-talangen-leo-messi/",
+   "datum": "2026-11-25",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Björn Frantzén sågar förbudet på läktarna: “Trams”",
+   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/bjorn-frantzen-sagar-forbudet-pa-laktarna-trams/",
+   "datum": "2026-11-25",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Tränaren blir av med historisk seger",
    "lank": "https://www.expressen.se/tv/sport/trav/tranaren-blir-av-med-historisk-seger/",
@@ -134,39 +164,36 @@
    "lank": "https://www.expressen.se/tv/sport/fotboll/johanna-almgren-anvander-motorsagen-lite-val-brutal/",
    "datum": "2026-11-23",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Hammarbyprofilerna inför guldramat: ”Det här har vi väntat på”",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/hammarbyprofilerna-infor-guldramat-det-har-har-vi-vantat-pa/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "70-miljonersbygget hackar",
-   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/70-miljonersbygget-hackar/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Guldstriden avgörs – så svarar Bajen",
-   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/guldstriden-avgors-sa-svarar-bajen/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Här ryker stjärnan och tränaren ihop på bänken",
-   "lank": "https://www.expressen.se/tv/sport/basket/har-ryker-stjarnan-och-tranaren-ihop-pa-banken/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "William Poromaas framtidsplan: lastbilschaffis",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/william-poromaas-framtidsplan-lastbilschaffis/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
   }
  ],
  "troligen_inte": [
+  {
+   "kalla": "TV4 Nyheterna",
+   "rubrik": "Jennifer Andersson - \"Du finns inom mig - Tarzan\" (Videoaudition Idol 2016)",
+   "lank": "https://www.tv4.se/klipp/va/20241298/jennifer-andersson-du-finns-inom-mig-tarzan-videoaudition-idol-2016",
+   "datum": "2026-11-25",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ]
+  },
+  {
+   "kalla": "SVT Nyheter",
+   "rubrik": "Nyheter från dagen: 25 november",
+   "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/nyheter-fran-dagen-25-november-rqqk4c",
+   "datum": "2026-11-25",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ]
+  },
+  {
+   "kalla": "SVT Nyheter",
+   "rubrik": "Förklaringen till att regionförhandlingarna kraschade: ”Egna poster viktigare än sakpolitiken”",
+   "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/forklaringen-till-att-regionforhandlingarna-kraschade-egna-poster-viktigare-an-sakpolitiken",
+   "datum": "2026-11-25",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ]
+  },
   {
    "kalla": "Skånesport",
    "rubrik": "Lindsjö och Spasic leder BK Höllviken – Berggren ansluter i tränarstaben",
