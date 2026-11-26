@@ -1,34 +1,8 @@
 {
- "skapad": "2026-11-26T06:52+01:00",
+ "skapad": "2026-11-26T12:13+01:00",
  "sokningar": 116,
  "misslyckade_sokningar": 0,
  "kandidater": [
-  {
-   "kalla": "Sveriges Radio",
-   "rubrik": "Så svarar Open AI på Ekots granskning",
-   "lank": "https://www.sverigesradio.se/artikel/sa-svarar-open-ai-pa-granskningen",
-   "datum": "2026-11-24",
-   "hittad_via": [
-    "Sveriges Radio: Ahlm"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [],
-   "hint": "kunde inte läsa artikeln"
-  },
-  {
-   "kalla": "Sveriges Radio",
-   "rubrik": "Därför granskade Ekot Chat GPT:s säkerhet kring skolattacker",
-   "lank": "https://www.sverigesradio.se/artikel/darfor-granskade-ekot-chat-gpts-sakerhet-kring-skolattacker",
-   "datum": "2026-11-24",
-   "hittad_via": [
-    "Sveriges Radio: Ahlm"
-   ],
-   "sprak": "",
-   "las": false,
-   "media": [],
-   "hint": "kunde inte läsa artikeln"
-  },
   {
    "kalla": "Men's Fitness",
    "rubrik": "Can Lifting Weights Raise Your Liver Enzymes Before a Blood Test?",
@@ -45,6 +19,42 @@
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Rädslan efter operationen:  ”Visste inte om de skulle kunna göra något”",
+   "lank": "https://www.expressen.se/tv/sport/skidskytte/radslan-efter-operationen-visste-inte-om-de-skulle-kunna-gora-nagot/",
+   "datum": "2026-11-26",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Här tränar Paulos Abraham ensam – dagar innan guldmatchen",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/har-tranar-paulos-abraham-ensam-dagar-innan-guldmatchen/",
+   "datum": "2026-11-26",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Här styr domaren (!) pucken i mål",
+   "lank": "https://www.expressen.se/tv/sport/hockey/har-styr-domaren--pucken-i-mal/",
+   "datum": "2026-11-26",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Rösta fram årets mål i elitettan 2026",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/rosta-fram-arets-mal-i-elitettan-2026/",
+   "datum": "2026-11-26",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Hockeypuls: Här dog TV4-profilens tränarkarriär",
+   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/hockeypuls-har-dog-tv4-profilens-tranarkarriar/",
+   "datum": "2026-11-26",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Maja Dahlqvists framtidsdom om kompisarna",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/maja-dahlqvists-framtidsdom-om-kompisarna/",
+   "datum": "2026-11-26",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Sågar svenskan: ”Du måste anstränga dig lite”",
    "lank": "https://www.expressen.se/tv/sport/skidskytte/sagar-svenskan-du-maste-anstranga-dig-lite/",
@@ -64,7 +74,7 @@
    "nämner_tyngdlyftning": false
   },
   {
-   "rubrik": "Frantzén hyllar AIK-talangen: ”Leo messi”",
+   "rubrik": "Frantzén hyllar AIK-talangen: ”Leo Messi”",
    "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/frantzen-hyllar-aik-talangen-leo-messi/",
    "datum": "2026-11-25",
    "nämner_tyngdlyftning": false
@@ -128,42 +138,6 @@
    "lank": "https://www.expressen.se/tv/sport/skidskytte/stjarnornas-beslut-om-barnet-kommer-vara-restriktiva/",
    "datum": "2026-11-24",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Hockeypuls on tour: Nollan i taket",
-   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/hockeypuls-on-tour-nollan-i-taket/",
-   "datum": "2026-11-24",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Kiruna flyttas – men idrotten lämnas kvar",
-   "lank": "https://www.expressen.se/tv/sport/kiruna-flyttas-men-idrotten-lamnas-kvar/",
-   "datum": "2026-11-24",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Höjdpunkter Örgryte – Kalmar: 3-2",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/highlights/hojdpunkter-orgryte-kalmar-3-2/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Höjdpunkter Hammarby – IFK Göteborg: 3-1",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/hojdpunkter-hammarby-ifk-goteborg-3-1/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Sveket: ”Comeback” i Djurgårdströja",
-   "lank": "https://www.expressen.se/tv/sport/hockey/sveket-comeback-i-djurgardstroja/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Johanna Almgren använder motorsågen: ”Lite väl brutal”",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/johanna-almgren-anvander-motorsagen-lite-val-brutal/",
-   "datum": "2026-11-23",
-   "nämner_tyngdlyftning": false
   }
  ],
  "troligen_inte": [
@@ -178,27 +152,18 @@
   },
   {
    "kalla": "SVT Nyheter",
-   "rubrik": "Nyheter från dagen: 25 november",
-   "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/nyheter-fran-dagen-25-november-rqqk4c",
-   "datum": "2026-11-25",
+   "rubrik": "Förklaringen till att regionförhandlingarna kraschade: ”Egna poster viktigare än sakpolitiken”",
+   "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/forklaringen-till-att-regionforhandlingarna-kraschade-egna-poster-viktigare-an-sakpolitiken",
+   "datum": "2026-11-26",
    "hittad_via": [
     "lyftare (bara namn)"
    ]
   },
   {
    "kalla": "SVT Nyheter",
-   "rubrik": "Förklaringen till att regionförhandlingarna kraschade: ”Egna poster viktigare än sakpolitiken”",
-   "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/forklaringen-till-att-regionforhandlingarna-kraschade-egna-poster-viktigare-an-sakpolitiken",
+   "rubrik": "Nyheter från dagen: 25 november",
+   "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/nyheter-fran-dagen-25-november-rqqk4c",
    "datum": "2026-11-25",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  },
-  {
-   "kalla": "Skånesport",
-   "rubrik": "Lindsjö och Spasic leder BK Höllviken – Berggren ansluter i tränarstaben",
-   "lank": "https://skanesport.se/2026/11/24/lindsjo-och-spasic-leder-bk-hollviken-berggren-ansluter-i-tranarstaben/",
-   "datum": "2026-11-24",
    "hittad_via": [
     "lyftare (bara namn)"
    ]
