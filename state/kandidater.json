@@ -1,5 +1,5 @@
 {
- "skapad": "2026-11-27T06:52+01:00",
+ "skapad": "2026-11-27T12:05+01:00",
  "sokningar": 117,
  "misslyckade_sokningar": 0,
  "kandidater": [
@@ -24,6 +24,24 @@
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": " Ribom nära tårar: ”Sämsta någonsin”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/-ribom-nara-tarar-samsta-nagonsin/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Stjärnan hyllas inför guldmatchen: ”Helt brutal – en historia för sig”",
+   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/lugnande-besked-fran-hammarbylagret-inte-lage-att-gnalla-nu/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Lisa Erikssons miss: ”Var helt yr”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/lisa-erikssons-miss-var-helt-yr/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Skämdes över brorsan på Ballon d’Or: ”Säg inte att jag är din syster”",
    "lank": "https://www.expressen.se/tv/sport/fotboll/skamdes-over-brorsan-pa-ballon-dor-sag-inteatt-jag-ar-din-syster/",
@@ -125,24 +143,6 @@
    "lank": "https://www.expressen.se/tv/sport/langdskidor/skidsnack/vallaboden-anton-grahn-handplockas-i-nytt-miljonprojekt/",
    "datum": "2026-11-25",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Hockeypuls on tour: Pelle Nyström-genombrottet",
-   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/hockeypuls-on-tour-pelle-nystrom-genombrottet/",
-   "datum": "2026-11-25",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Skriker ut sin smärta efter smällen: ”Ruggigt ont”",
-   "lank": "https://www.expressen.se/tv/sport/handboll/skriker-ut-sin-smarta-efter-smallen-ruggigt-ont/",
-   "datum": "2026-11-24",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Senegal får tillbaka titeln i Afrikanska mästerskapen",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/senegal-far-tillbaka-titeln-i-afrikanska-masterskapen/",
-   "datum": "2026-11-24",
-   "nämner_tyngdlyftning": false
   }
  ],
  "troligen_inte": [
@@ -160,15 +160,6 @@
    "rubrik": "Förklaringen till att regionförhandlingarna kraschade: ”Egna poster viktigare än sakpolitiken”",
    "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/forklaringen-till-att-regionforhandlingarna-kraschade-egna-poster-viktigare-an-sakpolitiken",
    "datum": "2026-11-25",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  },
-  {
-   "kalla": "TV4 Nyheterna",
-   "rubrik": "Hennes bästa vän mördades av sin tränare",
-   "lank": "https://www.tv4.se/artikel/2TmTqHGVvFqqramm4RzwD5/hennes-baesta-vaen-moerdades-av-sin-traenare",
-   "datum": "2026-11-26",
    "hittad_via": [
     "lyftare (bara namn)"
    ]
