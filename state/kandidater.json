@@ -1,27 +1,33 @@
 {
- "skapad": "2026-11-28T06:52+01:00",
- "sokningar": 116,
+ "skapad": "2026-11-28T11:43+01:00",
+ "sokningar": 117,
  "misslyckade_sokningar": 0,
  "kandidater": [
   {
-   "kalla": "TV4 Nyheterna",
-   "rubrik": "Jennifer Andersson - \"Du finns inom mig - Tarzan\" (Videoaudition Idol 2016)",
-   "lank": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPdHB0M1NTbG9pTjllNTE4eVpNNFRXYkZ2Q2hvbUE5dGxJUjhhZVlwZWxkc25jQmlNckFQODlIdURsMHdodFl3bGJwRTFhMzdhSUptcGxRMnBtT0wySC1rbHkzcUR3M2tyR05UblhQV1JlRlJOS0dwUlppVnlXbXhrcVY4aVRHMGlmLUh3TkphZkRNWFpUV3lzeTRPQzI0V2h2d24zak5wOA?oc=5",
-   "datum": "2026-11-25",
+   "kalla": "Yle Arenan",
+   "rubrik": "\"Hur kan jag slänga bort en del av mig själv?\" - Jannike Bäckström om att lämna toppidrotten | Sportliv",
+   "lank": "https://arenan.yle.fi/1-76080901",
+   "datum": "2026-11-27",
    "hittad_via": [
-    "lyftare (bara namn)"
+    "allmän"
    ],
    "sprak": "",
-   "las": false,
+   "las": true,
    "media": [],
-   "namn": [
-    "Jennifer Andersson"
-   ],
-   "hint": "kunde inte läsa artikeln"
+   "ingress": "Jannike Bäckström har varit tyngdlyftare sedan hon var 12 år gammal. Nu har 23-åringen kommit till en punkt där hon inte vet om hon ska fortsätta med toppidrotten eller inte. Beslutet blir svårt. \"Tyngdlyftningen är en del av min personlighet, en del av vad och vem jag är\", berättar hon i Sportliv.",
+   "utdrag": "…\"Hur kan jag slänga bort en del av mig själv?\" - Jannike Bäckström om att lämna toppidrotten 9 min · personporträtt · dokumentär · inspirerande · intim Jannike Bäckström har varit tyngdlyftare sedan hon var 12 år gammal. Nu har 23-åringen kommit till en punkt där hon inte vet om hon ska fortsätta med toppidrotten eller inte. Beslutet blir svårt. \"Tyngdlyftningen är en d…",
+   "sportord_i_texten": 2,
+   "hint": "trolig"
   }
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Så skulle Rydström fira guldet",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/sa-skulle-rydstrom-fira-guldet/",
+   "datum": "2026-11-28",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": "Udda upplevelsen – trav möter nattklubb: ”Hylla de i vår glitterbar”",
    "lank": "https://www.expressen.se/tv/sport/trav/udda-upplevelsen-trav-moter-nattklubb-hylla-de-i-var-glitterbar/",
@@ -135,28 +141,31 @@
    "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/satter-bastisen-pa-stor-ej-infor-matchen-betyder-mer-for-mig/",
    "datum": "2026-11-26",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Mörka mönstret bakom Sterlings öde: “Oerhört sorgligt”",
-   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/morka-monstret-bakom-sterlings-ode-oerhort-sorgligt/",
-   "datum": "2026-11-26",
-   "nämner_tyngdlyftning": false
   }
  ],
  "troligen_inte": [
   {
-   "kalla": "SVT Nyheter",
-   "rubrik": "Förklaringen till att regionförhandlingarna kraschade: ”Egna poster viktigare än sakpolitiken”",
-   "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/forklaringen-till-att-regionforhandlingarna-kraschade-egna-poster-viktigare-an-sakpolitiken",
+   "kalla": "Aftonbladet",
+   "rubrik": "Slog till direkt efter sommarpratet: ”Känns bra”",
+   "lank": "https://www.aftonbladet.se/senastenytt/ttsport/sport/a/6qVXo0/kamgas-styrkebesked-direkt-till-em-final",
    "datum": "2026-11-25",
    "hittad_via": [
     "lyftare (bara namn)"
    ]
   },
   {
-   "kalla": "SVT Nyheter",
-   "rubrik": "Nyheter från dagen: 25 november",
-   "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/nyheter-fran-dagen-25-november-rqqk4c",
+   "kalla": "HurBra.se",
+   "rubrik": "Agent-ish på SVT – rollista, handling och alla avsnitt",
+   "lank": "https://hurbra.se/agent-ish/",
+   "datum": "2026-11-28",
+   "hittad_via": [
+    "lyftare (bara namn)"
+   ]
+  },
+  {
+   "kalla": "TV4 Nyheterna",
+   "rubrik": "Jennifer Andersson - \"Du finns inom mig - Tarzan\" (Videoaudition Idol 2016)",
+   "lank": "https://www.tv4.se/klipp/va/20241298/jennifer-andersson-du-finns-inom-mig-tarzan-videoaudition-idol-2016",
    "datum": "2026-11-25",
    "hittad_via": [
     "lyftare (bara namn)"
