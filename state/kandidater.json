@@ -1,29 +1,111 @@
 {
- "skapad": "2026-11-27T12:05+01:00",
- "sokningar": 117,
+ "skapad": "2026-11-28T06:52+01:00",
+ "sokningar": 116,
  "misslyckade_sokningar": 0,
  "kandidater": [
   {
-   "kalla": "AOL.com",
-   "rubrik": "Can Lifting Weights Raise Your Liver Enzymes Before a Blood Test?",
-   "lank": "https://www.aol.com/articles/lifting-weights-raise-liver-enzymes-120000000.html",
-   "datum": "2026-11-24",
+   "kalla": "TV4 Nyheterna",
+   "rubrik": "Jennifer Andersson - \"Du finns inom mig - Tarzan\" (Videoaudition Idol 2016)",
+   "lank": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPdHB0M1NTbG9pTjllNTE4eVpNNFRXYkZ2Q2hvbUE5dGxJUjhhZVlwZWxkc25jQmlNckFQODlIdURsMHdodFl3bGJwRTFhMzdhSUptcGxRMnBtT0wySC1rbHkzcUR3M2tyR05UblhQV1JlRlJOS0dwUlppVnlXbXhrcVY4aVRHMGlmLUh3TkphZkRNWFpUV3lzeTRPQzI0V2h2d24zak5wOA?oc=5",
+   "datum": "2026-11-25",
    "hittad_via": [
-    "utländsk"
+    "lyftare (bara namn)"
    ],
-   "sprak": "ENGELSKA",
-   "las": true,
-   "media": [
-    "VIDEO"
+   "sprak": "",
+   "las": false,
+   "media": [],
+   "namn": [
+    "Jennifer Andersson"
    ],
-   "ingress": "In one experiment, two common liver-panel markers were still elevated a week after a single hard workout.",
-   "utdrag": "…If your result comes back high, tell the clinician who ordered the test when you last trained hard. They can interpret that detail alongside your other results and health history. Weightlifting and liver test study , AASLD guide to elevated liver enzymes How long can AST and ALT stay elevated after lifting? Researchers had healthy men who were physically active but rarel…",
-   "sportord_i_texten": 3,
-   "hint": "trolig"
+   "hint": "kunde inte läsa artikeln"
   }
  ],
  "specialkallor": [],
  "expressen_video": [
+  {
+   "rubrik": "Udda upplevelsen – trav möter nattklubb: ”Hylla de i vår glitterbar”",
+   "lank": "https://www.expressen.se/tv/sport/trav/udda-upplevelsen-trav-moter-nattklubb-hylla-de-i-var-glitterbar/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Galen kross i seriefinalen: ”Piss och skit”",
+   "lank": "https://www.expressen.se/tv/sport/bandy/galen-kross-i-seriefinalen-piss-och-skit/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Avslöjar samtalet med Tony: ”Vet inte om jag fick säga det”",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/avslojar-samtalet-med-tony-vet-inte-om-jag-fick-saga-det/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Påstodda burop mot ryskan: ”Då är man trög”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/pastodda-burop-mot-ryskan-da-ar-man-trog/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Ryskan buades ut under ceremonin: ”Då är man trög”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/ryskan-buades-ut-under-ceremonin-da-ar-man-trog/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Skidsnack: Chockas av bilden på Ebba: ”Känns som AI”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/skidsnack/skidsnack-chockas-av-bilden-pa-ebba-kanns-som-ai/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Gisselman bäste svensk: ”En bra start”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/gisselman-baste-svensk-en-bra-start/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Poromaa vurpar i premiären: ”Det suger”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/poromaa-vurpar-i-premiaren-det-suger/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Linn Svahns ilska: ”Då är man trög”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/linn-svahns-ilska-da-ar-man-trog/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Händerna domnade bort: ”Man bara lider”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/handerna-domnade-bort-man-bara-lider/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Expressen fotbolls tips inför Stryktipset 28 november",
+   "lank": "https://www.expressen.se/tv/sport/fotboll/expressen-fotbolls-tips-infor-stryktipset-28-november/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Ebbas okända drama innan succén: ”Vad fan”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/ebbas-okanda-drama-innan-succen-vad-fan/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Ebba Andersson tävlade med skadad rygg: ”Halkade i trappen”",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/ebba-andersson-tavlade-med-skadad-rygg-halkade-i-trappen/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
+  {
+   "rubrik": "Terentjeva lämnar efter frågan om Sverige",
+   "lank": "https://www.expressen.se/tv/sport/langdskidor/terentjeva-lamnar-efter-fragan-om-sverige/",
+   "datum": "2026-11-27",
+   "nämner_tyngdlyftning": false
+  },
   {
    "rubrik": " Ribom nära tårar: ”Sämsta någonsin”",
    "lank": "https://www.expressen.se/tv/sport/langdskidor/-ribom-nara-tarar-samsta-nagonsin/",
@@ -59,102 +141,9 @@
    "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/morka-monstret-bakom-sterlings-ode-oerhort-sorgligt/",
    "datum": "2026-11-26",
    "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Rädslan efter operationen:  ”Visste inte om de skulle kunna göra något”",
-   "lank": "https://www.expressen.se/tv/sport/skidskytte/radslan-efter-operationen-visste-inte-om-de-skulle-kunna-gora-nagot/",
-   "datum": "2026-11-26",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Här tränar Paulos Abraham ensam – dagar innan guldmatchen",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/har-tranar-paulos-abraham-ensam-dagar-innan-guldmatchen/",
-   "datum": "2026-11-26",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Här styr domaren (!) pucken i mål",
-   "lank": "https://www.expressen.se/tv/sport/hockey/har-styr-domaren--pucken-i-mal/",
-   "datum": "2026-11-26",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Rösta fram årets mål i elitettan 2026",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/rosta-fram-arets-mal-i-elitettan-2026/",
-   "datum": "2026-11-26",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Hockeypuls: Här dog TV4-profilens tränarkarriär",
-   "lank": "https://www.expressen.se/tv/sport/hockey/hockeypuls/hockeypuls-har-dog-tv4-profilens-tranarkarriar/",
-   "datum": "2026-11-26",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Maja Dahlqvists framtidsdom om kompisarna",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/maja-dahlqvists-framtidsdom-om-kompisarna/",
-   "datum": "2026-11-26",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Sågar svenskan: ”Du måste anstränga dig lite”",
-   "lank": "https://www.expressen.se/tv/sport/skidskytte/sagar-svenskan-du-maste-anstranga-dig-lite/",
-   "datum": "2026-11-25",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Hejar på gamla klubben: ”Håller alla tummar”",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/hejar-pa-gamla-klubben-haller-alla-tummar/",
-   "datum": "2026-11-25",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Frantzén rasar mot alkohollagen: ”Trams”",
-   "lank": "https://www.expressen.se/tv/sport/fotboll/allsvenskan/frantzen-rasar-mot-alkohollagen-trams/",
-   "datum": "2026-11-25",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Frantzén hyllar AIK-talangen: ”Leo Messi”",
-   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/frantzen-hyllar-aik-talangen-leo-messi/",
-   "datum": "2026-11-25",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Björn Frantzén sågar förbudet på läktarna: “Trams”",
-   "lank": "https://www.expressen.se/tv/sport/expressen-fotboll/bjorn-frantzen-sagar-forbudet-pa-laktarna-trams/",
-   "datum": "2026-11-25",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Tränaren blir av med historisk seger",
-   "lank": "https://www.expressen.se/tv/sport/trav/tranaren-blir-av-med-historisk-seger/",
-   "datum": "2026-11-25",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Anton Grahns nya sponsoravtal: ”4 miljarder om året”",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/skidsnack/anton-grahns-nya-sponsoravtal-4-miljarder-om-aret/",
-   "datum": "2026-11-25",
-   "nämner_tyngdlyftning": false
-  },
-  {
-   "rubrik": "Vallaboden: Anton Grahn handplockas i nytt miljonprojekt",
-   "lank": "https://www.expressen.se/tv/sport/langdskidor/skidsnack/vallaboden-anton-grahn-handplockas-i-nytt-miljonprojekt/",
-   "datum": "2026-11-25",
-   "nämner_tyngdlyftning": false
   }
  ],
  "troligen_inte": [
-  {
-   "kalla": "TV4 Nyheterna",
-   "rubrik": "Jennifer Andersson - \"Du finns inom mig - Tarzan\" (Videoaudition Idol 2016)",
-   "lank": "https://www.tv4.se/klipp/va/20241298/jennifer-andersson-du-finns-inom-mig-tarzan-videoaudition-idol-2016",
-   "datum": "2026-11-25",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  },
   {
    "kalla": "SVT Nyheter",
    "rubrik": "Förklaringen till att regionförhandlingarna kraschade: ”Egna poster viktigare än sakpolitiken”",
@@ -169,15 +158,6 @@
    "rubrik": "Nyheter från dagen: 25 november",
    "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/nyheter-fran-dagen-25-november-rqqk4c",
    "datum": "2026-11-25",
-   "hittad_via": [
-    "lyftare (bara namn)"
-   ]
-  },
-  {
-   "kalla": "SVT Nyheter",
-   "rubrik": "Norrlandspartiets lösning för ett nytt regionstyre: Extra val",
-   "lank": "https://www.svt.se/nyheter/lokalt/vasternorrland/norrlandspartiets-losning-for-ett-nytt-regionstyre-extra-val",
-   "datum": "2026-11-24",
    "hittad_via": [
     "lyftare (bara namn)"
    ]
